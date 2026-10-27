@@ -1,0 +1,353 @@
+{
+  "schema": 1,
+  "size": 100003,
+  "threads": 3,
+  "seed": 42,
+  "repetitions": 7,
+  "expected": 7037114401776080604,
+  "clock": "steady_clock",
+  "arithmetic": "uint64 modulo 2^64",
+  "warmup_per_variant": 1,
+  "spacing_bytes": 128,
+  "atomic_uint64_lock_free": true,
+  "timing": "AoS/SoA: traversal only; aggregation: release gate through finish gate and reduction; no allocation, thread creation or joins",
+  "errors": [],
+  "samples": [
+    {
+      "variant": "aos",
+      "repetition": 0,
+      "seconds": 0.000667791,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 149751943.34754434
+    },
+    {
+      "variant": "soa",
+      "repetition": 0,
+      "seconds": 4.0291e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 2482018316.7456756
+    },
+    {
+      "variant": "shared",
+      "repetition": 0,
+      "seconds": 0.001933041,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 51733512.11898765
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 0,
+      "seconds": 0.001541458,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 64875591.809831984
+    },
+    {
+      "variant": "spaced",
+      "repetition": 0,
+      "seconds": 0.000145,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 689675862.0689656
+    },
+    {
+      "variant": "local",
+      "repetition": 0,
+      "seconds": 0.000121917,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 820254763.4866344
+    },
+    {
+      "variant": "soa",
+      "repetition": 1,
+      "seconds": 2.0375e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 4908122699.386503
+    },
+    {
+      "variant": "shared",
+      "repetition": 1,
+      "seconds": 0.002576,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 38821040.37267081
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 1,
+      "seconds": 0.001509958,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 66228994.44885222
+    },
+    {
+      "variant": "spaced",
+      "repetition": 1,
+      "seconds": 0.000356791,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 280284536.32518756
+    },
+    {
+      "variant": "local",
+      "repetition": 1,
+      "seconds": 4.5667e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 2189830731.162546
+    },
+    {
+      "variant": "aos",
+      "repetition": 1,
+      "seconds": 0.000311917,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 320607725.7732025
+    },
+    {
+      "variant": "shared",
+      "repetition": 2,
+      "seconds": 0.001746458,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 57260466.61299613
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 2,
+      "seconds": 0.001335833,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 74861902.64801064
+    },
+    {
+      "variant": "spaced",
+      "repetition": 2,
+      "seconds": 0.000113917,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 877858440.7946136
+    },
+    {
+      "variant": "local",
+      "repetition": 2,
+      "seconds": 3.1083e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3217289193.4497957
+    },
+    {
+      "variant": "aos",
+      "repetition": 2,
+      "seconds": 0.000270375,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 369867776.2367083
+    },
+    {
+      "variant": "soa",
+      "repetition": 2,
+      "seconds": 3.0625e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3265404081.632653
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 3,
+      "seconds": 0.001695916,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 58966953.55194479
+    },
+    {
+      "variant": "spaced",
+      "repetition": 3,
+      "seconds": 0.000137333,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 728178951.8906599
+    },
+    {
+      "variant": "local",
+      "repetition": 3,
+      "seconds": 3.0042e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3328773051.0618467
+    },
+    {
+      "variant": "aos",
+      "repetition": 3,
+      "seconds": 0.000186125,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 537289456.0107454
+    },
+    {
+      "variant": "soa",
+      "repetition": 3,
+      "seconds": 2.6334e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3797486139.591403
+    },
+    {
+      "variant": "shared",
+      "repetition": 3,
+      "seconds": 0.0017915,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 55820820.54144572
+    },
+    {
+      "variant": "spaced",
+      "repetition": 4,
+      "seconds": 0.000110042,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 908771196.4522637
+    },
+    {
+      "variant": "local",
+      "repetition": 4,
+      "seconds": 2.8959e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3453261507.648745
+    },
+    {
+      "variant": "aos",
+      "repetition": 4,
+      "seconds": 0.00020675,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 483690447.4002418
+    },
+    {
+      "variant": "soa",
+      "repetition": 4,
+      "seconds": 2.7584e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3625398781.902552
+    },
+    {
+      "variant": "shared",
+      "repetition": 4,
+      "seconds": 0.001166875,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 85701553.29405464
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 4,
+      "seconds": 0.001719584,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 58155344.54844893
+    },
+    {
+      "variant": "local",
+      "repetition": 5,
+      "seconds": 5.45e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 1834917431.1926603
+    },
+    {
+      "variant": "aos",
+      "repetition": 5,
+      "seconds": 0.000236458,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 422920772.39932674
+    },
+    {
+      "variant": "soa",
+      "repetition": 5,
+      "seconds": 3.4333e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 2912737016.8642416
+    },
+    {
+      "variant": "shared",
+      "repetition": 5,
+      "seconds": 0.00139975,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 71443472.04858011
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 5,
+      "seconds": 0.001384042,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 72254310.20156902
+    },
+    {
+      "variant": "spaced",
+      "repetition": 5,
+      "seconds": 0.000276166,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 362111918.19412965
+    },
+    {
+      "variant": "aos",
+      "repetition": 6,
+      "seconds": 0.000125208,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 798694971.567312
+    },
+    {
+      "variant": "soa",
+      "repetition": 6,
+      "seconds": 1.7042e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 5868031921.136017
+    },
+    {
+      "variant": "shared",
+      "repetition": 6,
+      "seconds": 0.002742833,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 36459748.005073585
+    },
+    {
+      "variant": "adjacent",
+      "repetition": 6,
+      "seconds": 0.001752208,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 57072562.161569856
+    },
+    {
+      "variant": "spaced",
+      "repetition": 6,
+      "seconds": 0.000115083,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 868964138.9258188
+    },
+    {
+      "variant": "local",
+      "repetition": 6,
+      "seconds": 3.05e-05,
+      "checksum": 7037114401776080604,
+      "timing_status": "measured",
+      "items_per_second": 3278786885.2459016
+    }
+  ]
+}

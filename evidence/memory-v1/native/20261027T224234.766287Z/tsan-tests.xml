@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="(empty)"
+	tests="3"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname=""
+	time="3"
+	timestamp="2026-10-27T22:43:13"
+	>
+	<testcase name="runtime-core" classname="runtime-core" time="0.257699" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: core
+</system-out>
+	</testcase>
+	<testcase name="runtime-queue" classname="runtime-queue" time="0.263284" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: queue
+</system-out>
+	</testcase>
+	<testcase name="runtime-workloads-oracle" classname="runtime-workloads-oracle" time="3.32765" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: independent unsigned reference, variants, boundaries and invalid inputs
+</system-out>
+	</testcase>
+</testsuite>

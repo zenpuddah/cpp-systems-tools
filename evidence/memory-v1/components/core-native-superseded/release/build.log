@@ -1,0 +1,3 @@
+$ c++ -std=c++20 -Wall -Wextra -Wpedantic -Werror -O3 -DNDEBUG -I projects/runtime-inspector/memory/include projects/runtime-inspector/memory/tests/core.cpp -o /private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/runtime-memory-core
+
+exit=0

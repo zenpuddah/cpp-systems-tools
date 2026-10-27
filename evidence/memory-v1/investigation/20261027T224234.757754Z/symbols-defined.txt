@@ -1,0 +1,4 @@
+0000000000000038 D _specimen_global
+0000000000000000 T _specimen_transform
+
+--- stderr ---

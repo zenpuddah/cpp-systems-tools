@@ -9,6 +9,7 @@ A small native developer tool that builds and inspects its **own bundled C++ spe
 - Clearly labeled native **Mach-O/macOS** or **ELF/Linux** observations; an explicitly invented page translator model.
 - Runtime-input AoS/SoA and shared/adjacent/128-byte-spaced/local aggregation, checked modulo-2^64 sums, raw timings/checksums and an independent Python reference.
 - Separate owned bounded mutex/CV queue with monotonic closure, draining, rejected pushes, blocked-waiter wakeups and joined-worker tests. It is not part of the TCP server.
+- M01–M05 memory module: actual member/padding byte maps, non-owning bump arena, bounded checked fixed pool, counted PMR routes/lifetimes, equivalent allocation samples and a labeled free-interval model. See [memory guide](../../docs/MEMORY.md).
 
 ## Quick start
 
@@ -19,6 +20,7 @@ python3 projects/runtime-inspector/report.py --output reports/runtime
 cmake --preset release
 cmake --build --preset release
 ctest --preset release -R '^runtime-' --output-on-failure
+ctest --preset release -L memory --output-on-failure
 build/release/projects/runtime-inspector/runtime-workloads --size 200000 --threads 4 --seed 42 --repetitions 7
 ```
 

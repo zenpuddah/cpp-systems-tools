@@ -6,7 +6,7 @@ import re
 import subprocess
 
 ROOT = Path(__file__).resolve().parents[1]
-TOP = {'AGENTS.md', '.gitignore', 'PLAN.md', 'CMakeLists.txt', 'CMakePresets.json', 'README.md', 'progress.md'}
+TOP = {'AGENTS.md', '.gitignore', 'PLAN.md', 'MEMORY_PLAN.md', 'MEMORY_API.md', 'CMakeLists.txt', 'CMakePresets.json', 'README.md', 'progress.md'}
 DIRS = {'docs', 'scripts', 'tests', 'evidence'}
 SUFFIXES = {'.md', '.py', '.cpp', '.hpp', '.h', '.json', '.txt', '.yml', '.yaml', '.cmake'}
 FORBIDDEN = {'.env', '.git', 'author', 'solutions', 'attempts', 'current-context.md', 'current-context.json', 'reference.lock.json', 'learn.py'}
@@ -20,6 +20,8 @@ def allowed(name):
         return name in TOP
     if p.parts[:2] == ('.github', 'workflows'):
         return p.suffix in {'.yml', '.yaml'}
+    if p.parts[:2] == ('evidence', 'memory-v1') and p.suffix in {'.log', '.xml'}:
+        return True  # Versioned command logs and actual CTest JUnit results.
     if p.parts[0] == 'projects':
         return len(p.parts) >= 3 and p.parts[1] in {'tcp-kv', 'runtime-inspector'} and (
             p.suffix in SUFFIXES or p.name == '.gitignore' or ('evidence' in p.parts and p.suffix == '.log'))

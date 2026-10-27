@@ -1,0 +1,9 @@
+
+--- stderr ---
+Undefined symbols for architecture arm64:
+  "_specimen_global", referenced from:
+      _main in main.o
+  "_specimen_transform", referenced from:
+      _main in main.o
+ld: symbol(s) not found for architecture arm64
+clang++: error: linker command failed with exit code 1 (use -v to see invocation)

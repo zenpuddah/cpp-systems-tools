@@ -1,0 +1,6 @@
+/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/runtime-specimen:         Mach-O 64-bit executable arm64
+/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/main.o:                   Mach-O 64-bit object arm64
+/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/libruntime-example.a:     current ar archive random library
+/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/libruntime-example.dylib: Mach-O 64-bit dynamically linked shared library arm64
+
+--- stderr ---

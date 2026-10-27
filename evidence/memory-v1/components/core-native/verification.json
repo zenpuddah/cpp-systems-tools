@@ -1,0 +1,320 @@
+{
+  "recorded_at": "2026-10-27T22:23:27.663711+00:00",
+  "directory": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m",
+  "cwd": "/Users/macklex/folder/cpp-systems-tools-memory",
+  "source_sha256": {
+    "projects/runtime-inspector/memory/include/memory_lab/layout.hpp": "be08008d9dce7f7ec6f97926fddd63ee65bf998e4973b37c0ef2784394cfdd45",
+    "projects/runtime-inspector/memory/include/memory_lab/arena.hpp": "345d84bc6a7a174cb941f8817dca840f24460647091947e858657af7648ce7d0",
+    "projects/runtime-inspector/memory/include/memory_lab/pool.hpp": "086c9e14b224172741b4d04104da5ff43302817106ad514b48390fe0f66bd6a2",
+    "projects/runtime-inspector/memory/tests/core.cpp": "c50082f138890b6253ffc9ce2df03cd0257d8228d731f2ba71b825c8bab20ff1"
+  },
+  "source_drift": false,
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "uname": "Darwin Badrs-MacBook-Pro.local 25.6.0 Darwin Kernel Version 25.6.0: Fri Jul 31 19:19:08 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6050 arm64\n",
+  "os": "ProductName:\t\tmacOS\nProductVersion:\t\t26.6.2\nBuildVersion:\t\t25G83\n",
+  "git_head": "7d0759ca9535ea10d056400a9db435212c4d67c8",
+  "branch": "extension/memory-v1",
+  "commands": {
+    "dev": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O0",
+          "-g",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/build.log"
+      },
+      "tests": [
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/layout.log",
+          "selector": "layout",
+          "environment": {}
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/arena.log",
+          "selector": "arena",
+          "environment": {}
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/dev/pool.log",
+          "selector": "pool",
+          "environment": {}
+        }
+      ],
+      "binary_sha256": "d8ba55a93380e85476fac08d0e8fa397dc2295173493364459c498661173d151"
+    },
+    "release": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O3",
+          "-DNDEBUG",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/build.log"
+      },
+      "tests": [
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/layout.log",
+          "selector": "layout",
+          "environment": {}
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/arena.log",
+          "selector": "arena",
+          "environment": {}
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/pool.log",
+          "selector": "pool",
+          "environment": {}
+        }
+      ],
+      "binary_sha256": "bb6c8b83a94f91a0dd02ce86d9d8da7b591dfa53c6443c3968acc252816aa97f"
+    },
+    "asan": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "-g",
+          "-fno-omit-frame-pointer",
+          "-fsanitize=address",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/build.log"
+      },
+      "tests": [
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/layout.log",
+          "selector": "layout",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=0:halt_on_error=1"
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/arena.log",
+          "selector": "arena",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=0:halt_on_error=1"
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/asan/pool.log",
+          "selector": "pool",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=0:halt_on_error=1"
+          }
+        }
+      ],
+      "binary_sha256": "8717270c9a2472144c569ca06c374aac6589179519cd509116fa736f23781ff6"
+    },
+    "ubsan": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "-g",
+          "-fno-omit-frame-pointer",
+          "-fsanitize=undefined",
+          "-fno-sanitize-recover=all",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/build.log"
+      },
+      "tests": [
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/layout.log",
+          "selector": "layout",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/arena.log",
+          "selector": "arena",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        },
+        {
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/ubsan/pool.log",
+          "selector": "pool",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        }
+      ],
+      "binary_sha256": "c1ceed176296db95a8f1598a298b8007a2904458c5357258364dd378a3d9dbb9"
+    }
+  },
+  "header_standalone": [
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-fsyntax-only",
+        "-I",
+        "projects/runtime-inspector/memory/include",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/layout-standalone.cpp"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/layout-standalone.log"
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-fsyntax-only",
+        "-I",
+        "projects/runtime-inspector/memory/include",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/arena-standalone.cpp"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/arena-standalone.log"
+    },
+    {
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-fsyntax-only",
+        "-I",
+        "projects/runtime-inspector/memory/include",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/pool-standalone.cpp"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/pool-standalone.log"
+    }
+  ],
+  "usage": [
+    {
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core"
+      ],
+      "exit": 2,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/usage-missing.log"
+    },
+    {
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core",
+        "invalid"
+      ],
+      "exit": 2,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/usage-unknown.log"
+    }
+  ]
+}

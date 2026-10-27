@@ -1,0 +1,3 @@
+{"pid":64336,"pointer_bytes":8,"native_page_bytes":16384,"global_address":4307959808,"automatic_address":6158954320,"dynamic_address":4317551248,"result":1408,"minor_faults_since_start":298,"major_faults_since_start":1,"layout":{"size":24,"alignment":8,"tag_offset":0,"value_offset":8,"count_offset":16},"vector":{"old_capacity":2,"new_capacity":4,"old_address":4317551264,"new_address":4317551280}}
+
+--- stderr ---

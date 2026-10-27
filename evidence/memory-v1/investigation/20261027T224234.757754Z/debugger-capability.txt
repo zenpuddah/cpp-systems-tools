@@ -1,0 +1,23 @@
+(lldb) target create /Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/runtime-specimen
+Current executable set to '/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/runtime-specimen' (arm64).
+(lldb) breakpoint set -n specimen_transform
+Breakpoint 1: where = runtime-specimen`::specimen_transform(uint64_t, uint64_t) + 12 at operations.cpp:8:12, address = 0x00000001000036b8
+(lldb) run 42
+Process 64462 launched: '/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/runtime-specimen' (arm64)
+Process 64462 stopped
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+    frame #0: 0x00000001000036b8 runtime-specimen`specimen_transform(value=42, salt=5) at operations.cpp:8:12
+   5   	// A stable C symbol makes the actual ABI/disassembly easy to find; this is not
+   6   	// an assertion that a particular optimization level preserves a call.
+   7   	extern "C" std::uint64_t specimen_transform(std::uint64_t value, std::uint64_t salt) {
+-> 8   	    return value * 33U + salt + specimen_global;
+    	           ^
+   9   	}
+Target 0: (runtime-specimen) stopped.
+(lldb) bt
+* thread #1, queue = 'com.apple.main-thread', stop reason = breakpoint 1.1
+  * frame #0: 0x00000001000036b8 runtime-specimen`specimen_transform(value=42, salt=5) at operations.cpp:8:12
+    frame #1: 0x000000010000065c runtime-specimen`main(argc=2, argv=0x000000016fdff480) at main.cpp:15:52
+    frame #2: 0x000000018cff44e4 dyld`start + 6992
+
+--- stderr ---

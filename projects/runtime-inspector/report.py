@@ -22,11 +22,11 @@ ROOT = Path(__file__).resolve().parent
 
 def source_identity() -> str:
     digest = hashlib.sha256()
-    for folder in ("specimen", "src", "include", "tests"):
+    for folder in ("specimen", "src", "include", "tests", "memory/include", "memory/src", "memory/tests"):
         for path in sorted((ROOT / folder).rglob("*")):
             if path.is_file() and "__pycache__" not in path.parts:
                 digest.update(str(path.relative_to(ROOT)).encode() + b"\0" + path.read_bytes())
-    for name in ("CMakeLists.txt", "report.py"):
+    for name in ("CMakeLists.txt", "memory/CMakeLists.txt", "report.py"):
         digest.update(name.encode() + b"\0" + (ROOT / name).read_bytes())
     return digest.hexdigest()
 
@@ -95,16 +95,23 @@ class Inspector:
 def inspect(args):
     output = args.output.resolve()
     output.mkdir(parents=True, exist_ok=True)
+    # This is a tool-owned output name; a failed current memory run must not
+    # leave an old JSON document looking like a current measurement.
+    (output / 'memory.json').unlink(missing_ok=True)
     inspector = Inspector(output)
+    source_before = source_identity()
     cxx = shlex.split(args.cxx)
+    if not cxx or any('-fsanitize' in flag for flag in cxx):
+        raise RuntimeError('memory timings require a nonempty, uninstrumented compiler invocation')
     system = platform.system()
     if system not in ("Linux", "Darwin"):
         raise RuntimeError("native inspection supports Linux and macOS only; PE/DLL is documented comparison")
     native = "Mach-O / macOS" if system == "Darwin" else "ELF / Linux"
     flags = ["-std=c++20", "-O0", "-g", "-fPIC", "-fno-omit-frame-pointer"]
     workload_flags = ["-std=c++20", "-O2", "-g", "-pthread", "-fno-omit-frame-pointer"]
+    memory_flags = ["-std=c++20", "-O2", "-g", "-fno-omit-frame-pointer"]
     git = inspector.run("git-revision", ["git", "-C", ROOT, "rev-parse", "HEAD"])
-    inspector.run("git-dirty", ["git", "-C", ROOT, "status", "--short"])
+    dirty = inspector.run("git-dirty", ["git", "-C", ROOT, "status", "--short"])
     inspector.run("compiler", [*cxx, "--version"], required=True)
     inspector.run("compiler-target", [*cxx, "-dumpmachine"], required=True)
     inspector.require_build()
@@ -223,6 +230,29 @@ def inspect(args):
     except (OSError, ValueError, KeyError, IndexError) as exc:
         inspector.errors.append(f"workload validation: {exc}")
 
+    # M01-M05 are part of this same run-to-report workflow. Build their bounded
+    # reference separately from sanitizer binaries; retain exact flags/commands.
+    memory_binary = output / "runtime-memory"
+    memory_root = ROOT / "memory"
+    inspector.run("build-memory", [*cxx, *memory_flags, "-I", memory_root / "include",
+                                  memory_root / "src/pmr.cpp", memory_root / "src/experiments.cpp",
+                                  memory_root / "src/main.cpp", "-o", memory_binary], required=True, timeout=90)
+    inspector.require_build()
+    inspector.run("memory", [memory_binary, "--size", str(args.memory_size), "--seed", str(args.seed),
+                              "--repetitions", str(args.memory_repetitions)], required=True, timeout=60)
+    memory = None
+    try:
+        stdout = (output / "memory.txt").read_text().split("\n--- stderr ---\n", 1)[0]
+        memory = json.loads(stdout)
+        if not isinstance(memory, dict) or not memory:
+            raise ValueError("memory report must be a nonempty JSON object")
+        if memory.get("errors"):
+            raise ValueError("memory experiment reported errors")
+        (output / "memory.json").write_text(json.dumps(memory, indent=2, allow_nan=False) + "\n")
+        inspector.run('validate-memory', [sys.executable, memory_root / 'tests/check_driver.py', '--json', output / 'memory.json'], required=True)
+    except (OSError, ValueError, TypeError) as exc:
+        inspector.errors.append(f"memory validation: {exc}")
+
     capabilities = {name: shutil.which(name) for name in ("perf", "strace", "lldb", "gdb", "vmmap", "sample")}
     # Probes distinguish installed binaries from usable kernel/ptrace access.
     if capabilities["perf"]:
@@ -240,16 +270,80 @@ def inspect(args):
              "virtual_address": 0x12345, "virtual_page": 0x12, "offset": 0x345,
              "invented_page_table": {"18": 128}, "invented_physical_address": 0x80345}
     (output / "translator-model.json").write_text(json.dumps(model, indent=2) + "\n")
+    source_after = source_identity()
+    if source_after != source_before:
+        inspector.errors.append("source changed during inspection; exact build/measurement identity unverified")
+    revision = ((output / "git-revision.txt").read_text().split("\n--- stderr ---\n", 1)[0].strip()
+                if git["status"] == "passed" else None)
+    dirty_tree = (bool((output / "git-dirty.txt").read_text().split("\n--- stderr ---\n", 1)[0].strip())
+                  if dirty["status"] == "passed" else None)
     meta = {"schema": 1, "utc": dt.datetime.now(dt.timezone.utc).isoformat(),
             "native_format": native, "machine": platform.machine(), "platform": platform.platform(),
             "cpu_count": os.cpu_count(), "compiler": cxx, "specimen_flags": flags,
-            "workload_flags": workload_flags, "source_sha256": source_identity(),
+            "workload_flags": workload_flags, "memory_flags": memory_flags, "source_sha256": source_identity(),
             "git_revision_status": git["status"], "commands": inspector.commands,
+            "git_revision": revision, "source_tree_dirty": dirty_tree,
+            "source_before_sha256": source_before, "source_drift": source_after != source_before,
+            "memory_binary_sha256": hashlib.sha256(memory_binary.read_bytes()).hexdigest(),
             "capabilities": capabilities, "observations": observations, "workload_summary": summaries,
-            "errors": inspector.errors, "translator_model": model}
+            "errors": inspector.errors, "translator_model": model, "memory": memory}
     (output / "report.json").write_text(json.dumps(meta, indent=2) + "\n")
     write_markdown(output, meta)
     return 1 if inspector.errors else 0
+
+
+def memory_markdown(memory):
+    if not memory or memory.get('schema') != 'memory-lab-v1':
+        return []
+    lines = ['', '### Measured layout (active ABI)', '',
+             '| Fixture | Size / stride | Alignment | Internal / tail padding | Members: offset + size |',
+             '|---|---:|---:|---:|---|']
+    for layout in memory['layout']['fixture_layouts']:
+        members = ', '.join(f"{m['name']}: {m['offset']} + {m['size']}" for m in layout['members'])
+        lines.append(f"| {layout['name']} | {layout['object_size']} / {layout['array_stride']} | {layout['object_alignment']} | {layout['internal_padding']} / {layout['tail_padding']} | {members} |")
+    lines += ['', 'Computed byte maps: member initials; `.` internal padding; `T` tail padding. No padding values are read.', '']
+    for layout in memory['layout']['fixture_layouts']:
+        cells = ''.join('.' if i == -1 else 'T' if i == -2 else layout['members'][i]['name'][0] for i in layout['byte_owner'])
+        lines.append(f"- {layout['name']}: `{cells}`")
+    original = memory['layout']['fixture_layouts'][0]
+    internal = next((p for p in original['padding'] if not p['tail']), None)
+    if internal:
+        following = next((m for m in original['members'] if m['offset'] == internal['offset'] + internal['size']), None)
+        if following:
+            lines.append(f"Observed gap: {internal['size']} bytes at offset {internal['offset']} precede {following['name']} at aligned offset {following['offset']} (member alignment {following['alignment']}).")
+    lines.append(f"Observed original tail: {original['tail_padding']} bytes; size/stride {original['object_size']} is a multiple of object alignment {original['object_alignment']}, keeping successive array elements aligned. Neither this padding total nor reordering savings is universal.")
+    arena, pool = memory['arena'], memory['fixed_pool']
+    lines += ['', f"Caller-buffer arena demonstration: consumed {arena['consumed']} = payload {arena['payload_bytes']} + alignment padding {arena['alignment_padding']}; remaining {arena['remaining']} / capacity {arena['capacity']}. Reset consumption {arena['consumed_after_reset']}.",
+              f"Fixed pool demonstration: {pool['capacity']} slots, payload {pool['payload_size']}, stride {pool['slot_stride']}; front gap {pool['alignment_padding']}, tail {pool['tail_bytes']}, separate metadata used/reserved {pool['metadata_used_bytes']}/{pool['metadata_reserved_bytes']} bytes. Final live/free {pool['live_count']}/{pool['free_count']}.",
+              '', '### Observed PMR resource routes', '',
+              '| Route | Frontend successes / failures | Upstream successes / failures | Upstream peak bytes | Before release bytes | Final upstream bytes |',
+              '|---|---:|---:|---:|---:|---:|']
+    for name in ('monotonic_fallback', 'monotonic_hardcap', 'pool'):
+        r = memory['pmr'][name]
+        front, up = r['frontend'], r['upstream']
+        lines.append(f"| {name} | {front['allocations']} / {front['failures']} | {up['allocations']} / {up['failures']} | {up['peak_bytes']} | {r['upstream_before_release']} | {r['final_upstream_bytes']} |")
+    lines += ['', f"Hard-cap bad_alloc observed: {memory['pmr']['monotonic_hardcap']['bad_alloc_observed']}. Copy/move resource-selection fixtures: {memory['pmr']['copy_move']}. All counted objects were destroyed before release."]
+    exp = memory['experiments']
+    lines += ['', '### Controlled allocation question', '',
+              'For the same simultaneous-live payload and bulk lifetime, what does each instrumented allocation path cost, and what storage remains before collective reclamation? No causal or universal speedup claim follows.',
+              f"Size {exp['size']}; seed {exp['seed']}; repetitions {exp['repetitions']}; runtime trace and all raw samples retained in memory.json. Times below are medians in **nanoseconds**; setup/warmup, payload touch/checksum and teardown are separate. PMR counters/dispatch and checked pool-free validation costs are included, not subtracted.",
+              '', '| Backend | Raw allocation | Raw free | Reset/release | Object construction | Object destruction |', '|---|---:|---:|---:|---:|---:|']
+    for backend in exp['backends']:
+        def median(phase, timer):
+            values = [s[phase]['timings_ns'][timer] for s in backend['samples'] if s[phase]['timings_ns'][timer] is not None]
+            return f'{statistics.median(values):.9g}' if values else 'unsupported'
+        lines.append(f"| {backend['name']} | {median('raw', 'allocate')} | {median('raw', 'deallocate')} | {median('raw', 'release_or_reset')} | {median('objects', 'construct')} | {median('objects', 'destroy')} |")
+    lines += ['', 'Storage below is the **first raw sample**, bytes. Consumed is observed arena cursor/live-slot span or host client-visible payload, never inferred host footprint. Retained includes unused caller capacity; metadata is separate. `unknown` is not zero.', '',
+              '| Backend | Requested payload | Backing capacity | Acquired upstream peak | Consumed | Alignment gaps | Slot rounding | Custom metadata | Retained after client lifetime |', '|---|---:|---:|---:|---:|---:|---:|---:|---:|']
+    for backend in exp['backends']:
+        storage = backend['samples'][0]['raw']['storage_bytes']
+        keys = ('requested_live_payload', 'backing_capacity', 'resource_acquired_peak_bytes', 'consumed', 'alignment_slack', 'slot_rounding', 'metadata', 'retained_not_live_after_deallocate')
+        cells = [str(storage[k]) if storage[k] is not None else 'unknown' for k in keys]
+        lines.append('| ' + backend['name'] + ' | ' + ' | '.join(cells) + ' |')
+    model = exp['fragmentation']
+    lines += ['', f"Free-interval **model**, not libc heap: total free {model['fragmented_total_free']}, largest hole {model['fragmented_largest_free']}, request {model['failed_request']} fails despite sufficient sum. Adjacent-hole coalescing changes total/largest {model['before_merge_total']}/{model['before_merge_largest']} → {model['after_merge_total']}/{model['after_merge_largest']}; the request then succeeds.",
+              'Conclusion: arena/monotonic allocations retain dead payload until collective reclamation; fixed-slot rounding is internal loss; free fixed slots are not automatically external fragmentation. Standard-pool retention and host internals remain library-specific/unknown. Choose by lifetime, bounds and supported shape, not this small timing ranking.']
+    return lines
 
 
 def write_markdown(output, meta):
@@ -291,6 +385,15 @@ def write_markdown(output, meta):
                   for mode in ("spaced", "local")}
         lines += ["", f"Observed median ratios (baseline / candidate): {ratios}. None means below clock resolution. These are sample-specific ratios, not general speedup guarantees.",
                   "Conclusion: retain all variants as an experiment; no server/design change is warranted by these samples. Repeat on the target workload and use supported counters before assigning a hardware cause."]
+    lines += ["", "## Layout, caller-buffer allocation and PMR", "",
+              "M01–M05 extend this Inspector, not the server. `memory.json` retains actual standard-layout member/padding maps, arena/pool policies, PMR front-end/upstream counters, bounded allocation samples and a labeled free-interval model.",
+              "Member alignment, allocation alignment, object padding and cache-line spacing are different quantities. Padding is not semantic initialized data; never serialize a struct memory image or use padding in memcmp equality.",
+              "Arena reset/monotonic release reclaim storage collectively, not object lifetimes. Destroy dependent objects/containers before release; clear alone is insufficient. Fixed-slot checked releases are not standard-PMR invalid-deallocation tests.",
+              "Known payload, backing capacity, metadata/rounding/padding and retained storage are separate from unobservable host allocator internals or PMR cursors. Unknowns must not be inferred from RSS. Resource choices have no guaranteed speedup.",
+              ("[Full measured memory report and raw samples](memory.json). See memory.txt and build-memory.txt for the actual optimized uninstrumented run/flags."
+               if meta.get("memory") else "Memory report failed; see current command status/errors, not stale artifacts."),
+              ]
+    lines += memory_markdown(meta.get('memory'))
     lines += ["", "## Models and limits", "",
               "translator-model.json invents a page table/frame: VPN 0x12 + offset 0x345 maps to frame 0x80, physical 0x80345. It is not a physical-address measurement. See README/architecture for MMU/TLB, segmentation, faults, COW and PE/DLL comparison. PGM remains unresolved.",
               "No intentional protection failure is executed. No Linux/Windows results or universal race-freedom claims follow from macOS results.",
@@ -315,9 +418,12 @@ def main():
     parser.add_argument("--threads", type=int, default=4)
     parser.add_argument("--seed", type=int, default=42)
     parser.add_argument("--repetitions", type=int, default=5)
+    parser.add_argument("--memory-size", type=int, default=128)
+    parser.add_argument("--memory-repetitions", type=int, default=5)
     args = parser.parse_args()
     if not (0 <= args.size <= 10000000 and 1 <= args.threads <= 32 and
-            0 <= args.seed < (1 << 64) and 1 <= args.repetitions <= 30):
+            0 <= args.seed < (1 << 64) and 1 <= args.repetitions <= 30 and
+            1 <= args.memory_size <= 2048 and 1 <= args.memory_repetitions <= 20):
         parser.error("workload outside bounded input limits")
     try:
         status = inspect(args)

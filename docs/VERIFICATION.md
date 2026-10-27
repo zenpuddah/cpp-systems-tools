@@ -21,4 +21,6 @@ Actual Linux verification is now recorded in [RESULTS.md](RESULTS.md): workflow 
 
 ## Evidence boundaries
 
+Memory-v1 is additive: run `python3 scripts/verify_memory.py dev release asan ubsan tsan`. It writes timestamped records, source/test manifests, compile commands and JUnit results below `evidence/memory-v1/native/` (or `linux/` on Linux), not the original `evidence/verification.json`. Build/configure failure marks dependent steps **not run**. `python3 scripts/import_memory_ci.py RUN_ID` validates actual completed workflow/artifact revision, source drift, nonempty test results and platform, preserving an immutable per-run copy under `evidence/memory-v1/ci/`. A workflow definition is not a Linux pass. The original `public-v1` tag/evidence is not moved or overwritten by these commands.
+
 `passed`, `failed`, `unavailable`, `not run`, `documented only` are distinct. Compiler success alone is not a test pass. TSan success does not prove race freedom. Source/build/test flags, raw samples and errors are preserved; no benchmark is inferred from sanitizer execution. Reports are observations of this specimen/toolchain, not portable ABI guarantees.

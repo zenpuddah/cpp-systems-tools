@@ -1,0 +1,732 @@
+{
+  "root": "/Users/macklex/folder/cpp-systems-tools-memory",
+  "evidence": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "runs": [
+    {
+      "stage": "build",
+      "mode": "dev",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O0",
+        "-g",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/pmr.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-pmr-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "dev",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-pmr-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "dev",
+      "target": "runtime-memory-costs",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O0",
+        "-g",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/costs.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-costs-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "dev",
+      "target": "runtime-memory-costs",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-costs-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "dev",
+      "target": "runtime-memory",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O0",
+        "-g",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/main.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/dev-runtime-memory-build.log"
+    },
+    {
+      "stage": "build",
+      "mode": "release",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/pmr.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-pmr-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "release",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-pmr-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "release",
+      "target": "runtime-memory-costs",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/costs.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-costs-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "release",
+      "target": "runtime-memory-costs",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-costs-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "release",
+      "target": "runtime-memory",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O3",
+        "-DNDEBUG",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/main.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory-build.log"
+    },
+    {
+      "stage": "build",
+      "mode": "asan",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=address",
+        "-fno-omit-frame-pointer",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/pmr.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-pmr-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "asan",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-pmr-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "asan",
+      "target": "runtime-memory-costs",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=address",
+        "-fno-omit-frame-pointer",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/costs.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-costs-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "asan",
+      "target": "runtime-memory-costs",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-costs-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "asan",
+      "target": "runtime-memory",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=address",
+        "-fno-omit-frame-pointer",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/main.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/asan-runtime-memory-build.log"
+    },
+    {
+      "stage": "build",
+      "mode": "ubsan",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=undefined",
+        "-fno-omit-frame-pointer",
+        "-fno-sanitize-recover=all",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/pmr.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-pmr-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "ubsan",
+      "target": "runtime-memory-pmr",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-pmr"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-pmr-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "ubsan",
+      "target": "runtime-memory-costs",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=undefined",
+        "-fno-omit-frame-pointer",
+        "-fno-sanitize-recover=all",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/tests/costs.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-costs-build.log"
+    },
+    {
+      "stage": "test",
+      "mode": "ubsan",
+      "target": "runtime-memory-costs",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-costs"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-costs-test.log"
+    },
+    {
+      "stage": "build",
+      "mode": "ubsan",
+      "target": "runtime-memory",
+      "command": [
+        "clang++",
+        "-std=c++20",
+        "-Wall",
+        "-Wextra",
+        "-Wpedantic",
+        "-Werror",
+        "-I/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/include",
+        "-O1",
+        "-g",
+        "-fsanitize=undefined",
+        "-fno-omit-frame-pointer",
+        "-fno-sanitize-recover=all",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/pmr.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/experiments.cpp",
+        "/Users/macklex/folder/cpp-systems-tools-memory/projects/runtime-inspector/memory/src/main.cpp",
+        "-o",
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/ubsan-runtime-memory-build.log"
+    },
+    {
+      "stage": "optimized-uninstrumented-driver",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-driver-0.json"
+    },
+    {
+      "stage": "optimized-uninstrumented-driver",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory",
+        "--size",
+        "1",
+        "--seed",
+        "0",
+        "--repetitions",
+        "1"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-driver-1.json"
+    },
+    {
+      "stage": "optimized-uninstrumented-driver",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory",
+        "--size",
+        "128",
+        "--seed",
+        "42",
+        "--repetitions",
+        "7"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-driver-2.json"
+    },
+    {
+      "stage": "optimized-uninstrumented-driver",
+      "command": [
+        "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-runtime-memory",
+        "--size",
+        "2048",
+        "--seed",
+        "18446744073709551615",
+        "--repetitions",
+        "20"
+      ],
+      "exit": 0,
+      "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-experiment-final-awv0vdl3/release-driver-3.json"
+    }
+  ],
+  "checks": [
+    {
+      "case": 0,
+      "kind": "JSON/CLI/equivalent-independent-fixtures",
+      "status": "passed",
+      "config": {
+        "size": 128,
+        "seed": 42,
+        "repetitions": 3
+      }
+    },
+    {
+      "case": 1,
+      "kind": "JSON/CLI/equivalent-independent-fixtures",
+      "status": "passed",
+      "config": {
+        "size": 1,
+        "seed": 0,
+        "repetitions": 1
+      }
+    },
+    {
+      "case": 2,
+      "kind": "JSON/CLI/equivalent-independent-fixtures",
+      "status": "passed",
+      "config": {
+        "size": 128,
+        "seed": 42,
+        "repetitions": 7
+      }
+    },
+    {
+      "case": 3,
+      "kind": "JSON/CLI/equivalent-independent-fixtures",
+      "status": "passed",
+      "config": {
+        "size": 2048,
+        "seed": 18446744073709551615,
+        "repetitions": 20
+      }
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size",
+        "0"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: size must be 1..2048; repetitions must be 1..20\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size",
+        "2049"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: unknown, duplicate or out-of-range option\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size",
+        "-1"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: options require unsigned decimal integers\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size",
+        "1x"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: options require unsigned decimal integers\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size",
+        "1",
+        "--size",
+        "2"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: unknown, duplicate or out-of-range option\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--seed",
+        "18446744073709551616"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: options require unsigned decimal integers\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--seed",
+        "-1"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: options require unsigned decimal integers\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--repetitions",
+        "0"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: size must be 1..2048; repetitions must be 1..20\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--repetitions",
+        "21"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: unknown, duplicate or out-of-range option\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--size"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: option missing value\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--bogus",
+        "1"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: unknown, duplicate or out-of-range option\n",
+      "status": "passed"
+    },
+    {
+      "kind": "invalid CLI rejected without partial JSON",
+      "args": [
+        "--seed",
+        "+1"
+      ],
+      "exit": 2,
+      "stderr": "runtime-memory: options require unsigned decimal integers\n",
+      "status": "passed"
+    }
+  ],
+  "source_sha256": {
+    "projects/runtime-inspector/memory/include/memory_lab/arena.hpp": "345d84bc6a7a174cb941f8817dca840f24460647091947e858657af7648ce7d0",
+    "projects/runtime-inspector/memory/include/memory_lab/experiments.hpp": "491602334dda99f139ed8456fc447d7cbfdf588739aa3f377595fadb284e808a",
+    "projects/runtime-inspector/memory/include/memory_lab/layout.hpp": "be08008d9dce7f7ec6f97926fddd63ee65bf998e4973b37c0ef2784394cfdd45",
+    "projects/runtime-inspector/memory/include/memory_lab/pmr.hpp": "b300b64ef1346a9aad9456b039d37290b1ff40ccc025a8a3d6e13c8df69818d9",
+    "projects/runtime-inspector/memory/include/memory_lab/pool.hpp": "086c9e14b224172741b4d04104da5ff43302817106ad514b48390fe0f66bd6a2",
+    "projects/runtime-inspector/memory/src/experiments.cpp": "112c1a8f069efb2b3e60ea21f353ec3f7f187d367981f890d106ae6dcc46cff3",
+    "projects/runtime-inspector/memory/src/main.cpp": "73359ce6d0c72c598e4a66c196a6b2e7a1433a934f02330e37bd928a86973a4c",
+    "projects/runtime-inspector/memory/src/pmr.cpp": "a68081dfe42c5233c79d24a99548125886c61edf9d75030b2304f4fbd32db187",
+    "projects/runtime-inspector/memory/tests/costs.cpp": "0360b8c833677a30b863dc725f6028922749a1d287eeec0079cf0f2c26d28cf5",
+    "projects/runtime-inspector/memory/tests/pmr.cpp": "3d4ec83629646a1850bcd0a7d7085598fded68fb41770fbe85b84fa766e8cc28"
+  },
+  "git_head": "7d0759ca9535ea10d056400a9db435212c4d67c8",
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "binary_sha256": {
+    "dev-runtime-memory-pmr": "9f04efbc85528202df11da094f380daf86c5bb57494fc8cdf2bc61df6c17eecf",
+    "dev-runtime-memory-costs": "7d2ad9754274e22ba0ceaf7793aadb1d8900fa134658d3d7d0db55ab6e03c8f5",
+    "dev-runtime-memory": "d5ac7b03a6005bb89c5a2472d5c48c402321401c9a7db4a68ce7a62e9733ce8e",
+    "release-runtime-memory-pmr": "0b2b3f053a38d3c605334ec46d4b7dec183143647d81c2659d1ef3db6e6cc409",
+    "release-runtime-memory-costs": "012098a8b2159d1286024c5254034c729f0bca0cb4cc92cf425127d21e66db0a",
+    "release-runtime-memory": "39916f26ad8b7124cfca7996d1d7a3ad6998815692a3b65eb606f74dd81e266d",
+    "asan-runtime-memory-pmr": "00ab3a82a845ac4a2652e18bfac0ae41abbac4bcfbb570354ee4bf758cc047d5",
+    "asan-runtime-memory-costs": "3c3f0beb5f0a0e772adf04f41c9fcedbedbe8601a255765e5dcf3a9954f7a16f",
+    "asan-runtime-memory": "dee0c59d9f33a31d875a0f6fefb2803fbe39884e5e091e5122ff98a7684236d3",
+    "ubsan-runtime-memory-pmr": "d24689c84fbd98fa8f668d8c9abb87460e2694a33e816865d4e68427dcdd2d90",
+    "ubsan-runtime-memory-costs": "08cc386e1a682727666924ee7ea7ffdb808ac4406ba16d422ad0d644dcca40bb",
+    "ubsan-runtime-memory": "13caa0015b5c34bfa44031bb054d26f9713801c998681149fe9158d8d86ef648"
+  },
+  "measurement_summary": {
+    "new_delete_resource": {
+      "raw_allocation_ns_median": 2541,
+      "objects_construct_ns_median": 167,
+      "after_deallocate": {
+        "requested_live_payload": 5149,
+        "backing_capacity": 0,
+        "resource_acquired_live_bytes": 5149,
+        "resource_acquired_total_bytes": 5149,
+        "resource_acquired_peak_bytes": 5149,
+        "consumed": 5149,
+        "alignment_slack": null,
+        "slot_rounding": 0,
+        "metadata": null,
+        "retained_not_live_after_deallocate": 0,
+        "requested_live_payload_after_deallocate": 0,
+        "upstream_after_deallocate": 0,
+        "retained_dead_payload_after_deallocate": 0,
+        "final_upstream_bytes": 0,
+        "host_allocator_hidden_bytes": null,
+        "pmr_cursor_or_internal_metadata": null
+      }
+    },
+    "bump_arena": {
+      "raw_allocation_ns_median": 1333,
+      "objects_construct_ns_median": 166,
+      "after_deallocate": {
+        "requested_live_payload": 5149,
+        "backing_capacity": 16896,
+        "resource_acquired_live_bytes": 0,
+        "resource_acquired_total_bytes": 0,
+        "resource_acquired_peak_bytes": 0,
+        "consumed": 6095,
+        "alignment_slack": 946,
+        "slot_rounding": 0,
+        "metadata": 40,
+        "retained_not_live_after_deallocate": 16896,
+        "requested_live_payload_after_deallocate": 0,
+        "upstream_after_deallocate": 0,
+        "retained_dead_payload_after_deallocate": 5149,
+        "final_upstream_bytes": 0,
+        "host_allocator_hidden_bytes": null,
+        "pmr_cursor_or_internal_metadata": null
+      }
+    },
+    "fixed_pool": {
+      "raw_allocation_ns_median": 417,
+      "objects_construct_ns_median": 166,
+      "after_deallocate": {
+        "requested_live_payload": 5149,
+        "backing_capacity": 16896,
+        "resource_acquired_live_bytes": 0,
+        "resource_acquired_total_bytes": 0,
+        "resource_acquired_peak_bytes": 0,
+        "consumed": 8192,
+        "alignment_slack": 0,
+        "slot_rounding": 3043,
+        "metadata": 2160,
+        "retained_not_live_after_deallocate": 16896,
+        "requested_live_payload_after_deallocate": 0,
+        "upstream_after_deallocate": 0,
+        "retained_dead_payload_after_deallocate": 0,
+        "final_upstream_bytes": 0,
+        "host_allocator_hidden_bytes": null,
+        "pmr_cursor_or_internal_metadata": null
+      }
+    },
+    "pmr_monotonic": {
+      "raw_allocation_ns_median": 792,
+      "objects_construct_ns_median": 166,
+      "after_deallocate": {
+        "requested_live_payload": 5149,
+        "backing_capacity": 16896,
+        "resource_acquired_live_bytes": 0,
+        "resource_acquired_total_bytes": 0,
+        "resource_acquired_peak_bytes": 0,
+        "consumed": null,
+        "alignment_slack": null,
+        "slot_rounding": null,
+        "metadata": null,
+        "retained_not_live_after_deallocate": 16896,
+        "requested_live_payload_after_deallocate": 0,
+        "upstream_after_deallocate": 0,
+        "retained_dead_payload_after_deallocate": 5149,
+        "final_upstream_bytes": 0,
+        "host_allocator_hidden_bytes": null,
+        "pmr_cursor_or_internal_metadata": null
+      }
+    },
+    "pmr_pool": {
+      "raw_allocation_ns_median": 2709,
+      "objects_construct_ns_median": 167,
+      "after_deallocate": {
+        "requested_live_payload": 5149,
+        "backing_capacity": 0,
+        "resource_acquired_live_bytes": 8648,
+        "resource_acquired_total_bytes": 8648,
+        "resource_acquired_peak_bytes": 8648,
+        "consumed": null,
+        "alignment_slack": null,
+        "slot_rounding": null,
+        "metadata": null,
+        "retained_not_live_after_deallocate": 0,
+        "requested_live_payload_after_deallocate": 0,
+        "upstream_after_deallocate": 0,
+        "retained_dead_payload_after_deallocate": null,
+        "final_upstream_bytes": 0,
+        "host_allocator_hidden_bytes": null,
+        "pmr_cursor_or_internal_metadata": null
+      }
+    }
+  },
+  "source_drift": []
+}

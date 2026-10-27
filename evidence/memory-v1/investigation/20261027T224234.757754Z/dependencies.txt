@@ -1,0 +1,6 @@
+/Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224234.757754Z/shared-client:
+	@rpath/libruntime-example.dylib (compatibility version 0.0.0, current version 0.0.0)
+	/usr/lib/libc++.1.dylib (compatibility version 1.0.0, current version 2100.43.0)
+	/usr/lib/libSystem.B.dylib (compatibility version 1.0.0, current version 1356.0.0)
+
+--- stderr ---

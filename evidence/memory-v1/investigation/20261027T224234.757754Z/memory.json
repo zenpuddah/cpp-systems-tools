@@ -1,0 +1,5278 @@
+{
+  "schema": "memory-lab-v1",
+  "fixture_ok": true,
+  "config": {
+    "size": 128,
+    "seed": 42,
+    "repetitions": 7
+  },
+  "environment": {
+    "compiler": "Apple LLVM 21.0.0 (clang-2100.1.1.101)",
+    "os": "macOS",
+    "isa": "arm64",
+    "standard_library": "libc++",
+    "standard_library_version": 210106,
+    "cplusplus": 202002,
+    "pointer_bits": 64,
+    "optimized": true,
+    "flags": null,
+    "source_identity": null,
+    "identity_reason": "attach exact compiler command and source hashes in evidence/report wrapper; binary cannot infer them"
+  },
+  "layout": {
+    "fixture_layouts": [
+      {
+        "name": "original",
+        "object_size": 24,
+        "object_alignment": 8,
+        "array_stride": 24,
+        "internal_padding": 7,
+        "tail_padding": 4,
+        "members": [
+          {
+            "name": "label",
+            "offset": 0,
+            "size": 1,
+            "alignment": 1
+          },
+          {
+            "name": "value",
+            "offset": 8,
+            "size": 8,
+            "alignment": 8
+          },
+          {
+            "name": "count",
+            "offset": 16,
+            "size": 4,
+            "alignment": 4
+          }
+        ],
+        "padding": [
+          {
+            "offset": 1,
+            "size": 7,
+            "tail": false
+          },
+          {
+            "offset": 20,
+            "size": 4,
+            "tail": true
+          }
+        ],
+        "byte_owner": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          -2,
+          -2,
+          -2,
+          -2
+        ]
+      },
+      {
+        "name": "reordered",
+        "object_size": 16,
+        "object_alignment": 8,
+        "array_stride": 16,
+        "internal_padding": 0,
+        "tail_padding": 3,
+        "members": [
+          {
+            "name": "label",
+            "offset": 12,
+            "size": 1,
+            "alignment": 1
+          },
+          {
+            "name": "value",
+            "offset": 0,
+            "size": 8,
+            "alignment": 8
+          },
+          {
+            "name": "count",
+            "offset": 8,
+            "size": 4,
+            "alignment": 4
+          }
+        ],
+        "padding": [
+          {
+            "offset": 13,
+            "size": 3,
+            "tail": true
+          }
+        ],
+        "byte_owner": [
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          0,
+          -2,
+          -2,
+          -2
+        ]
+      },
+      {
+        "name": "alignas(64)",
+        "object_size": 64,
+        "object_alignment": 64,
+        "array_stride": 64,
+        "internal_padding": 7,
+        "tail_padding": 44,
+        "members": [
+          {
+            "name": "label",
+            "offset": 0,
+            "size": 1,
+            "alignment": 1
+          },
+          {
+            "name": "value",
+            "offset": 8,
+            "size": 8,
+            "alignment": 8
+          },
+          {
+            "name": "count",
+            "offset": 16,
+            "size": 4,
+            "alignment": 4
+          }
+        ],
+        "padding": [
+          {
+            "offset": 1,
+            "size": 7,
+            "tail": false
+          },
+          {
+            "offset": 20,
+            "size": 44,
+            "tail": true
+          }
+        ],
+        "byte_owner": [
+          0,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          -1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          1,
+          2,
+          2,
+          2,
+          2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2,
+          -2
+        ]
+      }
+    ],
+    "interpretation": "active ABI observations, not universal offsets or guaranteed reorder savings; internal gaps align members, tail padding permits aligned array stride. Padding contents are never read; explicit field encoding is needed for portable wire formats. Object alignment, allocation alignment and cache-line spacing are different properties."
+  },
+  "arena": {
+    "capacity": 1023,
+    "consumed": 94,
+    "payload_bytes": 38,
+    "alignment_padding": 56,
+    "remaining": 929,
+    "first_alignment_remainder": 0,
+    "second_alignment_remainder": 0,
+    "huge_failure_preserves_state": true,
+    "consumed_after_reset": 0,
+    "policy": "non-owning, single-threaded; no individual free; reset does not run destructors and invalidates old handles"
+  },
+  "fixed_pool": {
+    "backing_capacity": 255,
+    "payload_size": 24,
+    "alignment": 16,
+    "slot_stride": 32,
+    "capacity": 4,
+    "live_count": 0,
+    "free_count": 4,
+    "alignment_padding": 15,
+    "tail_bytes": 112,
+    "metadata_reserved_bytes": 64,
+    "metadata_used_bytes": 64,
+    "rounding_per_live_slot": 8,
+    "release_reuse_ok": true,
+    "policy": "bounded fixed-size individual reclamation, not general malloc; invalid-release checks O(capacity); caller owns object lifetimes"
+  },
+  "pmr": {
+    "monotonic_fallback": {
+      "frontend": {
+        "allocation_requests": 4,
+        "allocations": 4,
+        "failures": 0,
+        "deallocations": 4,
+        "allocated_bytes": 4808,
+        "deallocated_bytes": 4808,
+        "current_bytes": 0,
+        "peak_bytes": 4808,
+        "successful_alignment_counts": [
+          {
+            "alignment": 1,
+            "count": 1
+          },
+          {
+            "alignment": 8,
+            "count": 2
+          },
+          {
+            "alignment": 64,
+            "count": 1
+          }
+        ]
+      },
+      "upstream": {
+        "allocation_requests": 2,
+        "allocations": 2,
+        "failures": 0,
+        "deallocations": 2,
+        "allocated_bytes": 5184,
+        "deallocated_bytes": 5184,
+        "current_bytes": 0,
+        "peak_bytes": 5184,
+        "successful_alignment_counts": [
+          {
+            "alignment": 8,
+            "count": 1
+          },
+          {
+            "alignment": 64,
+            "count": 1
+          }
+        ]
+      },
+      "initial_buffer_bytes": 512,
+      "upstream_before_block_free": 5184,
+      "upstream_after_block_free": 5184,
+      "block_free_snapshot_null_reason": null,
+      "upstream_before_release": 5184,
+      "upstream_after_release": 0,
+      "final_upstream_bytes": 0,
+      "constructed": 2,
+      "destroyed": 2,
+      "fixture_ok": true,
+      "bad_alloc_observed": false
+    },
+    "monotonic_hardcap": {
+      "frontend": {
+        "allocation_requests": 4,
+        "allocations": 3,
+        "failures": 1,
+        "deallocations": 3,
+        "allocated_bytes": 112,
+        "deallocated_bytes": 112,
+        "current_bytes": 0,
+        "peak_bytes": 112,
+        "successful_alignment_counts": [
+          {
+            "alignment": 1,
+            "count": 1
+          },
+          {
+            "alignment": 8,
+            "count": 2
+          }
+        ]
+      },
+      "upstream": {
+        "allocation_requests": 1,
+        "allocations": 0,
+        "failures": 1,
+        "deallocations": 0,
+        "allocated_bytes": 0,
+        "deallocated_bytes": 0,
+        "current_bytes": 0,
+        "peak_bytes": 0,
+        "successful_alignment_counts": []
+      },
+      "initial_buffer_bytes": 512,
+      "upstream_before_block_free": null,
+      "upstream_after_block_free": null,
+      "block_free_snapshot_null_reason": "no successful explicit block/free pair in this route",
+      "upstream_before_release": 0,
+      "upstream_after_release": 0,
+      "final_upstream_bytes": 0,
+      "constructed": 2,
+      "destroyed": 2,
+      "fixture_ok": true,
+      "bad_alloc_observed": true
+    },
+    "pool": {
+      "frontend": {
+        "allocation_requests": 9,
+        "allocations": 9,
+        "failures": 0,
+        "deallocations": 9,
+        "allocated_bytes": 1992,
+        "deallocated_bytes": 1992,
+        "current_bytes": 0,
+        "peak_bytes": 664,
+        "successful_alignment_counts": [
+          {
+            "alignment": 1,
+            "count": 3
+          },
+          {
+            "alignment": 8,
+            "count": 6
+          }
+        ]
+      },
+      "upstream": {
+        "allocation_requests": 8,
+        "allocations": 8,
+        "failures": 0,
+        "deallocations": 8,
+        "allocated_bytes": 2672,
+        "deallocated_bytes": 2672,
+        "current_bytes": 0,
+        "peak_bytes": 1312,
+        "successful_alignment_counts": [
+          {
+            "alignment": 8,
+            "count": 8
+          }
+        ]
+      },
+      "initial_buffer_bytes": 0,
+      "upstream_before_block_free": null,
+      "upstream_after_block_free": null,
+      "block_free_snapshot_null_reason": "no successful explicit block/free pair in this route",
+      "upstream_before_release": 632,
+      "upstream_after_release": 0,
+      "final_upstream_bytes": 0,
+      "constructed": 6,
+      "destroyed": 6,
+      "fixture_ok": true,
+      "bad_alloc_observed": false
+    },
+    "copy_move": {
+      "copy_uses_default": true,
+      "explicit_copy_uses_destination": true,
+      "move_uses_source": true,
+      "explicit_move_uses_destination": true,
+      "move_assignment_keeps_destination": true,
+      "fixture_ok": true
+    },
+    "policies": {
+      "pool_upstream_live_byte_limit": 1048576,
+      "pool_chunk_counts": "observed, not fixed; metadata may allocate upstream",
+      "release": "destroy containers and objects before collective release; clear alone is insufficient",
+      "counter_limit": "counts explicit requests only; no host allocator internals or per-call heap ledger"
+    }
+  },
+  "experiments": {
+    "workload": "bulk lifetime: allocate all, observe all live payloads, destroy objects, free where supported, reset/release",
+    "trace_algorithm": "xorshift64(13,7,17), initial seed xor 0x9e3779b97f4a7c15; sizeof(Object)+state%(65-sizeof(Object))",
+    "size": 128,
+    "seed": 42,
+    "repetitions": 7,
+    "alignment": 16,
+    "object_size": 16,
+    "fixed_slot_payload": 64,
+    "upstream_live_byte_limit": 16777216,
+    "trace_bytes": [
+      17,
+      46,
+      49,
+      41,
+      30,
+      16,
+      25,
+      20,
+      51,
+      25,
+      28,
+      16,
+      63,
+      40,
+      32,
+      34,
+      19,
+      63,
+      58,
+      29,
+      17,
+      46,
+      21,
+      50,
+      39,
+      30,
+      40,
+      59,
+      38,
+      43,
+      31,
+      26,
+      26,
+      49,
+      48,
+      32,
+      30,
+      40,
+      58,
+      52,
+      27,
+      21,
+      52,
+      30,
+      32,
+      55,
+      23,
+      17,
+      19,
+      59,
+      43,
+      50,
+      50,
+      33,
+      48,
+      23,
+      44,
+      35,
+      58,
+      53,
+      49,
+      56,
+      25,
+      24,
+      31,
+      36,
+      60,
+      16,
+      29,
+      53,
+      59,
+      63,
+      63,
+      40,
+      23,
+      28,
+      54,
+      41,
+      54,
+      27,
+      37,
+      62,
+      32,
+      43,
+      42,
+      56,
+      55,
+      60,
+      48,
+      63,
+      59,
+      21,
+      60,
+      38,
+      51,
+      27,
+      53,
+      34,
+      23,
+      18,
+      34,
+      25,
+      39,
+      42,
+      50,
+      40,
+      54,
+      52,
+      35,
+      52,
+      57,
+      40,
+      50,
+      44,
+      48,
+      50,
+      46,
+      34,
+      61,
+      36,
+      18,
+      31,
+      28,
+      56,
+      56,
+      39,
+      23,
+      47
+    ],
+    "measurement": {
+      "clock": "steady_clock",
+      "units": "ns and operations/second",
+      "separation": "fresh resource per phase/trial; setup and bounded warmup separate; fill/checksum outside allocation timer; object lifetime separate; teardown includes resource and backing-buffer destruction",
+      "dispatch": "common noinline allocation/deallocation dispatch and externally observed full payload/pointer table",
+      "instrumentation": "PMR frontend/upstream counting and fixed-pool checked-free overhead are included, not subtracted; custom raw APIs are not PMR-wrapped",
+      "interpretation": "no speedup requirement; differing reclamation mechanics and fixed-pool O(capacity) checked frees are included",
+      "null_reason": "unsupported timer/metric or opaque PMR/host internals; not measured zeros"
+    },
+    "metric_definitions": {
+      "requested_live_payload": "sum trace bytes while all blocks live; object phase includes reserved bytes beyond object size",
+      "backing_capacity": "caller byte-buffer size, excluding typed slot metadata",
+      "resource_acquired": "counted upstream requested bytes, not host hidden size or RSS",
+      "consumed": "arena cursor; live fixed-slot strides; host client-visible payload only; PMR unknown",
+      "alignment_slack": "arena cumulative gaps or fixed-pool leading alignment gap; PMR/host unknown",
+      "slot_rounding": "live fixed-slot strides minus requested payload; non-slot host/arena zero, PMR unknown",
+      "metadata": "custom control object sizeof plus fixed-pool reserved typed metadata; excludes common benchmark wrappers/tables; PMR/host unknown",
+      "retained_not_live_after_deallocate": "caller byte-buffer capacity plus upstream current bytes when client live payload is zero; includes unused capacity, excludes separately listed typed metadata",
+      "retained_dead_payload_after_deallocate": "known unreclaimed workload payload for arena/monotonic, zero after immediate custom-pool/host frees; standard pool reuse/retention opaque"
+    },
+    "unsupported": [
+      "arena individual free",
+      "fixed-slot requests over 64 bytes or alignment over configured 16",
+      "general variable-size individually reclaimed arena/fixed-pool equivalence"
+    ],
+    "backends": [
+      {
+        "name": "new_delete_resource",
+        "warmup_ns": 7250,
+        "samples": [
+          {
+            "repetition": 0,
+            "raw": {
+              "timings_ns": {
+                "setup": 166,
+                "allocate": 18458,
+                "deallocate": 6291,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 6934662.476974754,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 167,
+                "allocate": 5292,
+                "deallocate": 4417,
+                "construct": 209,
+                "destroy": 250,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 24187452.75888133,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 1,
+            "raw": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 4250,
+                "deallocate": 4125,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 30117647.05882353,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3125,
+                "deallocate": 3667,
+                "construct": 208,
+                "destroy": 208,
+                "release_or_reset": null,
+                "teardown": 42
+              },
+              "allocation_operations_per_second": 40960000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 2,
+            "raw": {
+              "timings_ns": {
+                "setup": 250,
+                "allocate": 3084,
+                "deallocate": 3542,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 41504539.55901427,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 167,
+                "allocate": 3000,
+                "deallocate": 3458,
+                "construct": 208,
+                "destroy": 250,
+                "release_or_reset": null,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 42666666.666666664,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 3,
+            "raw": {
+              "timings_ns": {
+                "setup": 209,
+                "allocate": 2917,
+                "deallocate": 3500,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 43880699.348645866,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 2125,
+                "allocate": 2958,
+                "deallocate": 3500,
+                "construct": 209,
+                "destroy": 209,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 43272481.40635565,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 4,
+            "raw": {
+              "timings_ns": {
+                "setup": 208,
+                "allocate": 2917,
+                "deallocate": 3417,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 43880699.348645866,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 2084,
+                "allocate": 2959,
+                "deallocate": 3542,
+                "construct": 208,
+                "destroy": 208,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 43257857.38425144,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 5,
+            "raw": {
+              "timings_ns": {
+                "setup": 208,
+                "allocate": 3167,
+                "deallocate": 3417,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 167
+              },
+              "allocation_operations_per_second": 40416798.23176508,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 2833,
+                "deallocate": 3375,
+                "construct": 209,
+                "destroy": 209,
+                "release_or_reset": null,
+                "teardown": 166
+              },
+              "allocation_operations_per_second": 45181786.09248147,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 6,
+            "raw": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 2834,
+                "deallocate": 3500,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 45165843.33098095,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 2875,
+                "deallocate": 3416,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 44521739.13043478,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 5149,
+                "resource_acquired_total_bytes": 5149,
+                "resource_acquired_peak_bytes": 5149,
+                "consumed": 5149,
+                "alignment_slack": null,
+                "slot_rounding": 0,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "bump_arena",
+        "warmup_ns": 6583,
+        "samples": [
+          {
+            "repetition": 0,
+            "raw": {
+              "timings_ns": {
+                "setup": 3708,
+                "allocate": 1458,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 41,
+                "teardown": 209
+              },
+              "allocation_operations_per_second": 87791495.1989026,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 1417,
+                "deallocate": null,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 42,
+                "teardown": 166
+              },
+              "allocation_operations_per_second": 90331686.6619619,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 1,
+            "raw": {
+              "timings_ns": {
+                "setup": 583,
+                "allocate": 1458,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 87791495.1989026,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 500,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": 166,
+                "destroy": 208,
+                "release_or_reset": 0,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 2,
+            "raw": {
+              "timings_ns": {
+                "setup": 500,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": 166,
+                "destroy": 208,
+                "release_or_reset": 0,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 3,
+            "raw": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 1417,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 0,
+                "teardown": 250
+              },
+              "allocation_operations_per_second": 90331686.6619619,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 41,
+                "teardown": 167
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 4,
+            "raw": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 1416,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 90395480.2259887,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 5,
+            "raw": {
+              "timings_ns": {
+                "setup": 500,
+                "allocate": 1417,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 0,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 90331686.6619619,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 1417,
+                "deallocate": null,
+                "construct": 167,
+                "destroy": 209,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 90331686.6619619,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 6,
+            "raw": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 1375,
+                "deallocate": null,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 93090909.0909091,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 1458,
+                "deallocate": null,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 87791495.1989026,
+              "allocations": 128,
+              "deallocations": 0,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 6095,
+                "alignment_slack": 946,
+                "slot_rounding": 0,
+                "metadata": 40,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "fixed_pool",
+        "warmup_ns": 4000,
+        "samples": [
+          {
+            "repetition": 0,
+            "raw": {
+              "timings_ns": {
+                "setup": 875,
+                "allocate": 500,
+                "deallocate": 6708,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 250
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 750,
+                "allocate": 500,
+                "deallocate": 5834,
+                "construct": 166,
+                "destroy": 167,
+                "release_or_reset": null,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 1,
+            "raw": {
+              "timings_ns": {
+                "setup": 709,
+                "allocate": 459,
+                "deallocate": 5708,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 278867102.3965142,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 708,
+                "allocate": 500,
+                "deallocate": 5583,
+                "construct": 167,
+                "destroy": 166,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 2,
+            "raw": {
+              "timings_ns": {
+                "setup": 2667,
+                "allocate": 459,
+                "deallocate": 5583,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 278867102.3965142,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 750,
+                "allocate": 500,
+                "deallocate": 5542,
+                "construct": 208,
+                "destroy": 166,
+                "release_or_reset": null,
+                "teardown": 209
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 3,
+            "raw": {
+              "timings_ns": {
+                "setup": 709,
+                "allocate": 500,
+                "deallocate": 5542,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 167
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 500,
+                "deallocate": 5500,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 4,
+            "raw": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 500,
+                "deallocate": 5542,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 666,
+                "allocate": 500,
+                "deallocate": 5500,
+                "construct": 167,
+                "destroy": 166,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 5,
+            "raw": {
+              "timings_ns": {
+                "setup": 667,
+                "allocate": 500,
+                "deallocate": 5584,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 167
+              },
+              "allocation_operations_per_second": 256000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 458,
+                "deallocate": 5500,
+                "construct": 209,
+                "destroy": 209,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 279475982.5327511,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 6,
+            "raw": {
+              "timings_ns": {
+                "setup": 708,
+                "allocate": 458,
+                "deallocate": 5666,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 279475982.5327511,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 667,
+                "allocate": 458,
+                "deallocate": 5625,
+                "construct": 209,
+                "destroy": 167,
+                "release_or_reset": null,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 279475982.5327511,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": 8192,
+                "alignment_slack": 0,
+                "slot_rounding": 3043,
+                "metadata": 2160,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 0,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": null,
+              "frontend_null_reason": "custom raw API has no PMR frontend; dispatch counts appear in allocations/deallocations",
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "pmr_monotonic",
+        "warmup_ns": 3500,
+        "samples": [
+          {
+            "repetition": 0,
+            "raw": {
+              "timings_ns": {
+                "setup": 667,
+                "allocate": 833,
+                "deallocate": 542,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 0,
+                "teardown": 166
+              },
+              "allocation_operations_per_second": 153661464.58583432,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 959,
+                "deallocate": 500,
+                "construct": 166,
+                "destroy": 167,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 133472367.04900938,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 1,
+            "raw": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 959,
+                "deallocate": 500,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 209
+              },
+              "allocation_operations_per_second": 133472367.04900938,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 417,
+                "allocate": 917,
+                "deallocate": 500,
+                "construct": 209,
+                "destroy": 167,
+                "release_or_reset": 42,
+                "teardown": 166
+              },
+              "allocation_operations_per_second": 139585605.2344602,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 2,
+            "raw": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 1000,
+                "deallocate": 542,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 128000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 417,
+                "allocate": 1000,
+                "deallocate": 500,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 42,
+                "teardown": 166
+              },
+              "allocation_operations_per_second": 128000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 3,
+            "raw": {
+              "timings_ns": {
+                "setup": 542,
+                "allocate": 1000,
+                "deallocate": 541,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 0,
+                "teardown": 167
+              },
+              "allocation_operations_per_second": 128000000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 459,
+                "allocate": 959,
+                "deallocate": 500,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 0,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 133472367.04900938,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 4,
+            "raw": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 958,
+                "deallocate": 500,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 41,
+                "teardown": 209
+              },
+              "allocation_operations_per_second": 133611691.0229645,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 458,
+                "allocate": 958,
+                "deallocate": 500,
+                "construct": 167,
+                "destroy": 166,
+                "release_or_reset": 0,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 133611691.0229645,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 5,
+            "raw": {
+              "timings_ns": {
+                "setup": 667,
+                "allocate": 958,
+                "deallocate": 500,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 208
+              },
+              "allocation_operations_per_second": 133611691.0229645,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 667,
+                "allocate": 1042,
+                "deallocate": 458,
+                "construct": 208,
+                "destroy": 166,
+                "release_or_reset": 0,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 122840690.97888675,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": false,
+              "errors": [
+                "zero, negative or non-finite elapsed; invalid rate is null"
+              ],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          },
+          {
+            "repetition": 6,
+            "raw": {
+              "timings_ns": {
+                "setup": 625,
+                "allocate": 833,
+                "deallocate": 541,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 153661464.58583432,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 583,
+                "allocate": 1041,
+                "deallocate": 584,
+                "construct": 209,
+                "destroy": 209,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 122958693.56388089,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 16896,
+                "resource_acquired_live_bytes": 0,
+                "resource_acquired_total_bytes": 0,
+                "resource_acquired_peak_bytes": 0,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 16896,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": 5149,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 0,
+                "allocations": 0,
+                "failures": 0,
+                "deallocations": 0,
+                "allocated_bytes": 0,
+                "deallocated_bytes": 0,
+                "current_bytes": 0,
+                "peak_bytes": 0,
+                "successful_alignment_counts": []
+              }
+            }
+          }
+        ]
+      },
+      {
+        "name": "pmr_pool",
+        "warmup_ns": 6834,
+        "samples": [
+          {
+            "repetition": 0,
+            "raw": {
+              "timings_ns": {
+                "setup": 209,
+                "allocate": 6541,
+                "deallocate": 19875,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 19568873.26096927,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 167,
+                "allocate": 6542,
+                "deallocate": 18292,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 42,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 19565881.993274227,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 1,
+            "raw": {
+              "timings_ns": {
+                "setup": 167,
+                "allocate": 3750,
+                "deallocate": 17666,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 41,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 34133333.333333336,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 166,
+                "allocate": 3083,
+                "deallocate": 17084,
+                "construct": 166,
+                "destroy": 125,
+                "release_or_reset": 42,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 41518001.94615634,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 2,
+            "raw": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3125,
+                "deallocate": 16750,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 40960000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3084,
+                "deallocate": 16541,
+                "construct": 167,
+                "destroy": 167,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 41504539.55901427,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 3,
+            "raw": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3083,
+                "deallocate": 16708,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 41518001.94615634,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3083,
+                "deallocate": 16542,
+                "construct": 291,
+                "destroy": 167,
+                "release_or_reset": 42,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 41518001.94615634,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 4,
+            "raw": {
+              "timings_ns": {
+                "setup": 167,
+                "allocate": 3084,
+                "deallocate": 16583,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 83
+              },
+              "allocation_operations_per_second": 41504539.55901427,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3083,
+                "deallocate": 16709,
+                "construct": 166,
+                "destroy": 208,
+                "release_or_reset": 42,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 41518001.94615634,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 5,
+            "raw": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3084,
+                "deallocate": 16625,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 41,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 41504539.55901427,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3125,
+                "deallocate": 16667,
+                "construct": 208,
+                "destroy": 208,
+                "release_or_reset": 42,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 40960000,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          },
+          {
+            "repetition": 6,
+            "raw": {
+              "timings_ns": {
+                "setup": 166,
+                "allocate": 3083,
+                "deallocate": 16709,
+                "construct": null,
+                "destroy": null,
+                "release_or_reset": 42,
+                "teardown": 125
+              },
+              "allocation_operations_per_second": 41518001.94615634,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 0,
+              "destroyed": 0,
+              "payload_bytes": 5149,
+              "checksum": 662772,
+              "expected_checksum": 662772,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            },
+            "objects": {
+              "timings_ns": {
+                "setup": 125,
+                "allocate": 3084,
+                "deallocate": 16625,
+                "construct": 166,
+                "destroy": 166,
+                "release_or_reset": 42,
+                "teardown": 84
+              },
+              "allocation_operations_per_second": 41504539.55901427,
+              "allocations": 128,
+              "deallocations": 128,
+              "constructed": 128,
+              "destroyed": 128,
+              "payload_bytes": 5149,
+              "checksum": 8936830514104384,
+              "expected_checksum": 8936830514104384,
+              "fixture_ok": true,
+              "timing_valid": true,
+              "errors": [],
+              "storage_bytes": {
+                "requested_live_payload": 5149,
+                "backing_capacity": 0,
+                "resource_acquired_live_bytes": 8648,
+                "resource_acquired_total_bytes": 8648,
+                "resource_acquired_peak_bytes": 8648,
+                "consumed": null,
+                "alignment_slack": null,
+                "slot_rounding": null,
+                "metadata": null,
+                "retained_not_live_after_deallocate": 0,
+                "requested_live_payload_after_deallocate": 0,
+                "upstream_after_deallocate": 0,
+                "retained_dead_payload_after_deallocate": null,
+                "final_upstream_bytes": 0,
+                "host_allocator_hidden_bytes": null,
+                "pmr_cursor_or_internal_metadata": null
+              },
+              "frontend": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 5149,
+                "deallocated_bytes": 5149,
+                "current_bytes": 0,
+                "peak_bytes": 5149,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              },
+              "frontend_null_reason": null,
+              "upstream": {
+                "allocation_requests": 128,
+                "allocations": 128,
+                "failures": 0,
+                "deallocations": 128,
+                "allocated_bytes": 8648,
+                "deallocated_bytes": 8648,
+                "current_bytes": 0,
+                "peak_bytes": 8648,
+                "successful_alignment_counts": [
+                  {
+                    "alignment": 16,
+                    "count": 128
+                  }
+                ]
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "fragmentation": {
+      "kind": "deterministic free-interval model, not libc heap",
+      "capacity": 64,
+      "failed_request": 24,
+      "fragmented_total_free": 32,
+      "fragmented_largest_free": 16,
+      "fragmented_failed": true,
+      "contiguous_succeeded": true,
+      "fragmented_holes": [
+        {
+          "offset": 0,
+          "size": 16
+        },
+        {
+          "offset": 32,
+          "size": 16
+        }
+      ],
+      "before_merge_total": 48,
+      "before_merge_largest": 16,
+      "after_merge_total": 48,
+      "after_merge_largest": 48,
+      "after_merge_succeeded": true,
+      "coalesced_holes": [
+        {
+          "offset": 0,
+          "size": 48
+        }
+      ],
+      "interpretation": "external fragmentation is separated holes; adjacent-hole coalescing is explicit. Slot rounding is internal loss, free slots are not automatically external fragmentation. Arena/monotonic dead allocations are temporal retention until reset/release."
+    }
+  }
+}

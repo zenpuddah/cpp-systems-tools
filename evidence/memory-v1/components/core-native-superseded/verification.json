@@ -1,0 +1,242 @@
+{
+  "directory": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax",
+  "cwd": "/Users/macklex/folder/cpp-systems-tools-memory",
+  "source_sha256": {
+    "projects/runtime-inspector/memory/include/memory_lab/layout.hpp": "856718778327e163449e872b4694b7475e174fb87b49de5474fac41ba502fac8",
+    "projects/runtime-inspector/memory/include/memory_lab/arena.hpp": "345d84bc6a7a174cb941f8817dca840f24460647091947e858657af7648ce7d0",
+    "projects/runtime-inspector/memory/include/memory_lab/pool.hpp": "2a32896be430fa3897412e3a957747907c005e6ae0e80903fd8f590809494a4d",
+    "projects/runtime-inspector/memory/tests/core.cpp": "44af37a5196b824ccc61876c032edac278d1b7c7000b3f8f1c8fe7dfb9bb1d84"
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "commands": {
+    "dev": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O0",
+          "-g",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/build.log"
+      },
+      "tests": [
+        {
+          "selector": "layout",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/layout.log",
+          "environment": {}
+        },
+        {
+          "selector": "arena",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/arena.log",
+          "environment": {}
+        },
+        {
+          "selector": "pool",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/dev/pool.log",
+          "environment": {}
+        }
+      ]
+    },
+    "release": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O3",
+          "-DNDEBUG",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/build.log"
+      },
+      "tests": [
+        {
+          "selector": "layout",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/layout.log",
+          "environment": {}
+        },
+        {
+          "selector": "arena",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/arena.log",
+          "environment": {}
+        },
+        {
+          "selector": "pool",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/release/pool.log",
+          "environment": {}
+        }
+      ]
+    },
+    "asan": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "-g",
+          "-fno-omit-frame-pointer",
+          "-fsanitize=address",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/build.log"
+      },
+      "tests": [
+        {
+          "selector": "layout",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/runtime-memory-core",
+            "layout"
+          ],
+          "exit": -6,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/layout.log",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1"
+          }
+        },
+        {
+          "selector": "arena",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/runtime-memory-core",
+            "arena"
+          ],
+          "exit": -6,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/arena.log",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1"
+          }
+        },
+        {
+          "selector": "pool",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/runtime-memory-core",
+            "pool"
+          ],
+          "exit": -6,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/asan/pool.log",
+          "environment": {
+            "ASAN_OPTIONS": "detect_leaks=1:halt_on_error=1"
+          }
+        }
+      ]
+    },
+    "ubsan": {
+      "build": {
+        "command": [
+          "c++",
+          "-std=c++20",
+          "-Wall",
+          "-Wextra",
+          "-Wpedantic",
+          "-Werror",
+          "-O1",
+          "-g",
+          "-fno-omit-frame-pointer",
+          "-fsanitize=undefined",
+          "-fno-sanitize-recover=all",
+          "-I",
+          "projects/runtime-inspector/memory/include",
+          "projects/runtime-inspector/memory/tests/core.cpp",
+          "-o",
+          "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/runtime-memory-core"
+        ],
+        "exit": 0,
+        "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/build.log"
+      },
+      "tests": [
+        {
+          "selector": "layout",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/runtime-memory-core",
+            "layout"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/layout.log",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        },
+        {
+          "selector": "arena",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/runtime-memory-core",
+            "arena"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/arena.log",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        },
+        {
+          "selector": "pool",
+          "command": [
+            "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/runtime-memory-core",
+            "pool"
+          ],
+          "exit": 0,
+          "log": "/private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-j2ucosax/ubsan/pool.log",
+          "environment": {
+            "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1"
+          }
+        }
+      ]
+    }
+  }
+}

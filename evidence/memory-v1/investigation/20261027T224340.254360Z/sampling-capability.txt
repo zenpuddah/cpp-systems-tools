@@ -1,0 +1,5 @@
+
+--- stderr ---
+Sampling process 65303 for 1 second with 1 millisecond of run time between samples
+Sampling completed, processing symbols...
+Sample analysis of process 65303 written to file /Users/macklex/folder/cpp-systems-tools-memory/reports/memory-investigation-20261027T224340.254360Z/sample-profile.txt

@@ -1,5 +1,14 @@
 name: verify
-on: [push, workflow_dispatch]
+on:
+  push:
+    paths:
+      - 'projects/**'
+      - 'CMakeLists.txt'
+      - 'CMakePresets.json'
+      - 'scripts/**'
+      - 'tests/**'
+      - '.github/workflows/verify.yml'
+  workflow_dispatch:
 permissions:
   contents: read
 jobs:
@@ -12,7 +21,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: python3 scripts/capabilities.py
-      - run: python3 scripts/verify.py ${{ matrix.preset }}
+      - run: python3 scripts/verify_memory.py ${{ matrix.preset }}
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,0 +1,12 @@
+$ /private/var/folders/14/mvcf30lj2bz5nmw28f8nr1ch0000gn/T/opencode/memory-core-final-kpha8s2m/release/runtime-memory-core layout
+original size=24 align=8 stride=24 internal=7 tail=4
+  internal offset=1 bytes=7
+  tail offset=20 bytes=4
+reordered size=16 align=8 stride=16 internal=0 tail=3
+  tail offset=13 bytes=3
+alignas(64) size=64 align=64 stride=64 internal=7 tail=44
+  internal offset=1 bytes=7
+  tail offset=20 bytes=44
+layout: passed (release-enabled CHECK)
+
+exit=0

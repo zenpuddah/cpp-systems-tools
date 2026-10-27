@@ -1,0 +1,21 @@
+ M ../../.github/workflows/verify.yml
+ M ../../AGENTS.md
+ M ../../CMakeLists.txt
+ M ../../README.md
+ M ../../docs/VERIFICATION.md
+ M ../../progress.md
+ M CMakeLists.txt
+ M README.md
+ M report.py
+ M ../../scripts/public_audit.py
+?? ../../MEMORY_API.md
+?? ../../MEMORY_PLAN.md
+?? ../../docs/MEMORY.md
+?? ../../evidence/memory-v1/
+?? memory/
+?? ../../scripts/import_memory_ci.py
+?? ../../scripts/measure_memory.py
+?? ../../scripts/verify_memory.py
+?? ../../tests/test_memory_evidence.py
+
+--- stderr ---
