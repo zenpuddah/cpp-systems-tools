@@ -1,0 +1,143 @@
+{
+  "utc": "2026-10-27T22:45:22.972078+00:00",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "isa": "x86_64",
+  "probes": [
+    {
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "cmake version 3.31.6\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "Python 3.12.3\n"
+    },
+    {
+      "command": [
+        "ninja",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "1.13.2\n"
+    },
+    {
+      "command": [
+        "perf",
+        "stat",
+        "true"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "\n Performance counter stats for 'true':\n\n   <not supported>      cpu-cycles:u                     #      nan GHz  cycles_frequency     \n\n       0.001661202 seconds time elapsed\n\n       0.000000000 seconds user\n       0.001509000 seconds sys\n\n\n"
+    },
+    {
+      "command": [
+        "perf",
+        "record",
+        "-o",
+        "/home/runner/work/cpp-systems-tools/cpp-systems-tools/reports/perf.data",
+        "--",
+        "true"
+      ],
+      "status": "failed",
+      "exit_code": 255,
+      "output": "Missing support for build id in kernel mmap events.\nDisable this warning with --no-buildid-mmap\nError:\nFailure to open event 'cpu/cycles/Pu' on PMU 'cpu' which will be removed.\nAccess to performance monitoring and observability operations is limited.\nConsider adjusting /proc/sys/kernel/perf_event_paranoid setting to open\naccess to performance monitoring and observability operations for processes\nwithout CAP_PERFMON, CAP_SYS_PTRACE or CAP_SYS_ADMIN Linux capability.\nMore information can be found at 'Perf events and tool security' document:\nhttps://www.kernel.org/doc/html/latest/admin-guide/perf-security.html\nperf_event_paranoid setting is 4:\n  -1: Allow use of (almost) all events by all users\n      Ignore mlock limit after perf_event_mlock_kb without CAP_IPC_LOCK\n>= 0: Disallow raw and ftrace function tracepoint access\n>= 1: Disallow CPU event access\n>= 2: Disallow kernel profiling\nTo make the adjusted perf_event_paranoid setting permanent preserve it\nin /etc/sysctl.conf (e.g. kernel.perf_event_paranoid = <setting>)\nError:\nFailure to open any events for recording.\n"
+    },
+    {
+      "command": [
+        "perf",
+        "report",
+        "-i",
+        "/home/runner/work/cpp-systems-tools/cpp-systems-tools/reports/perf.data",
+        "--stdio"
+      ],
+      "status": "failed",
+      "exit_code": 255,
+      "output": "zero-sized data (/home/runner/work/cpp-systems-tools/cpp-systems-tools/reports/perf.data), nothing to do!\n"
+    },
+    {
+      "command": [
+        "strace",
+        "-c",
+        "true"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "% time     seconds  usecs/call     calls    errors syscall\n------ ----------- ----------- --------- --------- ----------------\n 61.57    0.000423         423         1           execve\n 15.28    0.000105          13         8           mmap\n  4.66    0.000032          10         3           mprotect\n  2.77    0.000019           9         2           openat\n  2.18    0.000015          15         1           munmap\n  1.89    0.000013           6         2           fstat\n  1.89    0.000013           6         2           pread64\n  1.75    0.000012           6         2           close\n  1.31    0.000009           9         1         1 access\n  1.16    0.000008           8         1           read\n  1.02    0.000007           7         1           brk\n  1.02    0.000007           7         1           rseq\n  0.87    0.000006           6         1           arch_prctl\n  0.87    0.000006           6         1           set_tid_address\n  0.87    0.000006           6         1           set_robust_list\n  0.87    0.000006           6         1           prlimit64\n------ ----------- ----------- --------- --------- ----------------\n100.00    0.000687          23        29         1 total\n"
+    },
+    {
+      "command": [
+        "lldb",
+        "--version"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "lldb",
+        "--batch",
+        "-o",
+        "run",
+        "--",
+        "/usr/bin/true"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "xctrace",
+        "list",
+        "templates"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "docker",
+        "version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "Client: Docker Engine - Community\n Version:           28.0.4\n API version:       1.48\n Go version:        go1.23.7\n Git commit:        b8034c0\n Built:             Tue Mar 25 15:07:16 2025\n OS/Arch:           linux/amd64\n Context:           default\n\nServer: Docker Engine - Community\n Engine:\n  Version:          28.0.4\n  API version:      1.48 (minimum version 1.24)\n  Go version:       go1.23.7\n  Git commit:       6430e49\n  Built:            Tue Mar 25 15:07:16 2025\n  OS/Arch:          linux/amd64\n  Experimental:     false\n containerd:\n  Version:          v2.4.2\n  GitCommit:        b7a25261e029d68978bbf290df0a62fc819b3c51\n runc:\n  Version:          1.5.2\n  GitCommit:        v1.5.2-0-g29dd3dc2\n docker-init:\n  Version:          0.19.0\n  GitCommit:        de40ad0\n"
+    },
+    {
+      "command": [
+        "podman",
+        "version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "Client:       Podman Engine\nVersion:      4.9.3\nAPI Version:  4.9.3\nGo Version:   go1.22.2\nBuilt:        Thu Jan  1 00:00:00 1970\nOS/Arch:      linux/amd64\n"
+    }
+  ],
+  "linux_native_tests": {
+    "status": "not run"
+  },
+  "clion_interactive": {
+    "status": "not run",
+    "installed_version": null,
+    "reason": "CLion not found at native macOS application path; no GUI demonstration"
+  }
+}

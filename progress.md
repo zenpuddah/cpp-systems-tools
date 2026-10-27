@@ -6,6 +6,10 @@ Independent local repository initialized on main; no prior target directories/re
 
 Next action: publish/pin the locally verified public extension and import actual Linux CI artifacts; then prepare the additive private M tasks. Original public-v1 remains unchanged.
 
+## Actual first Linux gate — portability correction
+
+Published native candidate d25250572a882345fc3a5fa9f4241441e1ca31f1 and handed it over explicitly with Linux pending. Actual workflow40597197071 failed all five builds under GCC13.3: new core test declarations using parenthesized CTAD `std::span(backing)` were parsed as invalid parameter declarations. Dependent tests are **not run**, not zero passed. Imported unmodified artifact evidence is evidence/memory-v1/ci/40597197071/. Nine test declarations now use unambiguous brace initialization; allocator/PMR/experiment implementations are unchanged. No original release tag moved and no private reference imported from the failed Linux candidate. Next action: rerun both native and actual Linux matrix on this correction before final extension pin/import.
+
 ## Memory-v1 verified native candidate — 2026-10-27
 
 `python3 scripts/verify_memory.py dev release asan ubsan tsan` completed exit0: **15/15** each dev/release/ASan/UBSan; **3/3** concurrency-only TSan. Native macOS26.6.2 ARM64, AppleClang21, CMake4.4.3, Python3.14.8. Exact commands/exits, per-case JUnit, compile commands, full source/test manifest: evidence/memory-v1/native/20261027T224234.766287Z/verification.json; source SHA256 **30e601e33fd1a740a0f51d6ae6e84a9746b0e59d4251eb269b0ff05fbcda99ec**, drift false. All original server/workload/queue source/test files and presets remain byte-identical to public-v1; old release evidence untouched.

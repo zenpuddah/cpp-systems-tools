@@ -226,3 +226,10 @@ retained/copied by the coordinator before any external temp cleanup.
 registered `memory-layout`, `memory-arena`, `memory-pool` tests and relevant
 regressions through integrated dev/release/ASan/UBSan, then records/publishes the
 extension identity without moving old release tags.
+
+Coordinator integration follow-up: first actual GCC13.3 Linux CI rejected nine
+parenthesized CTAD-span test initializations accepted by native Clang. Those builds
+failed and dependent tests were not run (workflow40597197071). Test declarations
+were changed to unambiguous braces, without changing allocator implementations.
+The source/test hashes above identify the earlier direct slice, not this corrected
+test revision; final root versioned matrix manifests are authoritative for it.

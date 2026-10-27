@@ -1,0 +1,104 @@
+[
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+  "output": "projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+  "output": "projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+  "output": "projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+  "output": "projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -Druntime_example_shared_EXPORTS -g -std=c++20 -fPIC -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/src/workloads.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/src/workloads.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/src/main.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/src/main.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/tests/tests.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/tests/tests.cpp",
+  "output": "projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory-lib.dir/src/pmr.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/pmr.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/pmr.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory-lib.dir/src/pmr.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory-lib.dir/src/experiments.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/experiments.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/experiments.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory-lib.dir/src/experiments.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory.dir/src/main.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/main.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/src/main.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory.dir/src/main.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/core.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/core.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory-pmr.dir/tests/pmr.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/pmr.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/pmr.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory-pmr.dir/tests/pmr.cpp.o"
+},
+{
+  "directory": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/tsan",
+  "command": "/usr/bin/c++ -I/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/include -g -std=c++20 -Wall -Wextra -Wpedantic -fsanitize=thread -fno-omit-frame-pointer -g -o projects/runtime-inspector/memory/CMakeFiles/runtime-memory-costs.dir/tests/costs.cpp.o -c /home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/costs.cpp",
+  "file": "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/costs.cpp",
+  "output": "projects/runtime-inspector/memory/CMakeFiles/runtime-memory-costs.dir/tests/costs.cpp.o"
+}
+]

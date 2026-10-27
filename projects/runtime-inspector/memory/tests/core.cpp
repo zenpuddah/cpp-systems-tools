@@ -261,7 +261,7 @@ void arena_tests() {
     empty.reset();
 
     alignas(256) std::array<std::byte, 1024> backing{};
-    BumpArena exact(std::span(backing).first(17));
+    BumpArena exact{std::span(backing).first(17)};
     arena_reject(exact, 18, 1); // One byte over a fresh view.
     CHECK(exact.allocate(17, 1) == backing.data());
     CHECK(arena_state(exact) == (std::array<std::size_t, 5>{17, 17, 0, 17, 0}));
@@ -271,14 +271,14 @@ void arena_tests() {
     arena_reject(exact, 2, 1); // One byte over remaining capacity.
     CHECK(exact.allocate(1, 1) != nullptr);
 
-    BumpArena unaligned(std::span(backing).subspan(1, 319));
+    BumpArena unaligned{std::span(backing).subspan(1, 319)};
     arena_reject(unaligned, 65, 256); // Payload fits alone, padding makes it fail.
     auto* aligned = unaligned.allocate(64, 256);
     CHECK(aligned == backing.data() + 256 && address(aligned) % 256 == 0);
     CHECK(arena_state(unaligned) == (std::array<std::size_t, 5>{319, 319, 0, 64, 255}));
     arena_reject(unaligned, 1, 1);
 
-    BumpArena object_arena(std::span(backing).subspan(1));
+    BumpArena object_arena{std::span(backing).subspan(1)};
     void* object_storage = object_arena.allocate(sizeof(OverAligned), alignof(OverAligned));
     CHECK(object_storage != nullptr && address(object_storage) % alignof(OverAligned) == 0);
     {
@@ -419,14 +419,14 @@ void pool_configuration_tests() {
         CHECK(both_empty.capacity() == 0 && both_empty.allocate() == nullptr);
     }
     {
-        FixedPool too_short(std::span(backing).subspan(1, 1), metadata, 1, 256);
+        FixedPool too_short{std::span(backing).subspan(1, 1), metadata, 1, 256};
         check_accounting(too_short, metadata.size());
         CHECK(too_short.capacity() == 0 && too_short.alignment_padding() == 1 && too_short.tail_bytes() == 0);
         CHECK(too_short.allocate() == nullptr);
         same_metadata(metadata, untouched);
     }
     {
-        FixedPool exact(std::span(backing).first(64), metadata, 17, 16);
+        FixedPool exact{std::span(backing).first(64), metadata, 17, 16};
         check_accounting(exact, metadata.size());
         CHECK(exact.slot_stride() == 32 && exact.capacity() == 2 && exact.tail_bytes() == 0);
         CHECK(exact.allocate() != nullptr && exact.allocate() != nullptr && exact.allocate() == nullptr);
@@ -434,13 +434,13 @@ void pool_configuration_tests() {
         same_metadata(std::span(metadata).subspan(2), std::span(untouched).subspan(2));
     }
     {
-        FixedPool one_byte_short(std::span(backing).first(63), metadata, 17, 16);
+        FixedPool one_byte_short{std::span(backing).first(63), metadata, 17, 16};
         check_accounting(one_byte_short, metadata.size());
         CHECK(one_byte_short.capacity() == 1 && one_byte_short.tail_bytes() == 31);
         CHECK(one_byte_short.allocate() != nullptr && one_byte_short.allocate() == nullptr);
     }
     {
-        FixedPool one_byte_extra(std::span(backing).first(65), metadata, 17, 16);
+        FixedPool one_byte_extra{std::span(backing).first(65), metadata, 17, 16};
         check_accounting(one_byte_extra, metadata.size());
         CHECK(one_byte_extra.capacity() == 2 && one_byte_extra.tail_bytes() == 1);
     }
@@ -448,7 +448,7 @@ void pool_configuration_tests() {
     // view; metadata, rather than bytes, limits this pool's capacity.
     for (std::size_t alignment = 1; alignment <= 256; alignment *= 2) {
         std::array<SlotState, 2> slots{};
-        FixedPool pool(std::span(backing).subspan(1), slots, 1, alignment);
+        FixedPool pool{std::span(backing).subspan(1), slots, 1, alignment};
         check_accounting(pool, slots.size());
         CHECK(pool.capacity() == slots.size());
         void* first = pool.allocate();
@@ -603,8 +603,8 @@ void pool_lifetimes() {
 
     alignas(256) std::array<std::byte, 1024> aligned_backing{};
     std::array<SlotState, 4> aligned_metadata{};
-    FixedPool aligned_pool(std::span(aligned_backing).subspan(1), aligned_metadata,
-                           sizeof(OverAligned), alignof(OverAligned));
+    FixedPool aligned_pool{std::span(aligned_backing).subspan(1), aligned_metadata,
+                           sizeof(OverAligned), alignof(OverAligned)};
     check_accounting(aligned_pool, aligned_metadata.size());
     void* aligned_storage = aligned_pool.allocate();
     CHECK(aligned_storage != nullptr && address(aligned_storage) % alignof(OverAligned) == 0);
