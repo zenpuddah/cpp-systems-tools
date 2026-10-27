@@ -1,0 +1,9 @@
+{
+  "source_revision": "377205a5280dcad79ff3ecbd5efc6c5624f6382b",
+  "command": ["ctest", "--preset", "release", "--output-on-failure"],
+  "exit_code": 0,
+  "status": "passed",
+  "tests_run": 7,
+  "tests_passed": 7,
+  "context": "Executed after both release investigations; actual output observed by coordinator. Product source and assessment tests unchanged."
+}

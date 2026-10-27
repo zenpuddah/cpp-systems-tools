@@ -17,6 +17,8 @@ Use Ubuntu 24.04 x86-64 or ARM64 with `build-essential clang cmake ninja-build p
 
 The public GitHub Actions workflow runs the preset matrix on Ubuntu, uploads evidence even on failure, and is a reproducible Linux route. Workflow definition alone is **documented only**, until actual workflow results are recorded in progress.md. See that ledger and checked workflow/artifact identities for status.
 
+Actual Linux verification is now recorded in [RESULTS.md](RESULTS.md): workflow 40573727465 passed all five presets. This does not change the native host's capability matrix. The owned inspector specimen also passed an LLDB breakpoint/backtrace probe despite the earlier system-binary launch denial; these are separate probe results.
+
 ## Evidence boundaries
 
 `passed`, `failed`, `unavailable`, `not run`, `documented only` are distinct. Compiler success alone is not a test pass. TSan success does not prove race freedom. Source/build/test flags, raw samples and errors are preserved; no benchmark is inferred from sanitizer execution. Reports are observations of this specimen/toolchain, not portable ABI guarantees.

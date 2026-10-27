@@ -56,6 +56,8 @@ The server never shares its map with workers. The queue belongs only to the insp
 
 `python3 scripts/verify.py` runs configure/build/CTest for dev, release, ASan, UBSan and a concurrency-only TSan preset. Failed builds mark tests **not run**. Raw commands, exits, source file hashes and platform are retained in `evidence/verification.json`. Capability probes: `python3 scripts/capabilities.py`. See [verification](docs/VERIFICATION.md) and the [ledger](progress.md) for actual results, not just supported commands.
 
+**Verified release:** macOS ARM64/Clang 21 and Ubuntu x86-64/GCC 13.3 passed **7/7** tests per dev/release/ASan/UBSan preset and **3/3** concurrency tests under TSan. [Exact revisions, CI run, measurements and limitations](docs/RESULTS.md).
+
 Measurements use release builds separately from sanitizer checks. `scripts/investigate_server.py` retains intended issue, actual issue and completion samples; client round-trip latency is not server service time. The inspector retains workload checksums and raw repetitions. See [investigations](docs/INVESTIGATIONS.md).
 
 ## Limitations

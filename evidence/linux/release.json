@@ -1,0 +1,237 @@
+{
+  "started_utc": "2026-10-27T19:57:41.958902+00:00",
+  "platform": "Linux-7.0.0-1017-azure-x86_64-with-glibc2.39",
+  "machine": "x86_64",
+  "python": "3.12.3",
+  "source": {
+    "sha256": "64f3a1d2e1e5d9e30840636438b827f7a6087ba22a3134e265b3c63e93ea5363",
+    "files": {
+      ".github/workflows/verify.yml": "520f9a877c4536d94d6354506bde0b958b0be925412ac764b75716df4006399c",
+      ".gitignore": "07734361aa0d5008198ba02aea16a902f198572486d7f3e3a11d480689fc6202",
+      "AGENTS.md": "a92a144bb021eac74a912635983b6c044015701912f85edf4c6c1b0c9e4882d6",
+      "CMakeLists.txt": "7b4418732b138cf7cb877302bac20831c2b97cb8a2f3949bf45c2be8f2f5f546",
+      "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b",
+      "PLAN.md": "c0e60c7fe948cbf80c8095c83dc5c83f2cd8f510c5648230357efd8843ac6d5e",
+      "README.md": "ee11af6aa908d7fc7f673d3e1e381f84a7cf8245e686dec92277a006e1583abd",
+      "docs/INVESTIGATIONS.md": "2e6cf09d1e80b0125b11204f46dd1487f1786bbc2e3715d1dd905c4db240df72",
+      "docs/VERIFICATION.md": "df42efa8074480c9f2b3a175ca4589a2b28fa2d53b9e726d9bc66207a8b9712f",
+      "projects/runtime-inspector/.gitignore": "780cbc84f659102498bd4958bd39921cce2283f7812c0307fb1ad8acf9842cd7",
+      "projects/runtime-inspector/CMakeLists.txt": "6cb22e1d46c4b6a76f444a42571a6a4b145212d55442fb3e740394cc107dc86c",
+      "projects/runtime-inspector/PLAN.md": "cb4b6de9da8d0f4f9b3ba0a8f773e54ed0030c89a18c49611f29cc6ba0cd948e",
+      "projects/runtime-inspector/README.md": "92c404e72186128549c77af6df9ff7d31a143185ef8f2f302e5684e9ae7a3dc3",
+      "projects/runtime-inspector/architecture.md": "db1432c0654d5578f5ffff4872a703cb81ff88c56823cf69ea9cda2570f0f38c",
+      "projects/runtime-inspector/include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+      "projects/runtime-inspector/include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+      "projects/runtime-inspector/report.py": "827e356c310b0f92ea3370220260de43292a3194ef76bf32d05a525f27fcb709",
+      "projects/runtime-inspector/specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+      "projects/runtime-inspector/specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+      "projects/runtime-inspector/specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+      "projects/runtime-inspector/src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+      "projects/runtime-inspector/src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+      "projects/runtime-inspector/tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+      "projects/runtime-inspector/tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+      "projects/runtime-inspector/tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+      "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+      "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+      "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+      "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+      "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+      "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+      "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+      "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+      "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+      "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+      "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+      "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+      "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989",
+      "scripts/capabilities.py": "7842c6c248e0a0845248d1c0bd0ae02eeedc09776c3a54e486312a6eb57750bc",
+      "scripts/import_ci.py": "86cf400ca0e625b105ee204c51586d43970629ab190317227f5ba7c9cbe4cb54",
+      "scripts/investigate_cpu.py": "7f689b86e95b056b1586f1f9a30a0f51105ece018fa8a52599508b5a99a77a04",
+      "scripts/investigate_server.py": "e124cac839d09c2475775ef5f281e49b3de15c8138ba1a90acc7f48caec7cdb5",
+      "scripts/public_audit.py": "b22cc9815a390e5bbb2656e466cf2173c7d679edcac00350221dd5a5b2fd0137",
+      "scripts/summarize.py": "04f64c70f9d1118bed118040bef8772110ff683acf8ce16d90853bfc793f3c48",
+      "scripts/verify.py": "cf987d94381bb578470d9b956df501013aea5b402b8d5c3bf00882a99ce7567d",
+      "tests/test_scripts.py": "8c11dbbda4b0e4340f8fd8c9a9a5619607656d1a51ab9eaa0e58599e46b96fcf"
+    }
+  },
+  "git": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.0013005999999933238,
+    "output": "377205a5280dcad79ff3ecbd5efc6c5624f6382b\n"
+  },
+  "dirty": {
+    "command": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.004829924000006258,
+    "output": " M evidence/capabilities.json\n"
+  },
+  "compiler": {
+    "command": [
+      "c++",
+      "--version"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.0009709790000016483,
+    "output": "c++ (Ubuntu 13.3.0-6ubuntu2~24.04.1) 13.3.0\nCopyright (C) 2023 Free Software Foundation, Inc.\nThis is free software; see the source for copying conditions.  There is NO\nwarranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.\n\n"
+  },
+  "cmake": {
+    "command": [
+      "cmake",
+      "--version"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.0016941199999962464,
+    "output": "cmake version 3.31.6\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+  },
+  "presets": {
+    "release": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "release"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 3.922991379999999,
+        "output": "Preset CMake variables:\n\n  BUILD_TESTING=\"ON\"\n  CMAKE_BUILD_TYPE=\"Release\"\n\n-- The CXX compiler identification is GNU 13.3.0\n-- Detecting CXX compiler ABI info\n-- Detecting CXX compiler ABI info - done\n-- Check for working CXX compiler: /usr/bin/c++ - skipped\n-- Detecting CXX compile features\n-- Detecting CXX compile features - done\n-- Found Python3: /usr/bin/python3.12 (found suitable version \"3.12.3\", minimum required is \"3.10\") found components: Interpreter\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD\n-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success\n-- Found Threads: TRUE\n-- Configuring done (3.8s)\n-- Generating done (0.0s)\n-- Build files have been written to: /home/runner/work/cpp-systems-tools/cpp-systems-tools/build/release\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "release",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 16.193621803,
+        "output": "[1/20] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o\n[2/20] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o\n[3/20] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o\n[4/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o\n[5/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o\n[6/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o\n[7/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o\n[8/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o\n[9/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o\n[10/20] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o\n[11/20] Linking CXX executable projects/runtime-inspector/runtime-specimen\n[12/20] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o\n[13/20] Linking CXX shared library projects/runtime-inspector/libruntime-example.so\n[14/20] Linking CXX static library projects/runtime-inspector/libruntime-workload-lib.a\n[15/20] Linking CXX static library projects/tcp-kv/libtcp-kv-core.a\n[16/20] Linking CXX static library projects/runtime-inspector/libruntime-example.a\n[17/20] Linking CXX executable projects/runtime-inspector/runtime-tests\n[18/20] Linking CXX executable projects/runtime-inspector/runtime-workloads\n[19/20] Linking CXX executable projects/tcp-kv/tcp-kv\n[20/20] Linking CXX executable projects/tcp-kv/tcp-kv-unit\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "release",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/home/runner/work/cpp-systems-tools/cpp-systems-tools/build/release/ctest-results.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 7.771764434000005,
+        "output": "Test project /home/runner/work/cpp-systems-tools/cpp-systems-tools/build/release\n    Start 1: evidence-scripts\n1/7 Test #1: evidence-scripts .................   Passed    0.25 sec\n    Start 2: tcp-kv-unit\n2/7 Test #2: tcp-kv-unit ......................   Passed    0.00 sec\n    Start 3: tcp-kv-integration\n3/7 Test #3: tcp-kv-integration ...............   Passed    1.44 sec\n    Start 4: runtime-core\n4/7 Test #4: runtime-core .....................   Passed    0.01 sec\n    Start 5: runtime-queue\n5/7 Test #5: runtime-queue ....................   Passed    0.03 sec\n    Start 6: runtime-workloads-oracle\n6/7 Test #6: runtime-workloads-oracle .........   Passed    0.16 sec\n    Start 7: runtime-report\n7/7 Test #7: runtime-report ...................   Passed    4.79 sec\n\n100% tests passed, 0 tests failed out of 7\n\nLabel Time Summary:\nconcurrency    =   0.20 sec*proc (3 tests)\ninspection     =   4.79 sec*proc (1 test)\n\nTotal Test time (real) =   6.76 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 7,
+          "passed": 7,
+          "cases": [
+            {
+              "name": "evidence-scripts",
+              "status": "passed",
+              "seconds": "0.253055"
+            },
+            {
+              "name": "tcp-kv-unit",
+              "status": "passed",
+              "seconds": "0.0032261"
+            },
+            {
+              "name": "tcp-kv-integration",
+              "status": "passed",
+              "seconds": "1.44155"
+            },
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.00569489"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.0303128"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "0.160059"
+            },
+            {
+              "name": "runtime-report",
+              "status": "passed",
+              "seconds": "4.78991"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "source_after": {
+    "sha256": "64f3a1d2e1e5d9e30840636438b827f7a6087ba22a3134e265b3c63e93ea5363",
+    "files": {
+      ".github/workflows/verify.yml": "520f9a877c4536d94d6354506bde0b958b0be925412ac764b75716df4006399c",
+      ".gitignore": "07734361aa0d5008198ba02aea16a902f198572486d7f3e3a11d480689fc6202",
+      "AGENTS.md": "a92a144bb021eac74a912635983b6c044015701912f85edf4c6c1b0c9e4882d6",
+      "CMakeLists.txt": "7b4418732b138cf7cb877302bac20831c2b97cb8a2f3949bf45c2be8f2f5f546",
+      "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b",
+      "PLAN.md": "c0e60c7fe948cbf80c8095c83dc5c83f2cd8f510c5648230357efd8843ac6d5e",
+      "README.md": "ee11af6aa908d7fc7f673d3e1e381f84a7cf8245e686dec92277a006e1583abd",
+      "docs/INVESTIGATIONS.md": "2e6cf09d1e80b0125b11204f46dd1487f1786bbc2e3715d1dd905c4db240df72",
+      "docs/VERIFICATION.md": "df42efa8074480c9f2b3a175ca4589a2b28fa2d53b9e726d9bc66207a8b9712f",
+      "projects/runtime-inspector/.gitignore": "780cbc84f659102498bd4958bd39921cce2283f7812c0307fb1ad8acf9842cd7",
+      "projects/runtime-inspector/CMakeLists.txt": "6cb22e1d46c4b6a76f444a42571a6a4b145212d55442fb3e740394cc107dc86c",
+      "projects/runtime-inspector/PLAN.md": "cb4b6de9da8d0f4f9b3ba0a8f773e54ed0030c89a18c49611f29cc6ba0cd948e",
+      "projects/runtime-inspector/README.md": "92c404e72186128549c77af6df9ff7d31a143185ef8f2f302e5684e9ae7a3dc3",
+      "projects/runtime-inspector/architecture.md": "db1432c0654d5578f5ffff4872a703cb81ff88c56823cf69ea9cda2570f0f38c",
+      "projects/runtime-inspector/include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+      "projects/runtime-inspector/include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+      "projects/runtime-inspector/report.py": "827e356c310b0f92ea3370220260de43292a3194ef76bf32d05a525f27fcb709",
+      "projects/runtime-inspector/specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+      "projects/runtime-inspector/specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+      "projects/runtime-inspector/specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+      "projects/runtime-inspector/src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+      "projects/runtime-inspector/src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+      "projects/runtime-inspector/tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+      "projects/runtime-inspector/tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+      "projects/runtime-inspector/tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+      "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+      "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+      "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+      "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+      "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+      "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+      "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+      "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+      "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+      "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+      "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+      "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+      "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989",
+      "scripts/capabilities.py": "7842c6c248e0a0845248d1c0bd0ae02eeedc09776c3a54e486312a6eb57750bc",
+      "scripts/import_ci.py": "86cf400ca0e625b105ee204c51586d43970629ab190317227f5ba7c9cbe4cb54",
+      "scripts/investigate_cpu.py": "7f689b86e95b056b1586f1f9a30a0f51105ece018fa8a52599508b5a99a77a04",
+      "scripts/investigate_server.py": "e124cac839d09c2475775ef5f281e49b3de15c8138ba1a90acc7f48caec7cdb5",
+      "scripts/public_audit.py": "b22cc9815a390e5bbb2656e466cf2173c7d679edcac00350221dd5a5b2fd0137",
+      "scripts/summarize.py": "04f64c70f9d1118bed118040bef8772110ff683acf8ce16d90853bfc793f3c48",
+      "scripts/verify.py": "cf987d94381bb578470d9b956df501013aea5b402b8d5c3bf00882a99ce7567d",
+      "tests/test_scripts.py": "8c11dbbda4b0e4340f8fd8c9a9a5619607656d1a51ab9eaa0e58599e46b96fcf"
+    }
+  },
+  "source_drift": false
+}

@@ -1,0 +1,513 @@
+{
+  "question": "Does private accumulation reduce observed cost compared with a shared atomic?",
+  "baseline": "shared",
+  "candidates": [
+    "spaced",
+    "local"
+  ],
+  "diagnostic_control": "adjacent",
+  "hypothesis": "Removing per-item shared atomic updates may reduce contention; spacing alone may not explain it.",
+  "changes": "Two existing workload alternatives, no performance-motivated source modification.",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "isa": "arm64",
+  "utc": "2026-10-27T19:58:13.058172+00:00",
+  "revision": "377205a5280dcad79ff3ecbd5efc6c5624f6382b",
+  "source_manifest": {
+    "sha256": "64f3a1d2e1e5d9e30840636438b827f7a6087ba22a3134e265b3c63e93ea5363",
+    "files": {
+      ".github/workflows/verify.yml": "520f9a877c4536d94d6354506bde0b958b0be925412ac764b75716df4006399c",
+      ".gitignore": "07734361aa0d5008198ba02aea16a902f198572486d7f3e3a11d480689fc6202",
+      "AGENTS.md": "a92a144bb021eac74a912635983b6c044015701912f85edf4c6c1b0c9e4882d6",
+      "CMakeLists.txt": "7b4418732b138cf7cb877302bac20831c2b97cb8a2f3949bf45c2be8f2f5f546",
+      "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b",
+      "PLAN.md": "c0e60c7fe948cbf80c8095c83dc5c83f2cd8f510c5648230357efd8843ac6d5e",
+      "README.md": "ee11af6aa908d7fc7f673d3e1e381f84a7cf8245e686dec92277a006e1583abd",
+      "docs/INVESTIGATIONS.md": "2e6cf09d1e80b0125b11204f46dd1487f1786bbc2e3715d1dd905c4db240df72",
+      "docs/VERIFICATION.md": "df42efa8074480c9f2b3a175ca4589a2b28fa2d53b9e726d9bc66207a8b9712f",
+      "projects/runtime-inspector/.gitignore": "780cbc84f659102498bd4958bd39921cce2283f7812c0307fb1ad8acf9842cd7",
+      "projects/runtime-inspector/CMakeLists.txt": "6cb22e1d46c4b6a76f444a42571a6a4b145212d55442fb3e740394cc107dc86c",
+      "projects/runtime-inspector/PLAN.md": "cb4b6de9da8d0f4f9b3ba0a8f773e54ed0030c89a18c49611f29cc6ba0cd948e",
+      "projects/runtime-inspector/README.md": "92c404e72186128549c77af6df9ff7d31a143185ef8f2f302e5684e9ae7a3dc3",
+      "projects/runtime-inspector/architecture.md": "db1432c0654d5578f5ffff4872a703cb81ff88c56823cf69ea9cda2570f0f38c",
+      "projects/runtime-inspector/include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+      "projects/runtime-inspector/include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+      "projects/runtime-inspector/report.py": "827e356c310b0f92ea3370220260de43292a3194ef76bf32d05a525f27fcb709",
+      "projects/runtime-inspector/specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+      "projects/runtime-inspector/specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+      "projects/runtime-inspector/specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+      "projects/runtime-inspector/src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+      "projects/runtime-inspector/src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+      "projects/runtime-inspector/tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+      "projects/runtime-inspector/tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+      "projects/runtime-inspector/tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+      "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+      "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+      "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+      "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+      "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+      "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+      "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+      "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+      "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+      "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+      "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+      "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+      "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989",
+      "scripts/capabilities.py": "7842c6c248e0a0845248d1c0bd0ae02eeedc09776c3a54e486312a6eb57750bc",
+      "scripts/import_ci.py": "86cf400ca0e625b105ee204c51586d43970629ab190317227f5ba7c9cbe4cb54",
+      "scripts/investigate_cpu.py": "7f689b86e95b056b1586f1f9a30a0f51105ece018fa8a52599508b5a99a77a04",
+      "scripts/investigate_server.py": "e124cac839d09c2475775ef5f281e49b3de15c8138ba1a90acc7f48caec7cdb5",
+      "scripts/public_audit.py": "b22cc9815a390e5bbb2656e466cf2173c7d679edcac00350221dd5a5b2fd0137",
+      "scripts/summarize.py": "04f64c70f9d1118bed118040bef8772110ff683acf8ce16d90853bfc793f3c48",
+      "scripts/verify.py": "cf987d94381bb578470d9b956df501013aea5b402b8d5c3bf00882a99ce7567d",
+      "tests/test_scripts.py": "8c11dbbda4b0e4340f8fd8c9a9a5619607656d1a51ab9eaa0e58599e46b96fcf"
+    }
+  },
+  "dirty": "?? evidence/server-investigation.json\n?? evidence/verification.json\n",
+  "binary_sha256": "73cb45a87875b847b95b2ed22b082dd26e8f5031aeb3bcaf46a951dc9c29b436",
+  "command": [
+    "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/runtime-workloads",
+    "--size",
+    "200000",
+    "--threads",
+    "4",
+    "--seed",
+    "42",
+    "--repetitions",
+    "7"
+  ],
+  "exit_code": 0,
+  "compiler": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n",
+  "compile_commands": [
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -Druntime_example_shared_EXPORTS -O3 -DNDEBUG -std=c++20 -arch arm64 -fPIC -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/workloads.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/workloads.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/main.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/main.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o"
+    },
+    {
+      "directory": "/Users/macklex/folder/cpp-systems-tools/build/release",
+      "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/include -O3 -DNDEBUG -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/tests/tests.cpp",
+      "file": "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/tests/tests.cpp",
+      "output": "/Users/macklex/folder/cpp-systems-tools/build/release/projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o"
+    }
+  ],
+  "independent_python_expected": 14073692402892375360,
+  "correctness": "passed",
+  "raw": {
+    "schema": 1,
+    "size": 200000,
+    "threads": 4,
+    "seed": 42,
+    "repetitions": 7,
+    "expected": 14073692402892375360,
+    "clock": "steady_clock",
+    "arithmetic": "uint64 modulo 2^64",
+    "warmup_per_variant": 1,
+    "spacing_bytes": 128,
+    "atomic_uint64_lock_free": true,
+    "timing": "AoS/SoA: traversal only; aggregation: release gate through finish gate and reduction; no allocation, thread creation or joins",
+    "errors": [],
+    "samples": [
+      {
+        "variant": "aos",
+        "repetition": 0,
+        "seconds": 0.000170375,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1173881144.5341158
+      },
+      {
+        "variant": "soa",
+        "repetition": 0,
+        "seconds": 1.3583e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 14724287712.581903
+      },
+      {
+        "variant": "shared",
+        "repetition": 0,
+        "seconds": 0.001428417,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 140015135.63616228
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 0,
+        "seconds": 0.0013065,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 153080750.09567547
+      },
+      {
+        "variant": "spaced",
+        "repetition": 0,
+        "seconds": 0.000108875,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1836969001.1481056
+      },
+      {
+        "variant": "local",
+        "repetition": 0,
+        "seconds": 2.95e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 6779661016.949153
+      },
+      {
+        "variant": "soa",
+        "repetition": 1,
+        "seconds": 1.3667e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 14633789419.77025
+      },
+      {
+        "variant": "shared",
+        "repetition": 1,
+        "seconds": 0.002127833,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 93992338.68447383
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 1,
+        "seconds": 0.001305333,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 153217608.07395506
+      },
+      {
+        "variant": "spaced",
+        "repetition": 1,
+        "seconds": 0.000109792,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1821626348.0034976
+      },
+      {
+        "variant": "local",
+        "repetition": 1,
+        "seconds": 2.9416e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 6799020940.984498
+      },
+      {
+        "variant": "aos",
+        "repetition": 1,
+        "seconds": 0.000112208,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1782404106.659062
+      },
+      {
+        "variant": "shared",
+        "repetition": 2,
+        "seconds": 0.002165625,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 92352092.35209236
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 2,
+        "seconds": 0.001364791,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 146542584.17589214
+      },
+      {
+        "variant": "spaced",
+        "repetition": 2,
+        "seconds": 0.000108459,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1844014788.9986079
+      },
+      {
+        "variant": "local",
+        "repetition": 2,
+        "seconds": 2.8875e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 6926406926.406926
+      },
+      {
+        "variant": "aos",
+        "repetition": 2,
+        "seconds": 0.000110666,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1807239802.6494136
+      },
+      {
+        "variant": "soa",
+        "repetition": 2,
+        "seconds": 1.4042e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 14242985329.72511
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 3,
+        "seconds": 0.001375208,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 145432545.476757
+      },
+      {
+        "variant": "spaced",
+        "repetition": 3,
+        "seconds": 0.000113334,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1764695501.791166
+      },
+      {
+        "variant": "local",
+        "repetition": 3,
+        "seconds": 2.5916e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 7717240314.863404
+      },
+      {
+        "variant": "aos",
+        "repetition": 3,
+        "seconds": 0.000113084,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1768596795.3026068
+      },
+      {
+        "variant": "soa",
+        "repetition": 3,
+        "seconds": 1.4375e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 13913043478.26087
+      },
+      {
+        "variant": "shared",
+        "repetition": 3,
+        "seconds": 0.001806292,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 110724068.97666602
+      },
+      {
+        "variant": "spaced",
+        "repetition": 4,
+        "seconds": 0.000245083,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 816050072.832469
+      },
+      {
+        "variant": "local",
+        "repetition": 4,
+        "seconds": 7.9542e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 2514394910.8647003
+      },
+      {
+        "variant": "aos",
+        "repetition": 4,
+        "seconds": 0.000114541,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1746099649.90702
+      },
+      {
+        "variant": "soa",
+        "repetition": 4,
+        "seconds": 2.3708e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 8435970980.259828
+      },
+      {
+        "variant": "shared",
+        "repetition": 4,
+        "seconds": 0.001635833,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 122261869.02941804
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 4,
+        "seconds": 0.001590459,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 125749862.14671361
+      },
+      {
+        "variant": "local",
+        "repetition": 5,
+        "seconds": 3.2791e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 6099234546.064469
+      },
+      {
+        "variant": "aos",
+        "repetition": 5,
+        "seconds": 0.00028775,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 695047784.5351869
+      },
+      {
+        "variant": "soa",
+        "repetition": 5,
+        "seconds": 1.7708e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 11294330246.216398
+      },
+      {
+        "variant": "shared",
+        "repetition": 5,
+        "seconds": 0.002327084,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 85944469.55932832
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 5,
+        "seconds": 0.00131825,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 151716290.53669637
+      },
+      {
+        "variant": "spaced",
+        "repetition": 5,
+        "seconds": 0.000110208,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1814750290.3600464
+      },
+      {
+        "variant": "aos",
+        "repetition": 6,
+        "seconds": 0.000121333,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1648356176.8026836
+      },
+      {
+        "variant": "soa",
+        "repetition": 6,
+        "seconds": 1.8e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 11111111111.11111
+      },
+      {
+        "variant": "shared",
+        "repetition": 6,
+        "seconds": 0.002171792,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 92089850.22506759
+      },
+      {
+        "variant": "adjacent",
+        "repetition": 6,
+        "seconds": 0.001347333,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 148441402.3853049
+      },
+      {
+        "variant": "spaced",
+        "repetition": 6,
+        "seconds": 0.000108833,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 1837677910.1926804
+      },
+      {
+        "variant": "local",
+        "repetition": 6,
+        "seconds": 2.3458e-05,
+        "checksum": 14073692402892375360,
+        "timing_status": "measured",
+        "items_per_second": 8525876033.762468
+      }
+    ]
+  },
+  "median_seconds": {
+    "aos": 0.000114541,
+    "soa": 1.4375e-05,
+    "adjacent": 0.001347333,
+    "shared": 0.002127833,
+    "local": 2.9416e-05,
+    "spaced": 0.000109792
+  },
+  "conclusion": "Observed timing comparison only. No cache/false-sharing causal claim without counters/tracing; no required speedup."
+}
