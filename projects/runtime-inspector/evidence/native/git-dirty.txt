@@ -1,0 +1,15 @@
+?? ../../.github/
+?? ../../.gitignore
+?? ../../AGENTS.md
+?? ../../CMakeLists.txt
+?? ../../CMakePresets.json
+?? ../../PLAN.md
+?? ../../README.md
+?? ../../docs/
+?? ../../evidence/
+?? ../../progress.md
+?? ../
+?? ../../scripts/
+?? ../../tests/
+
+--- stderr ---

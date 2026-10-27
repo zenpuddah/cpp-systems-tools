@@ -1,0 +1,250 @@
+{
+  "utc": "2026-10-27T19:51:55.340673+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "source_test_sha256": "8abe903eb5c44a2d739d3a0bbc107f47fa4818f5cdb912ac4eed8d8b7c856b4b",
+  "results": [
+    {
+      "preset": "dev",
+      "records": [
+        {
+          "step": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "dev"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "dev-configure.txt"
+        },
+        {
+          "step": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "dev",
+            "--target",
+            "runtime-specimen",
+            "runtime-example-static",
+            "runtime-example-shared",
+            "runtime-workloads",
+            "runtime-tests"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "dev-build.txt"
+        },
+        {
+          "step": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "dev",
+            "-R",
+            "^runtime-",
+            "--output-on-failure"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "dev-test.txt"
+        }
+      ]
+    },
+    {
+      "preset": "release",
+      "records": [
+        {
+          "step": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "release"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "release-configure.txt"
+        },
+        {
+          "step": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "release",
+            "--target",
+            "runtime-specimen",
+            "runtime-example-static",
+            "runtime-example-shared",
+            "runtime-workloads",
+            "runtime-tests"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "release-build.txt"
+        },
+        {
+          "step": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "release",
+            "-R",
+            "^runtime-",
+            "--output-on-failure"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "release-test.txt"
+        }
+      ]
+    },
+    {
+      "preset": "asan",
+      "records": [
+        {
+          "step": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "asan"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "asan-configure.txt"
+        },
+        {
+          "step": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "asan",
+            "--target",
+            "runtime-specimen",
+            "runtime-example-static",
+            "runtime-example-shared",
+            "runtime-workloads",
+            "runtime-tests"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "asan-build.txt"
+        },
+        {
+          "step": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "asan",
+            "-R",
+            "^runtime-",
+            "--output-on-failure"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "asan-test.txt"
+        }
+      ]
+    },
+    {
+      "preset": "ubsan",
+      "records": [
+        {
+          "step": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "ubsan"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "ubsan-configure.txt"
+        },
+        {
+          "step": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "ubsan",
+            "--target",
+            "runtime-specimen",
+            "runtime-example-static",
+            "runtime-example-shared",
+            "runtime-workloads",
+            "runtime-tests"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "ubsan-build.txt"
+        },
+        {
+          "step": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "ubsan",
+            "-R",
+            "^runtime-",
+            "--output-on-failure"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "ubsan-test.txt"
+        }
+      ]
+    },
+    {
+      "preset": "tsan",
+      "records": [
+        {
+          "step": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "tsan"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "tsan-configure.txt"
+        },
+        {
+          "step": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "tsan",
+            "--target",
+            "runtime-specimen",
+            "runtime-example-static",
+            "runtime-example-shared",
+            "runtime-workloads",
+            "runtime-tests"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "tsan-build.txt"
+        },
+        {
+          "step": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "tsan",
+            "-R",
+            "^runtime-",
+            "--output-on-failure",
+            "-L",
+            "concurrency"
+          ],
+          "exit_code": 0,
+          "status": "passed",
+          "log": "tsan-test.txt"
+        }
+      ]
+    }
+  ]
+}

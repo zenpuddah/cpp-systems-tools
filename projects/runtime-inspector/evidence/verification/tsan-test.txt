@@ -1,0 +1,14 @@
+Test project /Users/macklex/folder/cpp-systems-tools/build/tsan
+    Start 4: runtime-core
+1/3 Test #4: runtime-core .....................   Passed    0.53 sec
+    Start 5: runtime-queue
+2/3 Test #5: runtime-queue ....................   Passed    0.29 sec
+    Start 6: runtime-workloads-oracle
+3/3 Test #6: runtime-workloads-oracle .........   Passed    4.92 sec
+
+100% tests passed out of 3
+
+Label Time Summary:
+concurrency    =   5.74 sec*proc (3 tests)
+
+Total Test time (real) =   5.75 sec

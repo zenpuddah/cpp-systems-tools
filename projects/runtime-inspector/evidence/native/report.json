@@ -1,0 +1,652 @@
+{
+  "schema": 1,
+  "utc": "2026-10-27T19:53:34.523445+00:00",
+  "native_format": "Mach-O / macOS",
+  "machine": "arm64",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "cpu_count": 15,
+  "compiler": [
+    "c++"
+  ],
+  "specimen_flags": [
+    "-std=c++20",
+    "-O0",
+    "-g",
+    "-fPIC",
+    "-fno-omit-frame-pointer"
+  ],
+  "workload_flags": [
+    "-std=c++20",
+    "-O2",
+    "-g",
+    "-pthread",
+    "-fno-omit-frame-pointer"
+  ],
+  "source_sha256": "4b17a0084a2f31d787bc3dc8f9711cfbed307533b04984009f6b662fe5a030c7",
+  "git_revision_status": "failed",
+  "commands": [
+    {
+      "name": "git-revision",
+      "command": [
+        "git",
+        "-C",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector",
+        "rev-parse",
+        "HEAD"
+      ],
+      "status": "failed",
+      "exit_code": 128,
+      "seconds": 0.011066415987443179,
+      "expected_failure": false,
+      "log": "git-revision.txt",
+      "truncated": false
+    },
+    {
+      "name": "git-dirty",
+      "command": [
+        "git",
+        "-C",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector",
+        "status",
+        "--short"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.010412540985271335,
+      "expected_failure": false,
+      "log": "git-dirty.txt",
+      "truncated": false
+    },
+    {
+      "name": "compiler",
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.010517791961319745,
+      "expected_failure": false,
+      "log": "compiler.txt",
+      "truncated": false
+    },
+    {
+      "name": "compiler-target",
+      "command": [
+        "c++",
+        "-dumpmachine"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.010623082984238863,
+      "expected_failure": false,
+      "log": "compiler-target.txt",
+      "truncated": false
+    },
+    {
+      "name": "machine-details",
+      "command": [
+        "sysctl",
+        "machdep.cpu.brand_string",
+        "hw.model",
+        "hw.pagesize"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.0022911669802851975,
+      "expected_failure": false,
+      "log": "machine-details.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-main-ii",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-E",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.ii"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.08555504202377051,
+      "expected_failure": false,
+      "log": "build-main-ii.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-main-s",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-S",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.s"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.34363100002519786,
+      "expected_failure": false,
+      "log": "build-main-s.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-main-o",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-c",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/main.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.3301245420007035,
+      "expected_failure": false,
+      "log": "build-main-o.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-operations-ii",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-E",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.ii"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.018964666000101715,
+      "expected_failure": false,
+      "log": "build-operations-ii.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-operations-s",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-S",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.s"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.021221875038463622,
+      "expected_failure": false,
+      "log": "build-operations-s.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-operations-o",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O0",
+        "-g",
+        "-fPIC",
+        "-fno-omit-frame-pointer",
+        "-c",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/specimen/operations.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.022545458981767297,
+      "expected_failure": false,
+      "log": "build-operations-o.txt",
+      "truncated": false
+    },
+    {
+      "name": "link-specimen",
+      "command": [
+        "c++",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.o",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.026389500009827316,
+      "expected_failure": false,
+      "log": "link-specimen.txt",
+      "truncated": false
+    },
+    {
+      "name": "deliberate-link-failure",
+      "command": [
+        "c++",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/must-not-link"
+      ],
+      "status": "passed",
+      "exit_code": 1,
+      "seconds": 0.02697624999564141,
+      "expected_failure": true,
+      "log": "deliberate-link-failure.txt",
+      "truncated": false
+    },
+    {
+      "name": "archive",
+      "command": [
+        "ar",
+        "rcs",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.a",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.012935000006109476,
+      "expected_failure": false,
+      "log": "archive.txt",
+      "truncated": false
+    },
+    {
+      "name": "archive-members",
+      "command": [
+        "ar",
+        "t",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.a"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.008194082998670638,
+      "expected_failure": false,
+      "log": "archive-members.txt",
+      "truncated": false
+    },
+    {
+      "name": "link-static-client",
+      "command": [
+        "c++",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.a",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/static-client"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.026546499982941896,
+      "expected_failure": false,
+      "log": "link-static-client.txt",
+      "truncated": false
+    },
+    {
+      "name": "shared-library",
+      "command": [
+        "c++",
+        "-dynamiclib",
+        "-Wl,-install_name,@rpath/libruntime-example.dylib",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.o",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.dylib"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.026172333979047835,
+      "expected_failure": false,
+      "log": "shared-library.txt",
+      "truncated": false
+    },
+    {
+      "name": "link-shared-client",
+      "command": [
+        "c++",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.dylib",
+        "-Wl,-rpath,@loader_path",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/shared-client"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.02738066704478115,
+      "expected_failure": false,
+      "log": "link-shared-client.txt",
+      "truncated": false
+    },
+    {
+      "name": "run-runtime-specimen",
+      "command": [
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen",
+        "42"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.28638108301674947,
+      "expected_failure": false,
+      "log": "run-runtime-specimen.txt",
+      "truncated": false
+    },
+    {
+      "name": "run-static-client",
+      "command": [
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/static-client",
+        "42"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.26647258299635723,
+      "expected_failure": false,
+      "log": "run-static-client.txt",
+      "truncated": false
+    },
+    {
+      "name": "run-shared-client",
+      "command": [
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/shared-client",
+        "42"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.5257399170077406,
+      "expected_failure": false,
+      "log": "run-shared-client.txt",
+      "truncated": false
+    },
+    {
+      "name": "file-format",
+      "command": [
+        "file",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.a",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/libruntime-example.dylib"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.01261408400023356,
+      "expected_failure": false,
+      "log": "file-format.txt",
+      "truncated": false
+    },
+    {
+      "name": "symbols-defined",
+      "command": [
+        "nm",
+        "-g",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/operations.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.01876358297886327,
+      "expected_failure": false,
+      "log": "symbols-defined.txt",
+      "truncated": false
+    },
+    {
+      "name": "symbols-undefined",
+      "command": [
+        "nm",
+        "-u",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.014175291988067329,
+      "expected_failure": false,
+      "log": "symbols-undefined.txt",
+      "truncated": false
+    },
+    {
+      "name": "sections-segments",
+      "command": [
+        "otool",
+        "-l",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.013843209017068148,
+      "expected_failure": false,
+      "log": "sections-segments.txt",
+      "truncated": false
+    },
+    {
+      "name": "dependencies",
+      "command": [
+        "otool",
+        "-L",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/shared-client"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.012057790998369455,
+      "expected_failure": false,
+      "log": "dependencies.txt",
+      "truncated": false
+    },
+    {
+      "name": "relocations",
+      "command": [
+        "otool",
+        "-rv",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/main.o"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.010931957978755236,
+      "expected_failure": false,
+      "log": "relocations.txt",
+      "truncated": false
+    },
+    {
+      "name": "disassembly",
+      "command": [
+        "otool",
+        "-tvV",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.013744291965849698,
+      "expected_failure": false,
+      "log": "disassembly.txt",
+      "truncated": false
+    },
+    {
+      "name": "process-maps",
+      "command": [
+        "vmmap",
+        "95093"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.3641189170302823,
+      "expected_failure": false,
+      "log": "process-maps.txt",
+      "truncated": false
+    },
+    {
+      "name": "sampling-capability",
+      "command": [
+        "sample",
+        "95093",
+        "1",
+        "-file",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/sample-profile.txt"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 1.05223616596777,
+      "expected_failure": false,
+      "log": "sampling-capability.txt",
+      "truncated": false
+    },
+    {
+      "name": "build-workloads",
+      "command": [
+        "c++",
+        "-std=c++20",
+        "-O2",
+        "-g",
+        "-pthread",
+        "-fno-omit-frame-pointer",
+        "-I",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/include",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/workloads.cpp",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/src/main.cpp",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-workloads"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.8355519159813412,
+      "expected_failure": false,
+      "log": "build-workloads.txt",
+      "truncated": false
+    },
+    {
+      "name": "workloads",
+      "command": [
+        "/Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-workloads",
+        "--size",
+        "200000",
+        "--threads",
+        "4",
+        "--seed",
+        "42",
+        "--repetitions",
+        "7"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.3526542499894276,
+      "expected_failure": false,
+      "log": "workloads.txt",
+      "truncated": false
+    },
+    {
+      "name": "debugger-capability",
+      "command": [
+        "lldb",
+        "--batch",
+        "-o",
+        "target create /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/runtime-specimen",
+        "-o",
+        "breakpoint set -n specimen_transform",
+        "-o",
+        "run 42",
+        "-o",
+        "bt"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "seconds": 0.2341580410138704,
+      "expected_failure": false,
+      "log": "debugger-capability.txt",
+      "truncated": false
+    }
+  ],
+  "capabilities": {
+    "perf": null,
+    "strace": null,
+    "lldb": "/usr/bin/lldb",
+    "gdb": null,
+    "vmmap": "/usr/bin/vmmap",
+    "sample": "/usr/bin/sample"
+  },
+  "observations": {
+    "pid": 95079,
+    "pointer_bytes": 8,
+    "native_page_bytes": 16384,
+    "global_address": 4334944256,
+    "automatic_address": 6131969920,
+    "dynamic_address": 4343863408,
+    "result": 1408,
+    "minor_faults_since_start": 294,
+    "major_faults_since_start": 1,
+    "layout": {
+      "size": 24,
+      "alignment": 8,
+      "tag_offset": 0,
+      "value_offset": 8,
+      "count_offset": 16
+    },
+    "vector": {
+      "old_capacity": 2,
+      "new_capacity": 4,
+      "old_address": 4343863424,
+      "new_address": 4343863440
+    }
+  },
+  "workload_summary": {
+    "aos": {
+      "samples": 7,
+      "median_seconds": 0.000212583,
+      "min_seconds": 0.000186542,
+      "max_seconds": 0.000289834
+    },
+    "soa": {
+      "samples": 7,
+      "median_seconds": 2.9791e-05,
+      "min_seconds": 2.7708e-05,
+      "max_seconds": 3.2e-05
+    },
+    "shared": {
+      "samples": 7,
+      "median_seconds": 0.003609084,
+      "min_seconds": 0.002656833,
+      "max_seconds": 0.004273916
+    },
+    "adjacent": {
+      "samples": 7,
+      "median_seconds": 0.003321292,
+      "min_seconds": 0.002306209,
+      "max_seconds": 0.003686834
+    },
+    "spaced": {
+      "samples": 7,
+      "median_seconds": 0.000511208,
+      "min_seconds": 0.000497208,
+      "max_seconds": 0.000634125
+    },
+    "local": {
+      "samples": 7,
+      "median_seconds": 4.0375e-05,
+      "min_seconds": 3.5583e-05,
+      "max_seconds": 6.8125e-05
+    }
+  },
+  "errors": [],
+  "translator_model": {
+    "label": "toy page translator MODEL, not observed physical addresses",
+    "page_bytes": 4096,
+    "virtual_address": 74565,
+    "virtual_page": 18,
+    "offset": 837,
+    "invented_page_table": {
+      "18": 128
+    },
+    "invented_physical_address": 525125
+  }
+}

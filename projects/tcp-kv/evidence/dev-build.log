@@ -1,0 +1,7 @@
+[1/7] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o
+[2/7] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o
+[3/7] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o
+[4/7] Linking CXX static library projects/tcp-kv/libtcp-kv-core.a
+[5/7] Building CXX object projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o
+[6/7] Linking CXX executable projects/tcp-kv/tcp-kv
+[7/7] Linking CXX executable projects/tcp-kv/tcp-kv-unit

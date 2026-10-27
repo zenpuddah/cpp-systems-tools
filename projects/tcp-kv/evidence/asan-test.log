@@ -1,0 +1,9 @@
+Test project /Users/macklex/folder/cpp-systems-tools/build/asan
+    Start 2: tcp-kv-unit
+1/2 Test #2: tcp-kv-unit ......................   Passed    0.52 sec
+    Start 3: tcp-kv-integration
+2/2 Test #3: tcp-kv-integration ...............   Passed    1.60 sec
+
+100% tests passed out of 2
+
+Total Test time (real) =   2.13 sec

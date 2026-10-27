@@ -1,0 +1,25 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {"major": 3, "minor": 25, "patch": 0},
+  "configurePresets": [
+    {"name": "dev", "generator": "Ninja", "binaryDir": "${sourceDir}/build/${presetName}", "cacheVariables": {"CMAKE_BUILD_TYPE": "Debug", "BUILD_TESTING": "ON"}},
+    {"name": "release", "inherits": "dev", "cacheVariables": {"CMAKE_BUILD_TYPE": "Release"}},
+    {"name": "asan", "inherits": "dev", "cacheVariables": {"SANITIZER": "address"}},
+    {"name": "ubsan", "inherits": "dev", "cacheVariables": {"SANITIZER": "undefined"}},
+    {"name": "tsan", "inherits": "dev", "cacheVariables": {"SANITIZER": "thread"}}
+  ],
+  "buildPresets": [
+    {"name": "dev", "configurePreset": "dev"},
+    {"name": "release", "configurePreset": "release"},
+    {"name": "asan", "configurePreset": "asan"},
+    {"name": "ubsan", "configurePreset": "ubsan"},
+    {"name": "tsan", "configurePreset": "tsan"}
+  ],
+  "testPresets": [
+    {"name": "dev", "configurePreset": "dev", "output": {"outputOnFailure": true}, "execution": {"timeout": 40}},
+    {"name": "release", "configurePreset": "release", "output": {"outputOnFailure": true}, "execution": {"timeout": 40}},
+    {"name": "asan", "configurePreset": "asan", "output": {"outputOnFailure": true}, "execution": {"timeout": 40}},
+    {"name": "ubsan", "configurePreset": "ubsan", "output": {"outputOnFailure": true}, "execution": {"timeout": 40}},
+    {"name": "tsan", "configurePreset": "tsan", "filter": {"include": {"label": "concurrency"}}, "output": {"outputOnFailure": true}, "execution": {"timeout": 40}}
+  ]
+}

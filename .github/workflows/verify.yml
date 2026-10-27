@@ -1,0 +1,22 @@
+name: verify
+on: [push, workflow_dispatch]
+permissions:
+  contents: read
+jobs:
+  linux:
+    runs-on: ubuntu-24.04
+    strategy:
+      fail-fast: false
+      matrix:
+        preset: [dev, release, asan, ubsan, tsan]
+    steps:
+      - uses: actions/checkout@v4
+      - run: python3 scripts/capabilities.py
+      - run: python3 scripts/verify.py ${{ matrix.preset }}
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: linux-${{ matrix.preset }}-evidence
+          path: |
+            evidence/
+            build/${{ matrix.preset }}/Testing/Temporary/

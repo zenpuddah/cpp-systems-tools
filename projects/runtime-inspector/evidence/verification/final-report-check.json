@@ -1,0 +1,53 @@
+{
+  "utc": "2026-10-27T19:53:34.539318+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "source_test_sha256": "4b17a0084a2f31d787bc3dc8f9711cfbed307533b04984009f6b662fe5a030c7",
+  "commands": [
+    {
+      "command": [
+        "ctest",
+        "--preset",
+        "release",
+        "-R",
+        "^runtime-report$",
+        "--output-on-failure"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "final-report-test.txt"
+    },
+    {
+      "command": [
+        "/opt/homebrew/opt/python@3.14/bin/python3.14",
+        "projects/runtime-inspector/report.py",
+        "--output",
+        "projects/runtime-inspector/evidence/native",
+        "--size",
+        "200000",
+        "--threads",
+        "4",
+        "--seed",
+        "42",
+        "--repetitions",
+        "7"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "log": "final-native-run.txt"
+    }
+  ],
+  "file_sha256": {
+    "specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+    "specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+    "specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+    "include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+    "include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+    "src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+    "src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+    "tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+    "tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+    "tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+    "report.py": "827e356c310b0f92ea3370220260de43292a3194ef76bf32d05a525f27fcb709",
+    "CMakeLists.txt": "6cb22e1d46c4b6a76f444a42571a6a4b145212d55442fb3e740394cc107dc86c"
+  }
+}

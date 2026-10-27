@@ -1,0 +1,122 @@
+{
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "python": "3.14.8 (main, Sep 30 2026, 17:55:09) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "manifest": {
+    "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+    "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+    "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+    "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+    "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+    "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+    "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+    "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+    "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+    "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+    "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+    "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+    "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989"
+  },
+  "source_sha256": "6ed0d50571bdcd7959b0666b110a92576095bfb3289049a88983f2ad6fd131aa",
+  "assessment_sha256": "fa274467b9405b3ca92614370eec30e26d31a11ea70d3ba6320aa56b325964ea",
+  "manifest_sha256": "b85895b9c3c830a1c09053eee36def746c461fa7b30eba57be3b6333a75cda94",
+  "root_build_configuration": {
+    "CMakeLists.txt": "7b4418732b138cf7cb877302bac20831c2b97cb8a2f3949bf45c2be8f2f5f546",
+    "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b"
+  },
+  "runs": [
+    {
+      "preset": "dev",
+      "stages": [
+        {
+          "stage": "configure",
+          "command": [
+            "cmake",
+            "--preset",
+            "dev"
+          ],
+          "state": "passed",
+          "exit": 0,
+          "elapsed_seconds": 0.2022320830146782,
+          "log": "evidence/resilience-dev-configure.log"
+        },
+        {
+          "stage": "build",
+          "command": [
+            "cmake",
+            "--build",
+            "--preset",
+            "dev",
+            "--target",
+            "tcp-kv",
+            "tcp-kv-unit"
+          ],
+          "state": "passed",
+          "exit": 0,
+          "elapsed_seconds": 0.011043666047044098,
+          "log": "evidence/resilience-dev-build.log"
+        },
+        {
+          "stage": "test",
+          "command": [
+            "ctest",
+            "--preset",
+            "dev",
+            "-R",
+            "^tcp-kv-",
+            "--output-on-failure",
+            "--repeat",
+            "until-fail:20"
+          ],
+          "state": "passed",
+          "exit": 0,
+          "elapsed_seconds": 15.95411645801505,
+          "log": "evidence/resilience-dev-test.log"
+        }
+      ],
+      "compile_commands": [
+        {
+          "directory": "/Users/macklex/folder/cpp-systems-tools/build/dev",
+          "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+          "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/protocol.cpp",
+          "output": "/Users/macklex/folder/cpp-systems-tools/build/dev/projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/protocol.cpp.o"
+        },
+        {
+          "directory": "/Users/macklex/folder/cpp-systems-tools/build/dev",
+          "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+          "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/connection.cpp",
+          "output": "/Users/macklex/folder/cpp-systems-tools/build/dev/projects/tcp-kv/CMakeFiles/tcp-kv-core.dir/src/connection.cpp.o"
+        },
+        {
+          "directory": "/Users/macklex/folder/cpp-systems-tools/build/dev",
+          "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+          "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/src/main.cpp",
+          "output": "/Users/macklex/folder/cpp-systems-tools/build/dev/projects/tcp-kv/CMakeFiles/tcp-kv.dir/src/main.cpp.o"
+        },
+        {
+          "directory": "/Users/macklex/folder/cpp-systems-tools/build/dev",
+          "command": "/usr/bin/c++ -I/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/include -g -std=c++20 -arch arm64 -Wall -Wextra -Wpedantic -o projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o -c /Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+          "file": "/Users/macklex/folder/cpp-systems-tools/projects/tcp-kv/tests/unit.cpp",
+          "output": "/Users/macklex/folder/cpp-systems-tools/build/dev/projects/tcp-kv/CMakeFiles/tcp-kv-unit.dir/tests/unit.cpp.o"
+        }
+      ]
+    }
+  ],
+  "compiler": {
+    "command": [
+      "clang++",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+  },
+  "cmake": {
+    "command": [
+      "cmake",
+      "--version"
+    ],
+    "exit": 0,
+    "output": "cmake version 4.4.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+  },
+  "source_drift": false
+}

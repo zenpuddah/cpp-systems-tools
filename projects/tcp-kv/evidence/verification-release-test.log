@@ -1,0 +1,9 @@
+Test project /Users/macklex/folder/cpp-systems-tools/build/release
+    Start 2: tcp-kv-unit
+1/2 Test #2: tcp-kv-unit ......................   Passed    0.30 sec
+    Start 3: tcp-kv-integration
+2/2 Test #3: tcp-kv-integration ...............   Passed    0.59 sec
+
+100% tests passed out of 2
+
+Total Test time (real) =   0.89 sec

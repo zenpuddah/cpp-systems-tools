@@ -1,0 +1,139 @@
+{
+  "utc": "2026-10-27T19:40:31.255340+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "isa": "arm64",
+  "probes": [
+    {
+      "command": [
+        "c++",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+    },
+    {
+      "command": [
+        "cmake",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "cmake version 4.4.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+    },
+    {
+      "command": [
+        "python3",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "Python 3.14.8\n"
+    },
+    {
+      "command": [
+        "ninja",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "1.13.2\n"
+    },
+    {
+      "command": [
+        "perf",
+        "stat",
+        "true"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "perf",
+        "record",
+        "-o",
+        "/Users/macklex/folder/cpp-systems-tools/reports/perf.data",
+        "--",
+        "true"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "perf",
+        "report",
+        "-i",
+        "/Users/macklex/folder/cpp-systems-tools/reports/perf.data",
+        "--stdio"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "strace",
+        "-c",
+        "true"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "lldb",
+        "--version"
+      ],
+      "status": "passed",
+      "exit_code": 0,
+      "output": "lldb-2100.0.17.203\nApple Swift version 6.3.3 (swiftlang-6.3.3.1.3 clang-2100.1.1.101)\n"
+    },
+    {
+      "command": [
+        "lldb",
+        "--batch",
+        "-o",
+        "run",
+        "--",
+        "/usr/bin/true"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "output": "(lldb) target create \"/usr/bin/true\"\nCurrent executable set to '/usr/bin/true' (arm64e).\n(lldb) run\nerror: process exited with status -1 (attach failed (Not allowed to attach to process.  Look in the console messages (Console.app), near the debugserver entries, when the attach failed.  The subsystem that denied the attach permission will likely have logged an informative message about why it was denied.))\n"
+    },
+    {
+      "command": [
+        "xctrace",
+        "list",
+        "templates"
+      ],
+      "status": "failed",
+      "exit_code": 1,
+      "output": "xcode-select: error: tool 'xctrace' requires Xcode, but active developer directory '/Library/Developer/CommandLineTools' is a command line tools instance\n"
+    },
+    {
+      "command": [
+        "docker",
+        "version"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    },
+    {
+      "command": [
+        "podman",
+        "version"
+      ],
+      "status": "unavailable",
+      "reason": "executable not on PATH"
+    }
+  ],
+  "linux_native_tests": {
+    "status": "unavailable"
+  },
+  "clion_interactive": {
+    "status": "not run",
+    "installed_version": "2026.2.1"
+  }
+}

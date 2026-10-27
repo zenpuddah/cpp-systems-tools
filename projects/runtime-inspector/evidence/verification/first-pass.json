@@ -1,0 +1,66 @@
+{
+  "utc": "2026-10-27T19:49:57.910542+00:00",
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "source_test_sha256": "f2839c04e3eb35651bdd0ba89a6cba359c01b8155febcdea0e36328b3bb86fb7",
+  "results": [
+    {
+      "preset": "release",
+      "command": [
+        "ctest",
+        "--preset",
+        "release",
+        "-R",
+        "^runtime-",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "log": "release.txt"
+    },
+    {
+      "preset": "asan",
+      "command": [
+        "ctest",
+        "--preset",
+        "asan",
+        "-R",
+        "^runtime-",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "log": "asan.txt"
+    },
+    {
+      "preset": "ubsan",
+      "command": [
+        "ctest",
+        "--preset",
+        "ubsan",
+        "-R",
+        "^runtime-",
+        "--output-on-failure"
+      ],
+      "exit_code": 0,
+      "status": "passed",
+      "log": "ubsan.txt"
+    },
+    {
+      "preset": "tsan",
+      "command": [
+        "ctest",
+        "--preset",
+        "tsan",
+        "-R",
+        "^runtime-",
+        "--output-on-failure",
+        "-L",
+        "concurrency"
+      ],
+      "exit_code": 8,
+      "status": "failed",
+      "log": "tsan.txt"
+    }
+  ]
+}

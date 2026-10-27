@@ -1,0 +1,17 @@
+Test project /Users/macklex/folder/cpp-systems-tools/build/release
+    Start 4: runtime-core
+1/4 Test #4: runtime-core .....................   Passed    1.26 sec
+    Start 5: runtime-queue
+2/4 Test #5: runtime-queue ....................   Passed    0.01 sec
+    Start 6: runtime-workloads-oracle
+3/4 Test #6: runtime-workloads-oracle .........   Passed    1.31 sec
+    Start 7: runtime-report
+4/4 Test #7: runtime-report ...................   Passed    7.97 sec
+
+100% tests passed out of 4
+
+Label Time Summary:
+concurrency    =   2.58 sec*proc (3 tests)
+inspection     =   7.97 sec*proc (1 test)
+
+Total Test time (real) =  10.55 sec

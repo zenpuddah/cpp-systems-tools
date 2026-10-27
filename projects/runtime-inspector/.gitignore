@@ -1,0 +1,9 @@
+# Fresh native binaries/preprocessed sources are local evidence, not source.
+/evidence/native/*
+!/evidence/native/report.json
+!/evidence/native/report.md
+!/evidence/native/workloads.json
+!/evidence/native/translator-model.json
+!/evidence/native/*.txt
+/evidence/native/*.txt.dSYM/
+__pycache__/

@@ -1,0 +1,6 @@
+[1/6] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o
+[2/6] Linking CXX executable projects/runtime-inspector/runtime-specimen
+[3/6] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o
+[4/6] Linking CXX static library projects/runtime-inspector/libruntime-workload-lib.a
+[5/6] Linking CXX executable projects/runtime-inspector/runtime-workloads
+[6/6] Linking CXX executable projects/runtime-inspector/runtime-tests

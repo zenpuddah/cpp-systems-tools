@@ -1,0 +1,13 @@
+[1/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-example-static.dir/specimen/operations.cpp.o
+[2/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/operations.cpp.o
+[3/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-example-shared.dir/specimen/operations.cpp.o
+[4/13] Linking CXX shared library projects/runtime-inspector/libruntime-example.dylib
+[5/13] Linking CXX static library projects/runtime-inspector/libruntime-example.a
+[6/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-workloads.dir/src/main.cpp.o
+[7/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-specimen.dir/specimen/main.cpp.o
+[8/13] Linking CXX executable projects/runtime-inspector/runtime-specimen
+[9/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-workload-lib.dir/src/workloads.cpp.o
+[10/13] Linking CXX static library projects/runtime-inspector/libruntime-workload-lib.a
+[11/13] Building CXX object projects/runtime-inspector/CMakeFiles/runtime-tests.dir/tests/tests.cpp.o
+[12/13] Linking CXX executable projects/runtime-inspector/runtime-workloads
+[13/13] Linking CXX executable projects/runtime-inspector/runtime-tests

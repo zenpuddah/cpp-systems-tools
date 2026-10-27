@@ -1,0 +1,5 @@
+
+--- stderr ---
+Sampling process 95093 for 1 second with 1 millisecond of run time between samples
+Sampling completed, processing symbols...
+Sample analysis of process 95093 written to file /Users/macklex/folder/cpp-systems-tools/projects/runtime-inspector/evidence/native/sample-profile.txt
