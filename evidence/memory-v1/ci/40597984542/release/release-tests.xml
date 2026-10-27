@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-c++"
+	tests="15"
+	failures="0"
+	disabled="0"
+	skipped="0"
+	hostname="runnervmtai0g"
+	time="11"
+	timestamp="2026-10-27T22:52:03"
+	>
+	<testcase name="evidence-scripts" classname="evidence-scripts" time="0.23225" status="run">
+		<properties/>
+		<system-out>.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.153s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="memory-evidence" classname="memory-evidence" time="0.128816" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>......
+----------------------------------------------------------------------
+Ran 6 tests in 0.015s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="tcp-kv-unit" classname="tcp-kv-unit" time="0.0032185" status="run">
+		<properties/>
+		<system-out>PASS parser/store boundaries
+PASS descriptor ownership
+PASS every split point
+PASS injected transport
+PASS fairness and limits
+PASS EOF/recovery/deadlines
+6/6 unit groups passed (release-enabled checks)
+</system-out>
+	</testcase>
+	<testcase name="tcp-kv-integration" classname="tcp-kv-integration" time="1.44651" status="run">
+		<properties/>
+		<system-out>test_connection_limit_and_reconnect (__main__.Integration.test_connection_limit_and_reconnect) ... ok
+test_fragmentation_coalescing_and_buffered_fairness (__main__.Integration.test_fragmentation_coalescing_and_buffered_fairness) ... ok
+test_invalid_cli (__main__.Integration.test_invalid_cli) ... ok
+test_key_and_line_boundaries (__main__.Integration.test_key_and_line_boundaries) ... ok
+test_protocol_recovery_and_half_close (__main__.Integration.test_protocol_recovery_and_half_close) ... ok
+test_reset_and_clean_empty_eof (__main__.Integration.test_reset_and_clean_empty_eof) ... ok
+test_signal_shutdown_with_live_idle_clients (__main__.Integration.test_signal_shutdown_with_live_idle_clients) ... ok
+test_slow_reader_fairness_and_shutdown (__main__.Integration.test_slow_reader_fairness_and_shutdown) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.395s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="runtime-core" classname="runtime-core" time="0.00599102" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: core
+</system-out>
+	</testcase>
+	<testcase name="runtime-queue" classname="runtime-queue" time="0.0281806" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: queue
+</system-out>
+	</testcase>
+	<testcase name="runtime-workloads-oracle" classname="runtime-workloads-oracle" time="0.154075" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: independent unsigned reference, variants, boundaries and invalid inputs
+</system-out>
+	</testcase>
+	<testcase name="runtime-report" classname="runtime-report" time="9.66111" status="run">
+		<properties>
+			<property name="cmake_labels" value="inspection"/>
+		</properties>
+		<system-out>passed: report workflow, native labels, artifacts, diagnosed link failure, layout, checksums
+passed: failed compiler retains diagnostics and does not run dependent tests
+</system-out>
+	</testcase>
+	<testcase name="memory-inspector-report" classname="memory-inspector-report" time="0.0333467" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>passed: extended Inspector workflow, memory artifacts, binary/source identity and declared flags
+</system-out>
+	</testcase>
+	<testcase name="memory-layout" classname="memory-layout" time="0.00169295" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>original size=24 align=8 stride=24 internal=7 tail=4
+  internal offset=1 bytes=7
+  tail offset=20 bytes=4
+reordered size=16 align=8 stride=16 internal=0 tail=3
+  tail offset=13 bytes=3
+alignas(64) size=64 align=64 stride=64 internal=7 tail=44
+  internal offset=1 bytes=7
+  tail offset=20 bytes=44
+layout: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-arena" classname="memory-arena" time="0.0013735" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>arena: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-pool" classname="memory-pool" time="0.00152326" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>pool: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-pmr" classname="memory-pmr" time="0.00144036" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>PMR checks passed
+</system-out>
+	</testcase>
+	<testcase name="memory-costs" classname="memory-costs" time="0.00911066" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>Cost/model checks passed
+</system-out>
+	</testcase>
+	<testcase name="memory-driver" classname="memory-driver" time="0.0659036" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>passed: independent memory driver trace/checksums, layouts, lifetimes, accounting and fragmentation
+</system-out>
+	</testcase>
+</testsuite>

@@ -4,7 +4,11 @@
 
 Independent local repository initialized on main; no prior target directories/remotes existed. Hosting authentication checked: zenpuddah, requested repository names absent. Native macOS 26.6.2 / Darwin 25.6.0 / ARM64, Apple Clang 21.0.0, CMake 4.4.3, Python 3.14.8, Ninja installed. CLion 2026.2.1 installed; interactive workflow not run. perf/strace/container runtimes absent; LLDB available. Git identity exists, no signing override introduced. Source baseline: workspace 0c44a68a490035999aa3525e45f4601c883407f2. Discovery commands exited 0 except expected missing-repository queries. Product tests: not run yet. PLAN.md fixes files/interfaces/checks and delegation ownership.
 
-Next action: publish/pin the locally verified public extension and import actual Linux CI artifacts; then prepare the additive private M tasks. Original public-v1 remains unchanged.
+Next action: hand over the verified memory-v1 release receipt, then prepare the five additive private tasks. Original public-v1 remains unchanged.
+
+## Memory-v1 final public gate — passed
+
+Corrected product350a0e979dce3ef188b38466dbc7e0ce69d84ae1 passed **15/15** each dev/release/ASan/UBSan and **3/3** concurrency-only TSan on both native macOS ARM64/Clang21 and actual Ubuntu24.04 x86-64/GCC13.3. Native command exit0, record evidence/memory-v1/native/20261027T225153.085866Z/verification.json, source7919c541c97eefc63ae650a54a17a1978b57146706eea992a5fae9756d31a109, driftfalse. Linux workflow40597984542 success; `python3 scripts/import_memory_ci.py 40597984542` exit0 validated all five actual artifacts/revisions/source identities/nonempty suites; evidence/memory-v1/ci/40597984542/. Separate post-matrix corrected `python3 scripts/measure_memory.py` exit0, primary evidence/memory-v1/investigation/20261027T225302.460015Z/ (no errors/drift). Summary docs/MEMORY-RESULTS.md. This receipt changes only evidence/docs/progress after the tested product; implementation/test files match350a0e9. Failed earlier records remain labelled and immutable. No private reference imported before this final gate. Original public-v1 unchanged; CLion interactive pending, no independent learner competence inferred.
 
 ## Actual first Linux gate — portability correction
 

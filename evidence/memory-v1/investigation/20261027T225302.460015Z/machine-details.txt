@@ -1,0 +1,5 @@
+machdep.cpu.brand_string: Apple M5 Pro
+hw.model: Mac17,9
+hw.pagesize: 16384
+
+--- stderr ---

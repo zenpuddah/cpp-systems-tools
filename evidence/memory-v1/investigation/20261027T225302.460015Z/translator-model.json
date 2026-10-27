@@ -1,0 +1,11 @@
+{
+  "label": "toy page translator MODEL, not observed physical addresses",
+  "page_bytes": 4096,
+  "virtual_address": 74565,
+  "virtual_page": 18,
+  "offset": 837,
+  "invented_page_table": {
+    "18": 128
+  },
+  "invented_physical_address": 525125
+}
