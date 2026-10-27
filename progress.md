@@ -8,6 +8,8 @@ Next action: publish/pin the locally verified public extension and import actual
 
 ## Actual first Linux gate — portability correction
 
+Second actual workflow40597511941 built successfully; TSan3/3 passed, while four other presets ran 11 passing tests, three failing cost/driver/report tests, and one dependent artifact check not run. Alignment checks caught the libstdc++13 standard-pool PR118681 shape before typed construction (variable size such as24/40/56 with requested16). Corrected controlled experiment selects counted-object natural alignment8, preserving the identical variable-byte request trace/payload on all routes; pointer checks remain, and custom over-alignment tests remain through256. No private reference imported yet. The entire failed CI artifact is retained at evidence/memory-v1/ci/40597511941/. Native/CI reverification is required for this implementation change; previous timing values are historical, not silently relabeled current.
+
 Published native candidate d25250572a882345fc3a5fa9f4241441e1ca31f1 and handed it over explicitly with Linux pending. Actual workflow40597197071 failed all five builds under GCC13.3: new core test declarations using parenthesized CTAD `std::span(backing)` were parsed as invalid parameter declarations. Dependent tests are **not run**, not zero passed. Imported unmodified artifact evidence is evidence/memory-v1/ci/40597197071/. Nine test declarations now use unambiguous brace initialization; allocator/PMR/experiment implementations are unchanged. No original release tag moved and no private reference imported from the failed Linux candidate. Next action: rerun both native and actual Linux matrix on this correction before final extension pin/import.
 
 ## Memory-v1 verified native candidate — 2026-10-27

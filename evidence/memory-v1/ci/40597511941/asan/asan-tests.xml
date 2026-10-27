@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Linux-c++"
+	tests="15"
+	failures="3"
+	disabled="0"
+	skipped="1"
+	hostname="runnervmtai0g"
+	time="14"
+	timestamp="2026-10-27T22:48:07"
+	>
+	<testcase name="evidence-scripts" classname="evidence-scripts" time="0.262537" status="run">
+		<properties/>
+		<system-out>.......
+----------------------------------------------------------------------
+Ran 7 tests in 0.151s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="memory-evidence" classname="memory-evidence" time="0.212385" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>......
+----------------------------------------------------------------------
+Ran 6 tests in 0.016s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="tcp-kv-unit" classname="tcp-kv-unit" time="0.32184" status="run">
+		<properties/>
+		<system-out>PASS parser/store boundaries
+PASS descriptor ownership
+PASS every split point
+PASS injected transport
+PASS fairness and limits
+PASS EOF/recovery/deadlines
+6/6 unit groups passed (release-enabled checks)
+</system-out>
+	</testcase>
+	<testcase name="tcp-kv-integration" classname="tcp-kv-integration" time="1.58949" status="run">
+		<properties/>
+		<system-out>test_connection_limit_and_reconnect (__main__.Integration.test_connection_limit_and_reconnect) ... ok
+test_fragmentation_coalescing_and_buffered_fairness (__main__.Integration.test_fragmentation_coalescing_and_buffered_fairness) ... ok
+test_invalid_cli (__main__.Integration.test_invalid_cli) ... ok
+test_key_and_line_boundaries (__main__.Integration.test_key_and_line_boundaries) ... ok
+test_protocol_recovery_and_half_close (__main__.Integration.test_protocol_recovery_and_half_close) ... ok
+test_reset_and_clean_empty_eof (__main__.Integration.test_reset_and_clean_empty_eof) ... ok
+test_signal_shutdown_with_live_idle_clients (__main__.Integration.test_signal_shutdown_with_live_idle_clients) ... ok
+test_slow_reader_fairness_and_shutdown (__main__.Integration.test_slow_reader_fairness_and_shutdown) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 1.536s
+
+OK
+</system-out>
+	</testcase>
+	<testcase name="runtime-core" classname="runtime-core" time="0.0360674" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: core
+</system-out>
+	</testcase>
+	<testcase name="runtime-queue" classname="runtime-queue" time="0.0547511" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: queue
+</system-out>
+	</testcase>
+	<testcase name="runtime-workloads-oracle" classname="runtime-workloads-oracle" time="0.410399" status="run">
+		<properties>
+			<property name="cmake_labels" value="concurrency"/>
+		</properties>
+		<system-out>passed: independent unsigned reference, variants, boundaries and invalid inputs
+</system-out>
+	</testcase>
+	<testcase name="runtime-report" classname="runtime-report" time="10.9682" status="fail">
+		<failure message="Failed"/>
+		<properties>
+			<property name="cmake_labels" value="inspection"/>
+		</properties>
+		<system-out>Traceback (most recent call last):
+  File "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/tests/check_report.py", line 11, in &lt;module&gt;
+    assert result.returncode == 0, result.stdout + result.stderr
+           ^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: failed: /home/runner/work/cpp-systems-tools/cpp-systems-tools/build/asan/projects/runtime-inspector/report-test/report.md
+
+</system-out>
+	</testcase>
+	<testcase name="memory-inspector-report" classname="memory-inspector-report" time="0" status="notrun">
+		<skipped message="Fixture dependency failed"/>
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>Failed test dependencies: runtime-report</system-out>
+	</testcase>
+	<testcase name="memory-layout" classname="memory-layout" time="0.0105527" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>original size=24 align=8 stride=24 internal=7 tail=4
+  internal offset=1 bytes=7
+  tail offset=20 bytes=4
+reordered size=16 align=8 stride=16 internal=0 tail=3
+  tail offset=13 bytes=3
+alignas(64) size=64 align=64 stride=64 internal=7 tail=44
+  internal offset=1 bytes=7
+  tail offset=20 bytes=44
+layout: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-arena" classname="memory-arena" time="0.0107878" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>arena: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-pool" classname="memory-pool" time="0.0208899" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>pool: passed (release-enabled CHECK)
+</system-out>
+	</testcase>
+	<testcase name="memory-pmr" classname="memory-pmr" time="0.0128231" status="run">
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>PMR checks passed
+</system-out>
+	</testcase>
+	<testcase name="memory-costs" classname="memory-costs" time="0.0143006" status="fail">
+		<failure message="Failed"/>
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>misaligned workload block
+</system-out>
+	</testcase>
+	<testcase name="memory-driver" classname="memory-driver" time="0.156453" status="fail">
+		<failure message="Failed"/>
+		<properties>
+			<property name="cmake_labels" value="memory"/>
+		</properties>
+		<system-out>Traceback (most recent call last):
+  File "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/check_driver.py", line 162, in &lt;module&gt;
+    main()
+  File "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/check_driver.py", line 153, in main
+    require(result.returncode == 0, result.stderr)
+  File "/home/runner/work/cpp-systems-tools/cpp-systems-tools/projects/runtime-inspector/memory/tests/check_driver.py", line 14, in require
+    raise AssertionError(message)
+AssertionError: runtime-memory: misaligned workload block
+
+</system-out>
+	</testcase>
+</testsuite>

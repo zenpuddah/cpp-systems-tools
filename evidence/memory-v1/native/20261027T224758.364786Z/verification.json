@@ -1,0 +1,768 @@
+{
+  "schema": 1,
+  "extension": "memory-v1",
+  "source": {
+    "sha256": "908a8567687421328b836686b07c94213e5fa4421febaea5fa31ec3a5f02b790",
+    "files": {
+      ".github/workflows/verify.yml": "83e9b0d094ebee7e64cf4e43d39480f85be60802475b0ddca2f6b9f9826e94eb",
+      ".gitignore": "07734361aa0d5008198ba02aea16a902f198572486d7f3e3a11d480689fc6202",
+      "AGENTS.md": "a1e6d2b0f542c849ef534cc996fbb824dae549be08a0c27b099c681646b7a3ad",
+      "CMakeLists.txt": "4bbab26165e0b9db73f710c8ac489fbdd90db3dd30f265c7cad18561e5c4cf08",
+      "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b",
+      "MEMORY_API.md": "53c736e2b32d21000b98f388be88d90073dc81bf3c345459ab3590a340310292",
+      "MEMORY_PLAN.md": "abc20fdcf8312391eb2fa22a34f7dcd62afaca6ed46045426760989e8a9ac90b",
+      "PLAN.md": "c0e60c7fe948cbf80c8095c83dc5c83f2cd8f510c5648230357efd8843ac6d5e",
+      "README.md": "6d14f127703b519960d6934d45ff9113f7feb1980cb46c6f9bf9a9ab548f0a62",
+      "docs/INVESTIGATIONS.md": "2e6cf09d1e80b0125b11204f46dd1487f1786bbc2e3715d1dd905c4db240df72",
+      "docs/MEMORY.md": "fc621d17aaaf6dc76548f288c5781537903ee2c0f4df32778fbc7d673b1f98c3",
+      "docs/RESULTS.md": "7df4f450d752a1dcbddef1494f76e0e994434929e9ef3af7b03797427747ccac",
+      "docs/VERIFICATION.md": "20c748b067bed6218393624df2bf492d24374f7b8f9862821b2c600d00848fd5",
+      "projects/runtime-inspector/.gitignore": "780cbc84f659102498bd4958bd39921cce2283f7812c0307fb1ad8acf9842cd7",
+      "projects/runtime-inspector/CMakeLists.txt": "3e6970255e099dfe65cd863ebc0e9ea5cdea0479cc69b530c34349dfd55ace8e",
+      "projects/runtime-inspector/PLAN.md": "cb4b6de9da8d0f4f9b3ba0a8f773e54ed0030c89a18c49611f29cc6ba0cd948e",
+      "projects/runtime-inspector/README.md": "8b246ead6bca4c713477db7df9e4cd88c40a78020d0a6fcf8df5c835f229ca96",
+      "projects/runtime-inspector/architecture.md": "db1432c0654d5578f5ffff4872a703cb81ff88c56823cf69ea9cda2570f0f38c",
+      "projects/runtime-inspector/include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+      "projects/runtime-inspector/include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+      "projects/runtime-inspector/memory/CMakeLists.txt": "7d9f65a4eb63ac12eae8d2bae2e9e7fdc77395f35a42589963257adfc9e74d30",
+      "projects/runtime-inspector/memory/CORE-NOTES.md": "7041e734adaba3fac1c556a41ed82770a41f6a10b0396735b7d466fd319e5941",
+      "projects/runtime-inspector/memory/EXPERIMENT-NOTES.md": "1ba65bbd70df889949f2cfc7c5399eb439949111eaf0e2aa74ca4700e0bce509",
+      "projects/runtime-inspector/memory/include/memory_lab/arena.hpp": "345d84bc6a7a174cb941f8817dca840f24460647091947e858657af7648ce7d0",
+      "projects/runtime-inspector/memory/include/memory_lab/experiments.hpp": "491602334dda99f139ed8456fc447d7cbfdf588739aa3f377595fadb284e808a",
+      "projects/runtime-inspector/memory/include/memory_lab/layout.hpp": "be08008d9dce7f7ec6f97926fddd63ee65bf998e4973b37c0ef2784394cfdd45",
+      "projects/runtime-inspector/memory/include/memory_lab/pmr.hpp": "b300b64ef1346a9aad9456b039d37290b1ff40ccc025a8a3d6e13c8df69818d9",
+      "projects/runtime-inspector/memory/include/memory_lab/pool.hpp": "086c9e14b224172741b4d04104da5ff43302817106ad514b48390fe0f66bd6a2",
+      "projects/runtime-inspector/memory/src/experiments.cpp": "112c1a8f069efb2b3e60ea21f353ec3f7f187d367981f890d106ae6dcc46cff3",
+      "projects/runtime-inspector/memory/src/main.cpp": "73359ce6d0c72c598e4a66c196a6b2e7a1433a934f02330e37bd928a86973a4c",
+      "projects/runtime-inspector/memory/src/pmr.cpp": "a68081dfe42c5233c79d24a99548125886c61edf9d75030b2304f4fbd32db187",
+      "projects/runtime-inspector/memory/tests/check_driver.py": "ffaa320d85b4c01e368717166b2f16ec5df9ce89ab62dfb67d1f2d10a2562767",
+      "projects/runtime-inspector/memory/tests/check_inspector.py": "f8d467fc56ef2d226767edb60f0640ff3a2f770e616742553bcd6bca3f4d7447",
+      "projects/runtime-inspector/memory/tests/core.cpp": "3c84a3f71becbdf60d6363dff654295bcf57203ac4a5460b8914fe40caa2f58c",
+      "projects/runtime-inspector/memory/tests/costs.cpp": "0360b8c833677a30b863dc725f6028922749a1d287eeec0079cf0f2c26d28cf5",
+      "projects/runtime-inspector/memory/tests/pmr.cpp": "3d4ec83629646a1850bcd0a7d7085598fded68fb41770fbe85b84fa766e8cc28",
+      "projects/runtime-inspector/report.py": "ebe15509eabda2306cae36b053c30156ec9bed63cc40248cbafc8d5bc171177e",
+      "projects/runtime-inspector/specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+      "projects/runtime-inspector/specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+      "projects/runtime-inspector/specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+      "projects/runtime-inspector/src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+      "projects/runtime-inspector/src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+      "projects/runtime-inspector/tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+      "projects/runtime-inspector/tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+      "projects/runtime-inspector/tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+      "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+      "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+      "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+      "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+      "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+      "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+      "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+      "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+      "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+      "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+      "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+      "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+      "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989",
+      "scripts/capabilities.py": "7842c6c248e0a0845248d1c0bd0ae02eeedc09776c3a54e486312a6eb57750bc",
+      "scripts/import_ci.py": "86cf400ca0e625b105ee204c51586d43970629ab190317227f5ba7c9cbe4cb54",
+      "scripts/import_memory_ci.py": "fe4eb9ae4f9a749a8a9004e2c79dd5b298a9410c8dd0842cfc2604239c377da0",
+      "scripts/investigate_cpu.py": "7f689b86e95b056b1586f1f9a30a0f51105ece018fa8a52599508b5a99a77a04",
+      "scripts/investigate_server.py": "e124cac839d09c2475775ef5f281e49b3de15c8138ba1a90acc7f48caec7cdb5",
+      "scripts/measure_memory.py": "5605c76687a447d2b9913edc8e3aa2884dd736d029da615ce18a34be33cf06ea",
+      "scripts/public_audit.py": "422399105bb840998834a0c75234ee6f582eb91cbc2686b43fcd6ef67a85a6b3",
+      "scripts/summarize.py": "04f64c70f9d1118bed118040bef8772110ff683acf8ce16d90853bfc793f3c48",
+      "scripts/verify.py": "cf987d94381bb578470d9b956df501013aea5b402b8d5c3bf00882a99ce7567d",
+      "scripts/verify_memory.py": "a460f2e0ae7315ba578937f8b8265c0dd62eb57d4bf49e230c91069095274f2d",
+      "tests/test_memory_evidence.py": "3d87c43eb07b2fad91a5c7d87d4609c12f4b1e492cb1b33f08743d09a6bbea2e",
+      "tests/test_scripts.py": "8c11dbbda4b0e4340f8fd8c9a9a5619607656d1a51ab9eaa0e58599e46b96fcf"
+    }
+  },
+  "platform": "macOS-26.6.2-arm64-arm-64bit-Mach-O",
+  "machine": "arm64",
+  "compiler": {
+    "command": [
+      "c++",
+      "--version"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.05998787499265745,
+    "output": "Apple clang version 21.0.0 (clang-2100.1.1.101)\nTarget: arm64-apple-darwin25.6.0\nThread model: posix\nInstalledDir: /Library/Developer/CommandLineTools/usr/bin\n"
+  },
+  "cmake": {
+    "command": [
+      "cmake",
+      "--version"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.017363250022754073,
+    "output": "cmake version 4.4.3\n\nCMake suite maintained and supported by Kitware (kitware.com/cmake).\n"
+  },
+  "python": "3.14.8",
+  "revision": {
+    "command": [
+      "git",
+      "rev-parse",
+      "HEAD"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.009852125018369406,
+    "output": "911cbb8c23ad0986bbfa28b5a493af00335635d8\n"
+  },
+  "dirty": {
+    "command": [
+      "git",
+      "status",
+      "--porcelain"
+    ],
+    "exit_code": 0,
+    "status": "passed",
+    "seconds": 0.011279749975074083,
+    "output": ""
+  },
+  "presets": {
+    "dev": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "dev"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.20658570801606402,
+        "output": "-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /Users/macklex/folder/cpp-systems-tools-memory/build/dev\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "dev",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.5832060420070775,
+        "output": "[1/2] Building CXX object projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o\n[2/2] Linking CXX executable projects/runtime-inspector/memory/runtime-memory-core\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "dev",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/Users/macklex/folder/cpp-systems-tools-memory/build/dev/memory-ctest.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 10.804855125024915,
+        "output": "Test project /Users/macklex/folder/cpp-systems-tools-memory/build/dev\n      Start  1: evidence-scripts\n 1/15 Test  #1: evidence-scripts .................   Passed    0.21 sec\n      Start  2: memory-evidence\n 2/15 Test  #2: memory-evidence ..................   Passed    0.07 sec\n      Start  3: tcp-kv-unit\n 3/15 Test  #3: tcp-kv-unit ......................   Passed    0.01 sec\n      Start  4: tcp-kv-integration\n 4/15 Test  #4: tcp-kv-integration ...............   Passed    2.59 sec\n      Start  5: runtime-core\n 5/15 Test  #5: runtime-core .....................   Passed    0.00 sec\n      Start  6: runtime-queue\n 6/15 Test  #6: runtime-queue ....................   Passed    0.01 sec\n      Start  7: runtime-workloads-oracle\n 7/15 Test  #7: runtime-workloads-oracle .........   Passed    0.11 sec\n      Start  8: runtime-report\n 8/15 Test  #8: runtime-report ...................   Passed    7.30 sec\n      Start  9: memory-inspector-report\n 9/15 Test  #9: memory-inspector-report ..........   Passed    0.02 sec\n      Start 10: memory-layout\n10/15 Test #10: memory-layout ....................   Passed    0.29 sec\n      Start 11: memory-arena\n11/15 Test #11: memory-arena .....................   Passed    0.01 sec\n      Start 12: memory-pool\n12/15 Test #12: memory-pool ......................   Passed    0.01 sec\n      Start 13: memory-pmr\n13/15 Test #13: memory-pmr .......................   Passed    0.00 sec\n      Start 14: memory-costs\n14/15 Test #14: memory-costs .....................   Passed    0.06 sec\n      Start 15: memory-driver\n15/15 Test #15: memory-driver ....................   Passed    0.09 sec\n\n100% tests passed out of 15\n\nLabel Time Summary:\nconcurrency    =   0.13 sec*proc (3 tests)\ninspection     =   7.30 sec*proc (1 test)\nmemory         =   0.54 sec*proc (8 tests)\n\nTotal Test time (real) =  10.79 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 15,
+          "passed": 15,
+          "cases": [
+            {
+              "name": "evidence-scripts",
+              "status": "passed",
+              "seconds": "0.205152"
+            },
+            {
+              "name": "memory-evidence",
+              "status": "passed",
+              "seconds": "0.0735688"
+            },
+            {
+              "name": "tcp-kv-unit",
+              "status": "passed",
+              "seconds": "0.00522542"
+            },
+            {
+              "name": "tcp-kv-integration",
+              "status": "passed",
+              "seconds": "2.59395"
+            },
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.00374888"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.00901229"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "0.114056"
+            },
+            {
+              "name": "runtime-report",
+              "status": "passed",
+              "seconds": "7.30364"
+            },
+            {
+              "name": "memory-inspector-report",
+              "status": "passed",
+              "seconds": "0.0191333"
+            },
+            {
+              "name": "memory-layout",
+              "status": "passed",
+              "seconds": "0.287519"
+            },
+            {
+              "name": "memory-arena",
+              "status": "passed",
+              "seconds": "0.00575563"
+            },
+            {
+              "name": "memory-pool",
+              "status": "passed",
+              "seconds": "0.00905492"
+            },
+            {
+              "name": "memory-pmr",
+              "status": "passed",
+              "seconds": "0.00255025"
+            },
+            {
+              "name": "memory-costs",
+              "status": "passed",
+              "seconds": "0.0586483"
+            },
+            {
+              "name": "memory-driver",
+              "status": "passed",
+              "seconds": "0.0870198"
+            }
+          ]
+        }
+      }
+    ],
+    "release": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "release"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.20500575000187382,
+        "output": "-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /Users/macklex/folder/cpp-systems-tools-memory/build/release\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "release",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.7485779580310918,
+        "output": "[1/2] Building CXX object projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o\n[2/2] Linking CXX executable projects/runtime-inspector/memory/runtime-memory-core\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "release",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/Users/macklex/folder/cpp-systems-tools-memory/build/release/memory-ctest.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 8.446307500009425,
+        "output": "Test project /Users/macklex/folder/cpp-systems-tools-memory/build/release\n      Start  1: evidence-scripts\n 1/15 Test  #1: evidence-scripts .................   Passed    0.20 sec\n      Start  2: memory-evidence\n 2/15 Test  #2: memory-evidence ..................   Passed    0.07 sec\n      Start  3: tcp-kv-unit\n 3/15 Test  #3: tcp-kv-unit ......................   Passed    0.00 sec\n      Start  4: tcp-kv-integration\n 4/15 Test  #4: tcp-kv-integration ...............   Passed    0.58 sec\n      Start  5: runtime-core\n 5/15 Test  #5: runtime-core .....................   Passed    0.01 sec\n      Start  6: runtime-queue\n 6/15 Test  #6: runtime-queue ....................   Passed    0.01 sec\n      Start  7: runtime-workloads-oracle\n 7/15 Test  #7: runtime-workloads-oracle .........   Passed    0.09 sec\n      Start  8: runtime-report\n 8/15 Test  #8: runtime-report ...................   Passed    7.06 sec\n      Start  9: memory-inspector-report\n 9/15 Test  #9: memory-inspector-report ..........   Passed    0.02 sec\n      Start 10: memory-layout\n10/15 Test #10: memory-layout ....................   Passed    0.29 sec\n      Start 11: memory-arena\n11/15 Test #11: memory-arena .....................   Passed    0.00 sec\n      Start 12: memory-pool\n12/15 Test #12: memory-pool ......................   Passed    0.00 sec\n      Start 13: memory-pmr\n13/15 Test #13: memory-pmr .......................   Passed    0.00 sec\n      Start 14: memory-costs\n14/15 Test #14: memory-costs .....................   Passed    0.02 sec\n      Start 15: memory-driver\n15/15 Test #15: memory-driver ....................   Passed    0.07 sec\n\n100% tests passed out of 15\n\nLabel Time Summary:\nconcurrency    =   0.10 sec*proc (3 tests)\ninspection     =   7.06 sec*proc (1 test)\nmemory         =   0.48 sec*proc (8 tests)\n\nTotal Test time (real) =   8.44 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 15,
+          "passed": 15,
+          "cases": [
+            {
+              "name": "evidence-scripts",
+              "status": "passed",
+              "seconds": "0.196741"
+            },
+            {
+              "name": "memory-evidence",
+              "status": "passed",
+              "seconds": "0.0735414"
+            },
+            {
+              "name": "tcp-kv-unit",
+              "status": "passed",
+              "seconds": "0.00361754"
+            },
+            {
+              "name": "tcp-kv-integration",
+              "status": "passed",
+              "seconds": "0.583763"
+            },
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.00541779"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.00877396"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "0.0891176"
+            },
+            {
+              "name": "runtime-report",
+              "status": "passed",
+              "seconds": "7.06491"
+            },
+            {
+              "name": "memory-inspector-report",
+              "status": "passed",
+              "seconds": "0.0195924"
+            },
+            {
+              "name": "memory-layout",
+              "status": "passed",
+              "seconds": "0.286655"
+            },
+            {
+              "name": "memory-arena",
+              "status": "passed",
+              "seconds": "0.00458071"
+            },
+            {
+              "name": "memory-pool",
+              "status": "passed",
+              "seconds": "0.00262004"
+            },
+            {
+              "name": "memory-pmr",
+              "status": "passed",
+              "seconds": "0.00206146"
+            },
+            {
+              "name": "memory-costs",
+              "status": "passed",
+              "seconds": "0.0204213"
+            },
+            {
+              "name": "memory-driver",
+              "status": "passed",
+              "seconds": "0.0716475"
+            }
+          ]
+        }
+      }
+    ],
+    "asan": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "asan"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.2043348749866709,
+        "output": "-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /Users/macklex/folder/cpp-systems-tools-memory/build/asan\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "asan",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.5577055410249159,
+        "output": "[1/2] Building CXX object projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o\n[2/2] Linking CXX executable projects/runtime-inspector/memory/runtime-memory-core\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "asan",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/Users/macklex/folder/cpp-systems-tools-memory/build/asan/memory-ctest.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 10.719533167022746,
+        "output": "Test project /Users/macklex/folder/cpp-systems-tools-memory/build/asan\n      Start  1: evidence-scripts\n 1/15 Test  #1: evidence-scripts .................   Passed    0.20 sec\n      Start  2: memory-evidence\n 2/15 Test  #2: memory-evidence ..................   Passed    0.07 sec\n      Start  3: tcp-kv-unit\n 3/15 Test  #3: tcp-kv-unit ......................   Passed    0.06 sec\n      Start  4: tcp-kv-integration\n 4/15 Test  #4: tcp-kv-integration ...............   Passed    1.26 sec\n      Start  5: runtime-core\n 5/15 Test  #5: runtime-core .....................   Passed    0.05 sec\n      Start  6: runtime-queue\n 6/15 Test  #6: runtime-queue ....................   Passed    0.05 sec\n      Start  7: runtime-workloads-oracle\n 7/15 Test  #7: runtime-workloads-oracle .........   Passed    0.66 sec\n      Start  8: runtime-report\n 8/15 Test  #8: runtime-report ...................   Passed    7.09 sec\n      Start  9: memory-inspector-report\n 9/15 Test  #9: memory-inspector-report ..........   Passed    0.02 sec\n      Start 10: memory-layout\n10/15 Test #10: memory-layout ....................   Passed    0.36 sec\n      Start 11: memory-arena\n11/15 Test #11: memory-arena .....................   Passed    0.05 sec\n      Start 12: memory-pool\n12/15 Test #12: memory-pool ......................   Passed    0.05 sec\n      Start 13: memory-pmr\n13/15 Test #13: memory-pmr .......................   Passed    0.05 sec\n      Start 14: memory-costs\n14/15 Test #14: memory-costs .....................   Passed    0.12 sec\n      Start 15: memory-driver\n15/15 Test #15: memory-driver ....................   Passed    0.63 sec\n\n100% tests passed out of 15\n\nLabel Time Summary:\nconcurrency    =   0.76 sec*proc (3 tests)\ninspection     =   7.09 sec*proc (1 test)\nmemory         =   1.34 sec*proc (8 tests)\n\nTotal Test time (real) =  10.71 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 15,
+          "passed": 15,
+          "cases": [
+            {
+              "name": "evidence-scripts",
+              "status": "passed",
+              "seconds": "0.195291"
+            },
+            {
+              "name": "memory-evidence",
+              "status": "passed",
+              "seconds": "0.0719133"
+            },
+            {
+              "name": "tcp-kv-unit",
+              "status": "passed",
+              "seconds": "0.0603259"
+            },
+            {
+              "name": "tcp-kv-integration",
+              "status": "passed",
+              "seconds": "1.25629"
+            },
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.0511815"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.0548167"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "0.655184"
+            },
+            {
+              "name": "runtime-report",
+              "status": "passed",
+              "seconds": "7.0897"
+            },
+            {
+              "name": "memory-inspector-report",
+              "status": "passed",
+              "seconds": "0.0193312"
+            },
+            {
+              "name": "memory-layout",
+              "status": "passed",
+              "seconds": "0.360813"
+            },
+            {
+              "name": "memory-arena",
+              "status": "passed",
+              "seconds": "0.045462"
+            },
+            {
+              "name": "memory-pool",
+              "status": "passed",
+              "seconds": "0.0469351"
+            },
+            {
+              "name": "memory-pmr",
+              "status": "passed",
+              "seconds": "0.0482513"
+            },
+            {
+              "name": "memory-costs",
+              "status": "passed",
+              "seconds": "0.121444"
+            },
+            {
+              "name": "memory-driver",
+              "status": "passed",
+              "seconds": "0.628704"
+            }
+          ]
+        }
+      }
+    ],
+    "ubsan": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "ubsan"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.20180270896526054,
+        "output": "-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /Users/macklex/folder/cpp-systems-tools-memory/build/ubsan\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "ubsan",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.5265409169951454,
+        "output": "[1/2] Building CXX object projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o\n[2/2] Linking CXX executable projects/runtime-inspector/memory/runtime-memory-core\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "ubsan",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/Users/macklex/folder/cpp-systems-tools-memory/build/ubsan/memory-ctest.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 9.102498207997996,
+        "output": "Test project /Users/macklex/folder/cpp-systems-tools-memory/build/ubsan\n      Start  1: evidence-scripts\n 1/15 Test  #1: evidence-scripts .................   Passed    0.19 sec\n      Start  2: memory-evidence\n 2/15 Test  #2: memory-evidence ..................   Passed    0.07 sec\n      Start  3: tcp-kv-unit\n 3/15 Test  #3: tcp-kv-unit ......................   Passed    0.01 sec\n      Start  4: tcp-kv-integration\n 4/15 Test  #4: tcp-kv-integration ...............   Passed    0.62 sec\n      Start  5: runtime-core\n 5/15 Test  #5: runtime-core .....................   Passed    0.01 sec\n      Start  6: runtime-queue\n 6/15 Test  #6: runtime-queue ....................   Passed    0.01 sec\n      Start  7: runtime-workloads-oracle\n 7/15 Test  #7: runtime-workloads-oracle .........   Passed    0.18 sec\n      Start  8: runtime-report\n 8/15 Test  #8: runtime-report ...................   Passed    7.44 sec\n      Start  9: memory-inspector-report\n 9/15 Test  #9: memory-inspector-report ..........   Passed    0.02 sec\n      Start 10: memory-layout\n10/15 Test #10: memory-layout ....................   Passed    0.29 sec\n      Start 11: memory-arena\n11/15 Test #11: memory-arena .....................   Passed    0.01 sec\n      Start 12: memory-pool\n12/15 Test #12: memory-pool ......................   Passed    0.01 sec\n      Start 13: memory-pmr\n13/15 Test #13: memory-pmr .......................   Passed    0.01 sec\n      Start 14: memory-costs\n14/15 Test #14: memory-costs .....................   Passed    0.09 sec\n      Start 15: memory-driver\n15/15 Test #15: memory-driver ....................   Passed    0.13 sec\n\n100% tests passed out of 15\n\nLabel Time Summary:\nconcurrency    =   0.20 sec*proc (3 tests)\ninspection     =   7.44 sec*proc (1 test)\nmemory         =   0.63 sec*proc (8 tests)\n\nTotal Test time (real) =   9.10 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 15,
+          "passed": 15,
+          "cases": [
+            {
+              "name": "evidence-scripts",
+              "status": "passed",
+              "seconds": "0.194842"
+            },
+            {
+              "name": "memory-evidence",
+              "status": "passed",
+              "seconds": "0.0715757"
+            },
+            {
+              "name": "tcp-kv-unit",
+              "status": "passed",
+              "seconds": "0.0107551"
+            },
+            {
+              "name": "tcp-kv-integration",
+              "status": "passed",
+              "seconds": "0.616378"
+            },
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.00822029"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.0114131"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "0.178789"
+            },
+            {
+              "name": "runtime-report",
+              "status": "passed",
+              "seconds": "7.43538"
+            },
+            {
+              "name": "memory-inspector-report",
+              "status": "passed",
+              "seconds": "0.0190035"
+            },
+            {
+              "name": "memory-layout",
+              "status": "passed",
+              "seconds": "0.293462"
+            },
+            {
+              "name": "memory-arena",
+              "status": "passed",
+              "seconds": "0.00762496"
+            },
+            {
+              "name": "memory-pool",
+              "status": "passed",
+              "seconds": "0.0111088"
+            },
+            {
+              "name": "memory-pmr",
+              "status": "passed",
+              "seconds": "0.00629071"
+            },
+            {
+              "name": "memory-costs",
+              "status": "passed",
+              "seconds": "0.0936584"
+            },
+            {
+              "name": "memory-driver",
+              "status": "passed",
+              "seconds": "0.132218"
+            }
+          ]
+        }
+      }
+    ],
+    "tsan": [
+      {
+        "command": [
+          "cmake",
+          "--preset",
+          "tsan"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.20432341599371284,
+        "output": "-- Configuring done (0.2s)\n-- Generating done (0.0s)\n-- Build files have been written to: /Users/macklex/folder/cpp-systems-tools-memory/build/tsan\n"
+      },
+      {
+        "command": [
+          "cmake",
+          "--build",
+          "--preset",
+          "tsan",
+          "-j",
+          "4"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 0.502998000010848,
+        "output": "[1/2] Building CXX object projects/runtime-inspector/memory/CMakeFiles/runtime-memory-core.dir/tests/core.cpp.o\n[2/2] Linking CXX executable projects/runtime-inspector/memory/runtime-memory-core\n"
+      },
+      {
+        "command": [
+          "ctest",
+          "--preset",
+          "tsan",
+          "--output-on-failure",
+          "--no-tests=error",
+          "--output-junit",
+          "/Users/macklex/folder/cpp-systems-tools-memory/build/tsan/memory-ctest.xml"
+        ],
+        "exit_code": 0,
+        "status": "passed",
+        "seconds": 3.8696838339674287,
+        "output": "Test project /Users/macklex/folder/cpp-systems-tools-memory/build/tsan\n    Start 5: runtime-core\n1/3 Test #5: runtime-core .....................   Passed    0.26 sec\n    Start 6: runtime-queue\n2/3 Test #6: runtime-queue ....................   Passed    0.26 sec\n    Start 7: runtime-workloads-oracle\n3/3 Test #7: runtime-workloads-oracle .........   Passed    3.34 sec\n\n100% tests passed out of 3\n\nLabel Time Summary:\nconcurrency    =   3.86 sec*proc (3 tests)\n\nTotal Test time (real) =   3.86 sec\n",
+        "tests": {
+          "status": "passed",
+          "count": 3,
+          "passed": 3,
+          "cases": [
+            {
+              "name": "runtime-core",
+              "status": "passed",
+              "seconds": "0.263977"
+            },
+            {
+              "name": "runtime-queue",
+              "status": "passed",
+              "seconds": "0.259935"
+            },
+            {
+              "name": "runtime-workloads-oracle",
+              "status": "passed",
+              "seconds": "3.33599"
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "sanitizer_environment": {
+    "ASAN_OPTIONS": "halt_on_error=1:detect_leaks=0",
+    "UBSAN_OPTIONS": "halt_on_error=1:print_stacktrace=1",
+    "TSAN_OPTIONS": null
+  },
+  "source_after": {
+    "sha256": "908a8567687421328b836686b07c94213e5fa4421febaea5fa31ec3a5f02b790",
+    "files": {
+      ".github/workflows/verify.yml": "83e9b0d094ebee7e64cf4e43d39480f85be60802475b0ddca2f6b9f9826e94eb",
+      ".gitignore": "07734361aa0d5008198ba02aea16a902f198572486d7f3e3a11d480689fc6202",
+      "AGENTS.md": "a1e6d2b0f542c849ef534cc996fbb824dae549be08a0c27b099c681646b7a3ad",
+      "CMakeLists.txt": "4bbab26165e0b9db73f710c8ac489fbdd90db3dd30f265c7cad18561e5c4cf08",
+      "CMakePresets.json": "8be9f66622e34a2022f1200b6b11398c60a7cbda137b2100c8d138375197ec9b",
+      "MEMORY_API.md": "53c736e2b32d21000b98f388be88d90073dc81bf3c345459ab3590a340310292",
+      "MEMORY_PLAN.md": "abc20fdcf8312391eb2fa22a34f7dcd62afaca6ed46045426760989e8a9ac90b",
+      "PLAN.md": "c0e60c7fe948cbf80c8095c83dc5c83f2cd8f510c5648230357efd8843ac6d5e",
+      "README.md": "6d14f127703b519960d6934d45ff9113f7feb1980cb46c6f9bf9a9ab548f0a62",
+      "docs/INVESTIGATIONS.md": "2e6cf09d1e80b0125b11204f46dd1487f1786bbc2e3715d1dd905c4db240df72",
+      "docs/MEMORY.md": "fc621d17aaaf6dc76548f288c5781537903ee2c0f4df32778fbc7d673b1f98c3",
+      "docs/RESULTS.md": "7df4f450d752a1dcbddef1494f76e0e994434929e9ef3af7b03797427747ccac",
+      "docs/VERIFICATION.md": "20c748b067bed6218393624df2bf492d24374f7b8f9862821b2c600d00848fd5",
+      "projects/runtime-inspector/.gitignore": "780cbc84f659102498bd4958bd39921cce2283f7812c0307fb1ad8acf9842cd7",
+      "projects/runtime-inspector/CMakeLists.txt": "3e6970255e099dfe65cd863ebc0e9ea5cdea0479cc69b530c34349dfd55ace8e",
+      "projects/runtime-inspector/PLAN.md": "cb4b6de9da8d0f4f9b3ba0a8f773e54ed0030c89a18c49611f29cc6ba0cd948e",
+      "projects/runtime-inspector/README.md": "8b246ead6bca4c713477db7df9e4cd88c40a78020d0a6fcf8df5c835f229ca96",
+      "projects/runtime-inspector/architecture.md": "db1432c0654d5578f5ffff4872a703cb81ff88c56823cf69ea9cda2570f0f38c",
+      "projects/runtime-inspector/include/runtime/bounded_queue.hpp": "7c63535d4d86f58ecb94955148da64c199c1e0b5bbfcb5e3432d599eb88af928",
+      "projects/runtime-inspector/include/runtime/workloads.hpp": "6a716d56145b2110ec8f4dbb8c97f2c6256454d925135864376220c85619cd63",
+      "projects/runtime-inspector/memory/CMakeLists.txt": "7d9f65a4eb63ac12eae8d2bae2e9e7fdc77395f35a42589963257adfc9e74d30",
+      "projects/runtime-inspector/memory/CORE-NOTES.md": "7041e734adaba3fac1c556a41ed82770a41f6a10b0396735b7d466fd319e5941",
+      "projects/runtime-inspector/memory/EXPERIMENT-NOTES.md": "1ba65bbd70df889949f2cfc7c5399eb439949111eaf0e2aa74ca4700e0bce509",
+      "projects/runtime-inspector/memory/include/memory_lab/arena.hpp": "345d84bc6a7a174cb941f8817dca840f24460647091947e858657af7648ce7d0",
+      "projects/runtime-inspector/memory/include/memory_lab/experiments.hpp": "491602334dda99f139ed8456fc447d7cbfdf588739aa3f377595fadb284e808a",
+      "projects/runtime-inspector/memory/include/memory_lab/layout.hpp": "be08008d9dce7f7ec6f97926fddd63ee65bf998e4973b37c0ef2784394cfdd45",
+      "projects/runtime-inspector/memory/include/memory_lab/pmr.hpp": "b300b64ef1346a9aad9456b039d37290b1ff40ccc025a8a3d6e13c8df69818d9",
+      "projects/runtime-inspector/memory/include/memory_lab/pool.hpp": "086c9e14b224172741b4d04104da5ff43302817106ad514b48390fe0f66bd6a2",
+      "projects/runtime-inspector/memory/src/experiments.cpp": "112c1a8f069efb2b3e60ea21f353ec3f7f187d367981f890d106ae6dcc46cff3",
+      "projects/runtime-inspector/memory/src/main.cpp": "73359ce6d0c72c598e4a66c196a6b2e7a1433a934f02330e37bd928a86973a4c",
+      "projects/runtime-inspector/memory/src/pmr.cpp": "a68081dfe42c5233c79d24a99548125886c61edf9d75030b2304f4fbd32db187",
+      "projects/runtime-inspector/memory/tests/check_driver.py": "ffaa320d85b4c01e368717166b2f16ec5df9ce89ab62dfb67d1f2d10a2562767",
+      "projects/runtime-inspector/memory/tests/check_inspector.py": "f8d467fc56ef2d226767edb60f0640ff3a2f770e616742553bcd6bca3f4d7447",
+      "projects/runtime-inspector/memory/tests/core.cpp": "3c84a3f71becbdf60d6363dff654295bcf57203ac4a5460b8914fe40caa2f58c",
+      "projects/runtime-inspector/memory/tests/costs.cpp": "0360b8c833677a30b863dc725f6028922749a1d287eeec0079cf0f2c26d28cf5",
+      "projects/runtime-inspector/memory/tests/pmr.cpp": "3d4ec83629646a1850bcd0a7d7085598fded68fb41770fbe85b84fa766e8cc28",
+      "projects/runtime-inspector/report.py": "ebe15509eabda2306cae36b053c30156ec9bed63cc40248cbafc8d5bc171177e",
+      "projects/runtime-inspector/specimen/main.cpp": "fd3961302f60108859f9ec6b9065ac40b9aa033a92f35bd9a7efcf46a79af49b",
+      "projects/runtime-inspector/specimen/operations.cpp": "ca10c4922bc47b36905004d3edb735b546f669c4bb5453fa9477db734582f618",
+      "projects/runtime-inspector/specimen/specimen.hpp": "46fe5fd83e996b00a39a21de0656143173950dbe582d2bcca9190c05aa21ed01",
+      "projects/runtime-inspector/src/main.cpp": "dac33354a4f53c4fa84c18bbad8a57fa7d8ce2b07b492f4efe68a4c01873bc54",
+      "projects/runtime-inspector/src/workloads.cpp": "fa76f78d93e92726bb62ca3397ad6ae054b98ea6cd41c6acedfca0a6831ca1e4",
+      "projects/runtime-inspector/tests/check_report.py": "1cfc454730ac71ec5ce0bdb7d3581690758ca0f5c68e70d76d58f4ffedacc8dc",
+      "projects/runtime-inspector/tests/check_workloads.py": "5803e883f4aa7b4ad73d8bcc4085df83594a2027616156fb9d91d4c3914f5079",
+      "projects/runtime-inspector/tests/tests.cpp": "99eaa6e7a99cc5ad092e6e87806c5a35e2a4a1367a951d5849a626af7ffd87b0",
+      "projects/tcp-kv/CMakeLists.txt": "a1462c7462e08dd2ce0acc3a8994047893e4f881d0121daf5a7480551e0b874e",
+      "projects/tcp-kv/PLAN.md": "153f37b89b064b45b9f373c9318644d88e8cdc6ba7873e851025827c6387258e",
+      "projects/tcp-kv/README.md": "92bbc752092ec4cf71e5c48e51caee19db4698daeab775108e6b1e6d1cf5a710",
+      "projects/tcp-kv/docs/architecture.md": "237c40b3ce5ebe99da0dcedefb40d4d07dd8b012e93fd72f2eb5458fcf5da422",
+      "projects/tcp-kv/include/tcp_kv/connection.hpp": "6274b5439a01834988bb4f43089edaaaf4164f24613a045e7fc0b719ac8b33f5",
+      "projects/tcp-kv/include/tcp_kv/fd.hpp": "b47903fd9419427aeb64a56470ebbfaa35dd189dd807990bca9958f6db8f0f8e",
+      "projects/tcp-kv/include/tcp_kv/protocol.hpp": "f63a22c0eb3f924eadc1602a12b60fb929c9e6a69dd30e4ef3df0837a03038a8",
+      "projects/tcp-kv/src/connection.cpp": "8f82f845ea475f5739462c174c1e7ec35e767fa9752d331ac51c4727fc6f5b13",
+      "projects/tcp-kv/src/main.cpp": "c983a7663d83a186e9ccde7a7448afe4cb703ed57cca8c73654f076b543827fe",
+      "projects/tcp-kv/src/protocol.cpp": "246bad3136c5d878fe300a0a5daaf17f42de523cf9ef527e516c114e89410944",
+      "projects/tcp-kv/tests/integration.py": "b4e3de44a7ae1a979fe74e306cf1f01a6979603e19aa71f434c3d9657b400ba0",
+      "projects/tcp-kv/tests/unit.cpp": "b0d2737507040eac5f40d36cf91139c95cc0269e05200ffca6ad8295fbd1f7ed",
+      "projects/tcp-kv/tests/verify.py": "90b64857d3158311187211bc2f7607006f0255b3516998e319433fb9e23cf989",
+      "scripts/capabilities.py": "7842c6c248e0a0845248d1c0bd0ae02eeedc09776c3a54e486312a6eb57750bc",
+      "scripts/import_ci.py": "86cf400ca0e625b105ee204c51586d43970629ab190317227f5ba7c9cbe4cb54",
+      "scripts/import_memory_ci.py": "fe4eb9ae4f9a749a8a9004e2c79dd5b298a9410c8dd0842cfc2604239c377da0",
+      "scripts/investigate_cpu.py": "7f689b86e95b056b1586f1f9a30a0f51105ece018fa8a52599508b5a99a77a04",
+      "scripts/investigate_server.py": "e124cac839d09c2475775ef5f281e49b3de15c8138ba1a90acc7f48caec7cdb5",
+      "scripts/measure_memory.py": "5605c76687a447d2b9913edc8e3aa2884dd736d029da615ce18a34be33cf06ea",
+      "scripts/public_audit.py": "422399105bb840998834a0c75234ee6f582eb91cbc2686b43fcd6ef67a85a6b3",
+      "scripts/summarize.py": "04f64c70f9d1118bed118040bef8772110ff683acf8ce16d90853bfc793f3c48",
+      "scripts/verify.py": "cf987d94381bb578470d9b956df501013aea5b402b8d5c3bf00882a99ce7567d",
+      "scripts/verify_memory.py": "a460f2e0ae7315ba578937f8b8265c0dd62eb57d4bf49e230c91069095274f2d",
+      "tests/test_memory_evidence.py": "3d87c43eb07b2fad91a5c7d87d4609c12f4b1e492cb1b33f08743d09a6bbea2e",
+      "tests/test_scripts.py": "8c11dbbda4b0e4340f8fd8c9a9a5619607656d1a51ab9eaa0e58599e46b96fcf"
+    }
+  },
+  "source_drift": false,
+  "status": "passed"
+}

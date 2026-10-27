@@ -122,13 +122,18 @@ const char* name(Kind k) {
 }
 
 struct ObjectCounts { std::size_t constructed{}, destroyed{}; };
-struct alignas(16) Object {
+// Use the counted object's natural alignment for the equivalent cost trace.
+// GCC13/libstdc++ has PR118681 for pool sizes not divisible by a larger requested
+// alignment (e.g. 24 bytes / 16). The earlier Linux run caught that before object
+// construction. Custom allocator over-alignment is tested separately, not hidden
+// by rounding different request sizes for only one comparison backend.
+struct Object {
     std::uint64_t value;
     ObjectCounts* counts;
     Object(std::uint64_t v, ObjectCounts& c) : value(v), counts(&c) { ++counts->constructed; }
     ~Object() { ++counts->destroyed; }
 };
-static_assert(sizeof(Object) <= 64 && alignof(Object) == 16);
+static_assert(sizeof(Object) <= 64 && alignof(Object) <= 8);
 constexpr std::size_t alignment = alignof(Object), slot_payload = 64;
 
 std::vector<std::size_t> make_trace(std::size_t count, std::uint64_t seed) {
@@ -306,7 +311,8 @@ PhaseSample phase(Kind kind, const std::vector<std::size_t>& trace, std::uint64_
     result.allocate_ns = elapsed(start);
     result.allocations = allocated;
     for (void* pointer : pointers)
-        if (reinterpret_cast<std::uintptr_t>(pointer) % alignment != 0) throw std::logic_error("misaligned workload block");
+        if (reinterpret_cast<std::uintptr_t>(pointer) % alignment != 0)
+            throw std::logic_error(std::string("misaligned workload block: ") + name(kind));
     result.storage = backend->metrics(result.payload_bytes, allocated);
     if (objects) {
         start = Clock::now();
@@ -467,7 +473,7 @@ void write_experiments_json(std::ostream& out, const ExperimentReport& r) {
            "\"metadata\":\"custom control object sizeof plus fixed-pool reserved typed metadata; excludes common benchmark wrappers/tables; PMR/host unknown\","
            "\"retained_not_live_after_deallocate\":\"caller byte-buffer capacity plus upstream current bytes when client live payload is zero; includes unused capacity, excludes separately listed typed metadata\","
            "\"retained_dead_payload_after_deallocate\":\"known unreclaimed workload payload for arena/monotonic, zero after immediate custom-pool/host frees; standard pool reuse/retention opaque\"},"
-           "\"unsupported\":[\"arena individual free\",\"fixed-slot requests over 64 bytes or alignment over configured 16\","
+           "\"unsupported\":[\"arena individual free\",\"fixed-slot requests over 64 bytes or alignment over configured natural Object alignment\","
            "\"general variable-size individually reclaimed arena/fixed-pool equivalence\"],\"backends\":[";
     for (std::size_t i = 0; i < r.backends.size(); ++i) {
         if (i) out << ',';

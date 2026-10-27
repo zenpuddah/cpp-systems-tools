@@ -199,3 +199,25 @@ were made. No learner competence is asserted.
 Next action: coordinator integrates this schema into the existing Inspector report,
 runs combined regressions/CI on final source identities, and preserves/publishes
 the selected evidence before the private delta.
+
+## Coordinator Linux follow-up (supersedes original trace alignment)
+
+Actual GCC13.3/libstdc++ CI40597511941 built after the CTAD-test fix, then the cost
+trace's alignment check caught misaligned standard-pool blocks before any typed
+object construction. This matches known libstdc++ PR118681: size classes such as
+24/40/56 need not satisfy a requested 16-byte alignment for every block. Core
+allocator/PMR-route tests passed; cost/driver/report checks failed and the dependent
+report-artifact check was not run. Actual failed evidence is retained in root
+evidence/memory-v1/ci/40597511941/, not called a pass.
+
+The equivalent cost trace now uses the counted object's **natural alignment**
+(8 on supported ARM64/x86-64); its variable byte sizes, seeds, simultaneous-live
+payloads and identical request sizes across all five backends are preserved.
+This avoids that known library shape without silently rounding only one backend's
+requests or weakening pointer checks. It is a deliberately bounded cost experiment,
+not verification of every standard-library pool alignment. Custom arena/pool
+over-alignment remains covered through 256; PMR standard deallocation preconditions
+remain unchanged. Earlier 16-byte-aligned timing observations above are historical;
+new root versioned manifests/investigations identify the corrected implementation.
+
+Reference: [GCC PR118681 fix](https://github.com/gcc-mirror/gcc/commit/ac2fb60a67d6d1de6446c25c5623b8a1389f4770).

@@ -37,6 +37,8 @@ Destroy containers/objects before collective release, then reconstruct them. `cl
 
 Equivalent bulk-lifetime traces compare new/delete-backed, arena, compatible fixed-slot and PMR routes. Raw storage, object construction/destruction, collective reset/release, setup and warm-up are separate timing boundaries. Checked pool deallocation includes its validation cost. Unsupported arbitrary-size/fine-grained arena lifetimes are declared, not forced into misleading comparisons. Tiny nonpositive timing intervals have no fabricated throughput or guaranteed speedup.
 
+The cost trace uses natural counted-object alignment (8 on supported ARM64/x86-64), not an over-aligned cost workload. Actual GCC13/libstdc++ testing caught its known [PR118681](https://github.com/gcc-mirror/gcc/commit/ac2fb60a67d6d1de6446c25c5623b8a1389f4770) for variable-size pool requests with 16-byte alignment before typed construction. Failed evidence is retained. The selected natural-alignment trace preserves identical request sizes across routes; it does not assert all library pool alignment shapes are correct. Separate custom arena/pool tests exercise supported over-alignment through 256.
+
 Requested payload, backing capacity, acquired upstream bytes, consumed arena storage, alignment gaps, slot round-up, metadata and retained dead storage have distinct meanings. Unknown PMR cursor/metadata and host allocator internals are not guessed from RSS. Unused fixed slots are not automatically external fragmentation. A deterministic free-interval **model**, not a libc heap reconstruction, contrasts total-free versus largest-contiguous space and adjacent-hole coalescing. Temporal retention is distinct from both internal and external fragmentation.
 
 ## Verification and references
